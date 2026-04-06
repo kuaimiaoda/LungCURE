@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LungCURE — Benchmarking Multimodal Real-World Clinical Reasoning</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="static/css/style.css" />
+</head>
+<body>
+
+<!-- ─── Navigation ────────────────────────────────────────────── -->
+<nav>
+  <span class="nav-brand">LungCURE</span>
+  <div class="nav-links">
+    <a href="#abstract">Abstract</a>
+    <a href="#tasks">Tasks</a>
+    <a href="#benchmark">Benchmark</a>
+    <a href="#leaderboard">Leaderboard</a>
+    <a href="#lcagent">LCAgent</a>
+  </div>
+</nav>
+
+<!-- ─── Hero ─────────────────────────────────────────────────── -->
+<header class="hero">
+  <div class="hero-badge">ACM Multimedia 2026</div>
+  <h1>
+    <span class="accent">LungCURE</span>: Benchmarking Multimodal<br/>
+    Real-World Clinical Reasoning for<br/>
+    Precision Lung Cancer Diagnosis and Treatment
+  </h1>
+  <p class="hero-sub">
+    The first standardized multimodal benchmark for lung cancer clinical decision support,
+    built from 1,000 real-world clinician-labeled cases across 10+ hospitals.
+  </p>
+  <div class="authors">
+    <strong>Fangyu Hao</strong> &nbsp;·&nbsp; <strong>Jiayu Yang</strong> &nbsp;·&nbsp;
+    <strong>Yifan Zhu*</strong> &nbsp;·&nbsp; Zijun Yu &nbsp;·&nbsp; Qicen Wu &nbsp;·&nbsp;
+    Yunlong Wang &nbsp;·&nbsp; Jiawei Li &nbsp;·&nbsp; Yulin Liu<br/>
+    Xu Zeng &nbsp;·&nbsp; Guanting Chen &nbsp;·&nbsp; Shihao Li &nbsp;·&nbsp;
+    Zhonghong Ou &nbsp;·&nbsp; Meina Song<br/>
+    Mengyang Sun &nbsp;·&nbsp; <strong>Haoran Luo*</strong> &nbsp;·&nbsp; Yu Shi &nbsp;·&nbsp; Yingyi Wang<br/>
+    <em>Beijing Univ. of Posts &amp; Telecomm. &nbsp;·&nbsp; Tsinghua Univ. &nbsp;·&nbsp;
+    Nanyang Technological Univ. &nbsp;·&nbsp; Peking Union Med. Coll. Hosp.</em>
+  </div>
+  <div class="btn-group">
+    <a class="btn btn-primary" href="https://arxiv.org/abs/YOUR_ARXIV_ID" target="_blank">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15v-4H7l5-8v4h4l-5 8z"/></svg>
+      arXiv Paper
+    </a>
+    <a class="btn btn-outline" href="https://github.com/Joker-hfy/LungCURE" target="_blank">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+      GitHub
+    </a>
+    <a class="btn btn-outline" href="https://huggingface.co/datasets/Fine2378/LungCURE" target="_blank">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 2c4.418 0 8 3.582 8 8s-3.582 8-8 8-8-3.582-8-8 3.582-8 8-8zm-1 4v4H7l5 6 5-6h-4V8h-2z"/></svg>
+      HuggingFace Dataset
+    </a>
+  </div>
+</header>
+
+<!-- ─── Stats bar ─────────────────────────────────────────────── -->
+<div class="stats-bar">
+  <div class="stat-item">
+    <div class="stat-num">1,000</div>
+    <div class="stat-label">Real-world Cases</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">10+</div>
+    <div class="stat-label">Hospitals</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">3</div>
+    <div class="stat-label">Clinical Tasks</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">4</div>
+    <div class="stat-label">Modalities</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">10+</div>
+    <div class="stat-label">LLMs Evaluated</div>
+  </div>
+</div>
+
+<!-- ─── Abstract ─────────────────────────────────────────────── -->
+<section id="abstract">
+  <div class="container">
+    <div class="section-label">Overview</div>
+    <h2 class="section-title">Abstract</h2>
+    <div class="section-divider"></div>
+    <div class="abstract-box">
+      Lung cancer clinical decision support demands precise reasoning across complex, multi-stage oncological workflows.
+      Existing multimodal large language models (MLLMs) fail to handle guideline-constrained staging and treatment reasoning.
+      We formalize three oncological precision treatment (OPT) tasks for lung cancer, spanning <strong>TNM staging</strong>,
+      <strong>treatment recommendation</strong>, and <strong>end-to-end clinical decision support</strong>.
+      We introduce <strong>LungCURE</strong>, the first standardized multimodal benchmark built from 1,000 real-world,
+      clinician-labeled cases across more than 10 hospitals.
+      We further propose <strong>LCAgent</strong>, a multi-agent framework that ensures guideline-compliant lung cancer
+      clinical decision-making by suppressing cascading reasoning errors across the clinical pathway.
+      Experiments reveal large differences across various large language models (LLMs) in their capabilities
+      for complex medical reasoning, when given precise treatment requirements.
+      We further verify that LCAgent, as a simple yet effective plugin, enhances the reasoning performance of
+      LLMs in real-world medical scenarios.
+    </div>
+  </div>
+</section>
+
+<!-- ─── Tasks ─────────────────────────────────────────────────── -->
+<section id="tasks">
+  <div class="container">
+    <div class="section-label">Benchmark Design</div>
+    <h2 class="section-title">Tasks</h2>
+    <div class="section-divider"></div>
+    <p class="section-subtitle">LungCURE formalizes three oncological precision treatment (OPT) tasks that span the full clinical workflow for lung cancer diagnosis and treatment. All tasks share the same multimodal patient input.</p>
+
+    <!-- Task figure -->
+    <div class="task-image-wrap">
+      <img src="static/images/task.png" alt="LungCURE Task Formulation" />
+    </div>
+
+    <!-- Task cards -->
+    <div class="task-grid">
+      <div class="task-card t1">
+        <div class="task-num">Task 1</div>
+        <h3>TNM Staging</h3>
+        <p>
+          Given multimodal clinical data (imaging reports, pathology reports, clinical records,
+          supplementary materials), predict the complete TNM pathological stage.
+          A prediction is correct only if the T, N, and M stages are <em>all</em> correct.
+        </p>
+        <div class="task-metrics">
+          <span class="metric-tag">Staging Accuracy</span>
+          <span class="metric-tag">Reasoning Quality (RQ)</span>
+        </div>
+      </div>
+      <div class="task-card t2">
+        <div class="task-num">Task 2</div>
+        <h3>Treatment Recommendation</h3>
+        <p>
+          Given multimodal inputs <em>and</em> the ground-truth TNM stage as a conditioning signal,
+          generate a guideline-compliant treatment plan. Tests the model's treatment planning
+          capability independent of staging accuracy.
+        </p>
+        <div class="task-metrics">
+          <span class="metric-tag">Precision (%)</span>
+          <span class="metric-tag">BERT-F1</span>
+        </div>
+      </div>
+      <div class="task-card t3">
+        <div class="task-num">Task 3</div>
+        <h3>End-to-End Decision Support</h3>
+        <p>
+          Given <em>only</em> the multimodal clinical materials (no staging input), generate
+          a complete clinical decision. Mirrors real-world deployment where a patient uploads
+          records and receives full decision support without manual staging intervention.
+        </p>
+        <div class="task-metrics">
+          <span class="metric-tag">Precision (%)</span>
+          <span class="metric-tag">BERT-F1</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Benchmark ─────────────────────────────────────────────── -->
+<section id="benchmark">
+  <div class="container">
+    <div class="section-label">Dataset</div>
+    <h2 class="section-title">The LungCURE Benchmark</h2>
+    <div class="section-divider"></div>
+    <p class="section-subtitle">1,000 real-world multimodal clinical cases collected from 10+ hospitals in China (2019–2025), fully de-identified and approved by the Ethics Committee of Peking Union Medical College Hospital.</p>
+
+    <!-- 6 cards, 3 per row -->
+    <div class="dataset-grid">
+      <div class="dataset-card">
+        <div class="dataset-icon">🏥</div>
+        <h4>Multi-Center</h4>
+        <p>Sourced from 10+ hospitals across China for geographic and clinical diversity</p>
+      </div>
+      <div class="dataset-card">
+        <div class="dataset-icon">📁</div>
+        <h4>Multimodal</h4>
+        <p>Imaging reports, pathology reports, clinical records, and genomic testing results</p>
+      </div>
+      <div class="dataset-card">
+        <div class="dataset-icon">👨‍⚕️</div>
+        <h4>Expert Annotated</h4>
+        <p>Two-stage annotation protocol by senior clinicians with evidence-based TNM staging</p>
+      </div>
+      <div class="dataset-card">
+        <div class="dataset-icon">🌐</div>
+        <h4>Bilingual</h4>
+        <p>Supports both Chinese (ZH) and English (EN) evaluation for cross-lingual assessment</p>
+      </div>
+      <div class="dataset-card">
+        <div class="dataset-icon">🔒</div>
+        <h4>Privacy-Safe</h4>
+        <p>Fully de-identified; all patients provided informed consent before enrollment</p>
+      </div>
+      <div class="dataset-card">
+        <div class="dataset-icon">⚖️</div>
+        <h4>Guideline-Grounded</h4>
+        <p>Gold standards based on AJCC, NCCN, and CSCO clinical oncology guidelines</p>
+      </div>
+    </div>
+
+    <!-- Pipeline -->
+    <p class="pipeline-title">Data Collection Pipeline</p>
+    <div class="pipeline">
+      <div class="pipeline-step">
+        <div class="step-icon">📂</div>
+        <h4>Step 1: Data Collection</h4>
+        <p>Imaging, pathology, clinical records, and gene testing data from hospitals</p>
+      </div>
+      <div class="pipeline-step">
+        <div class="step-icon">🛡️</div>
+        <h4>Step 2: Anonymization</h4>
+        <p>Privacy de-sensitization and unified management of case files</p>
+      </div>
+      <div class="pipeline-step">
+        <div class="step-icon">✅</div>
+        <h4>Step 3: Annotation &amp; QC</h4>
+        <p>Interdisciplinary team annotation with expert TNM staging and quality control</p>
+      </div>
+    </div>
+
+    <!-- Evaluation Metrics — names only, no descriptions -->
+    <div class="metrics-box">
+      <h4>Evaluation Metrics</h4>
+      <div class="metrics-tags">
+        <span class="metrics-tag">TNM Staging Accuracy</span>
+        <span class="metrics-tag">Reasoning Quality (RQ)</span>
+        <span class="metrics-tag">Precision (%)</span>
+        <span class="metrics-tag">BERT-F1</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Leaderboard ───────────────────────────────────────────── -->
+<section id="leaderboard">
+  <div class="container">
+    <div class="section-label">Results</div>
+    <h2 class="section-title">Leaderboard</h2>
+    <div class="section-divider"></div>
+    <p class="section-subtitle">Performance of state-of-the-art MLLMs on LungCURE-Core. ZH = Chinese, EN = English. Click column headers to sort. ⚡ = with LCAgent plugin.</p>
+
+    <div class="lb-tabs">
+      <button class="lb-tab active" onclick="switchInput('image')">MLLM (Image Input)</button>
+      <button class="lb-tab" onclick="switchInput('text')">OCR + LLM (Text Input)</button>
+    </div>
+    <div class="task-tabs">
+      <button class="task-tab active" onclick="switchTask('tnm')">TNM Staging</button>
+      <button class="task-tab" onclick="switchTask('treat')">Treatment Recommendation</button>
+      <button class="task-tab" onclick="switchTask('e2e')">End-to-End Decision Support</button>
+    </div>
+
+    <div class="lb-table-wrap">
+      <table id="lb-table">
+        <thead id="lb-head"></thead>
+        <tbody id="lb-body"></tbody>
+      </table>
+    </div>
+    <p class="lb-note">
+      * Grok 3 results use OCR pre-processing due to image context limitations. &nbsp;·&nbsp;
+      — indicates the model exceeded maximum supported sequence length (infeasible). &nbsp;·&nbsp;
+      LCAgent rows show performance with the LCAgent framework applied on top of the base model.
+    </p>
+  </div>
+</section>
+
+<!-- ─── LCAgent ───────────────────────────────────────────────── -->
+<section id="lcagent">
+  <div class="container">
+    <div class="section-label">Method</div>
+    <h2 class="section-title">LCAgent Framework</h2>
+    <div class="section-divider"></div>
+    <p class="section-subtitle">A simple yet effective multi-agent plugin that boosts MLLM performance on LungCURE by decomposing the clinical pathway into structured, guideline-grounded stages.</p>
+
+    <!-- 4 cards, one row -->
+    <div class="agent-grid">
+      <div class="agent-card">
+        <div class="agent-card-icon">🎯</div>
+        <h4>Anatomical Dimension Isolation</h4>
+        <p>
+          Three concurrently executed agents independently extract T, N, and M evidence;
+          a deterministic rule-based node aggregates the final stage, eliminating stochastic errors.
+        </p>
+      </div>
+      <div class="agent-card">
+        <div class="agent-card-icon">🗺️</div>
+        <h4>Feature Routing for Guideline-Grounded Treatment</h4>
+        <p>
+          Decision variables map to a structured feature vector that dynamically activates a
+          scenario-specific expert agent under locally injected guideline subsets as hard constraints.
+        </p>
+      </div>
+      <div class="agent-card">
+        <div class="agent-card-icon">🔗</div>
+        <h4>Cascading Error Suppression</h4>
+        <p>
+          Strict decision boundaries between stages prevent reasoning errors from propagating
+          across the clinical pathway — a core failure mode of direct MLLM prompting.
+        </p>
+      </div>
+      <div class="agent-card">
+        <div class="agent-card-icon">🔌</div>
+        <h4>Plug-and-Play Compatibility</h4>
+        <p>
+          Model-agnostic: consistently boosts Qwen3.5-397B, Kimi-K2.5, GPT-5.2, and more
+          in a plug-in way with gains across all three tasks.
+        </p>
+      </div>
+    </div>
+
+    <!-- 4 gain cards, one row -->
+    <div class="gains-box">
+      <h4>Key Performance Gains with LCAgent &nbsp;·&nbsp; Qwen3.5-397B, MLLM Image Input, ZH</h4>
+      <div class="gains-grid">
+        <div class="gain-item gain-blue">
+          <div class="gain-num">+4.84%</div>
+          <div class="gain-label">TNM Staging Accuracy</div>
+        </div>
+        <div class="gain-item gain-green">
+          <div class="gain-num">+24.07%</div>
+          <div class="gain-label">Treatment Recommendation Precision</div>
+        </div>
+        <div class="gain-item gain-gold">
+          <div class="gain-num">+30.38%</div>
+          <div class="gain-label">End-to-End Decision Precision</div>
+        </div>
+        <div class="gain-item gain-red">
+          <div class="gain-num">+42.91%</div>
+          <div class="gain-label">E2E Precision (OCR+LLM)</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Citation ──────────────────────────────────────────────── -->
+<section>
+  <div class="container">
+    <div class="section-label">Reference</div>
+    <h2 class="section-title">Citation</h2>
+    <div class="section-divider"></div>
+    <div class="citation-wrap">
+      <pre class="citation-block">@inproceedings{hao2026lungcure,
+  title     = {LungCURE: Benchmarking Multimodal Real-World Clinical Reasoning
+               for Precision Lung Cancer Diagnosis and Treatment},
+  author    = {Hao, Fangyu and Yang, Jiayu and Zhu, Yifan and Yu, Zijun and
+               Wu, Qicen and Wang, Yunlong and Li, Jiawei and Liu, Yulin and
+               Zeng, Xu and Chen, Guanting and Li, Shihao and Ou, Zhonghong and
+               Song, Meina and Sun, Mengyang and Luo, Haoran and Shi, Yu and
+               Wang, Yingyi},
+  booktitle = {Proceedings of the 34th ACM International Conference on Multimedia},
+  year      = {2026}
+}</pre>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Footer ────────────────────────────────────────────────── -->
+<footer>
+  <div class="footer-links">
+    <a href="https://arxiv.org/abs/YOUR_ARXIV_ID" target="_blank">📄 arXiv</a>
+    <a href="https://github.com/Joker-hfy/LungCURE" target="_blank">💻 GitHub</a>
+    <a href="https://huggingface.co/datasets/Fine2378/LungCURE" target="_blank">🤗 HuggingFace</a>
+  </div>
+  <p>LungCURE &nbsp;·&nbsp; Beijing University of Posts and Telecommunications</p>
+  <p class="footer-note">Dataset approved by Ethics Committee of Peking Union Medical College Hospital.</p>
+</footer>
+
+<script src="static/js/leaderboard.js"></script>
+</body>
+</html>
