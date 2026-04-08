@@ -1,0 +1,1938 @@
+app:
+  description: 2026.2.3整合版本
+  icon: 🤖
+  icon_background: '#FFEAD5'
+  mode: advanced-chat
+  name: tnm分期助手_分开_格式化
+  use_icon_as_answer_icon: false
+dependencies:
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: langgenius/zhipuai:0.0.23@7e6213a06c26b17b5dfc2416db36f664d4fb08252bd1644ca54a82a6cc7a8609
+kind: app
+version: 0.3.0
+workflow:
+  conversation_variables: []
+  environment_variables: []
+  features:
+    file_upload:
+      allowed_file_extensions:
+      - .JPG
+      - .JPEG
+      - .PNG
+      - .GIF
+      - .WEBP
+      - .SVG
+      allowed_file_types:
+      - image
+      - document
+      allowed_file_upload_methods:
+      - remote_url
+      - local_file
+      enabled: true
+      fileUploadConfig:
+        audio_file_size_limit: 50
+        batch_count_limit: 5
+        file_size_limit: 15
+        image_file_size_limit: 10
+        video_file_size_limit: 100
+        workflow_file_upload_limit: 10
+      image:
+        enabled: false
+        number_limits: 3
+        transfer_methods:
+        - local_file
+        - remote_url
+      number_limits: 3
+    opening_statement: ''
+    retriever_resource:
+      enabled: true
+    sensitive_word_avoidance:
+      enabled: false
+    speech_to_text:
+      enabled: false
+    suggested_questions: []
+    suggested_questions_after_answer:
+      enabled: false
+    text_to_speech:
+      enabled: false
+      language: ''
+      voice: ''
+  graph:
+    edges:
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: start
+        targetType: document-extractor
+      id: 1756804397059-source-1756804402464-target
+      selected: false
+      source: '1756804397059'
+      sourceHandle: source
+      target: '1756804402464'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: document-extractor
+        targetType: llm
+      id: 1756804402464-source-1758186451078-target
+      selected: false
+      source: '1756804402464'
+      sourceHandle: source
+      target: '1758186451078'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: llm
+        targetType: code
+      id: 1758861864675-source-1764323555201-target
+      selected: false
+      source: '1758861864675'
+      sourceHandle: source
+      target: '1764323555201'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: llm
+        targetType: code
+      id: 1758861867069-source-17643235703550-target
+      selected: false
+      source: '1758861867069'
+      sourceHandle: source
+      target: '17643235703550'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: llm
+        targetType: code
+      id: 1758861898205-source-17643235815850-target
+      selected: false
+      source: '1758861898205'
+      sourceHandle: source
+      target: '17643235815850'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: code
+        targetType: code
+      id: 1764323555201-source-1768228656389-target
+      selected: false
+      source: '1764323555201'
+      sourceHandle: source
+      target: '1768228656389'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: code
+        targetType: code
+      id: 17643235703550-source-1768228656389-target
+      selected: false
+      source: '17643235703550'
+      sourceHandle: source
+      target: '1768228656389'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: code
+        targetType: code
+      id: 17643235815850-source-1768228656389-target
+      selected: false
+      source: '17643235815850'
+      sourceHandle: source
+      target: '1768228656389'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: code
+        targetType: answer
+      id: 1768228656389-source-answer-target
+      selected: false
+      source: '1768228656389'
+      sourceHandle: source
+      target: answer
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: llm
+        targetType: code
+      id: 1758186451078-source-1764323445709-target
+      selected: false
+      source: '1758186451078'
+      sourceHandle: source
+      target: '1764323445709'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: code
+        targetType: llm
+      id: 1764323445709-source-1769599924411-target
+      source: '1764323445709'
+      sourceHandle: source
+      target: '1769599924411'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: llm
+        targetType: code
+      id: 1769599924411-source-1769603565594-target
+      source: '1769599924411'
+      sourceHandle: source
+      target: '1769603565594'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: code
+        targetType: code
+      id: 1769603565594-source-1769604169192-target
+      source: '1769603565594'
+      sourceHandle: source
+      target: '1769604169192'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: code
+        targetType: llm
+      id: 1769604169192-source-1758861867069-target
+      source: '1769604169192'
+      sourceHandle: source
+      target: '1758861867069'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: code
+        targetType: llm
+      id: 1769604169192-source-1758861898205-target
+      source: '1769604169192'
+      sourceHandle: source
+      target: '1758861898205'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: code
+        targetType: llm
+      id: 1764323445709-source-1770127326622-target
+      source: '1764323445709'
+      sourceHandle: source
+      target: '1770127326622'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: llm
+        targetType: code
+      id: 1770127326622-source-1770127431059-target
+      source: '1770127326622'
+      sourceHandle: source
+      target: '1770127431059'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: code
+        targetType: code
+      id: 1770127431059-source-1770127481088-target
+      source: '1770127431059'
+      sourceHandle: source
+      target: '1770127481088'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: code
+        targetType: llm
+      id: 1770127481088-source-1758861864675-target
+      source: '1770127481088'
+      sourceHandle: source
+      target: '1758861864675'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    nodes:
+    - data:
+        desc: ''
+        selected: false
+        title: 开始
+        type: start
+        variables: []
+      height: 52
+      id: '1756804397059'
+      position:
+        x: -427.0996395598006
+        y: 265.94797206002454
+      positionAbsolute:
+        x: -427.0996395598006
+        y: 265.94797206002454
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        answer: '{{#1770127326622.text#}}
+
+          {{#1769599924411.text#}}
+
+          {{#1768228656389.result#}}
+
+          '
+        desc: ''
+        selected: false
+        title: 直接回复
+        type: answer
+        variables: []
+      height: 140
+      id: answer
+      position:
+        x: 3040.286210556385
+        y: 336.3953877260365
+      positionAbsolute:
+        x: 3040.286210556385
+        y: 336.3953877260365
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        desc: ''
+        is_array_file: true
+        selected: false
+        title: 文档提取器
+        type: document-extractor
+        variable_selector:
+        - sys
+        - files
+      height: 90
+      id: '1756804402464'
+      position:
+        x: -85.32537904648848
+        y: 265.94797206002454
+      positionAbsolute:
+        x: -85.32537904648848
+        y: 265.94797206002454
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params:
+            temperature: 0.1
+            thinking: false
+          mode: chat
+          name: glm-4.7
+          provider: langgenius/zhipuai/zhipuai
+        prompt_template:
+        - id: 1b305772-fcf8-4167-954f-398120064ba9
+          role: system
+          text: '角色
+
+            你是病例提取工具。将给你几个报告（如CT报告、PET/CT报告、病例报告、脑核磁报告、病理报告、基因检测等）。你的任务是提取其中的主干信息，而不改变任何关键字眼。
+
+
+            核心任务与逻辑
+
+            影像学报告（CT/PET/MR等）：
+
+            主要提取“影像表现/所见”（对应【主要描述】）和“影像诊断/结论”（对应【诊断意见】）。注意：报告中的标题可能不完全叫这两个名字，请识别同义板块。
+
+            病理报告：
+
+            完整提取肉眼所见及镜下描述（对应【主要描述】）和病理诊断结果/免疫组化（对应【诊断意见】）。
+
+            语义处理规则
+
+
+            诊断意见标准化：
+
+            诊断意见标准化：
+
+            语义优化：将“不排除转移”、“考虑转移”等含有“转移”字眼的模糊词标准化为含有“转移”含义的描述。
+
+            拆分长句（普通拆分）：按句号或分号自然拆分。
+
+            复合解剖部位强制拆分（新增关键规则）：
+
+            逻辑：当文中出现“A部位及B部位+病变描述”的复合短语时，必须将其拆解为两条独立的描述，并让两者都继承后面的病变性质。
+
+            针对性场景（淋巴结）：
+
+            原文：“余双肺门及纵隔（2、4区）淋巴结，不除外转移”。
+
+            错误提取：“余双肺门及纵隔（2、4区）淋巴结转移”。
+
+            正确提取（必须拆开）：
+
+            双肺门淋巴结转移（继承“不除外转移”）。
+
+            纵隔（2、4区）淋巴结转移（继承“不除外转移”）。
+
+            目的：确保“双肺门”（N3指征）与“纵隔”（N2指征）独立展示，防止下游分期逻辑混淆。
+
+
+
+            特殊注意事项（严禁修改）：
+
+            语义保持：出现“性质待定”、“随诊观察”、“炎症”、“感染”、“纤维灶”等词，严禁改为“转移”，必须原样保留。
+
+            符号提取：原发灶尺寸之间的乘号*或x要保留
+
+
+            输出格式规范（重要）
+
+            请严格按照以下Markdown格式输出每个报告的提取内容。每个报告必须包含且仅包含以下两个固定标签：
+
+            格式模板：
+
+            报告类型：（在此注明是CT、PET/CT还是病理等）
+
+            【主要描述】
+
+            （在此处填入提取的影像所见或病理描述，保留原文关键细节）
+
+            【诊断意见】
+
+            （在此处填入提取的结论或病理诊断。请在此处执行“语义优化”和“拆分长句”的逻辑）
+
+            示例：
+
+            报告类型：胸部CT
+
+            【主要描述】
+
+            右肺上叶可见一结节影，大小约2.3cm，边缘毛糙，纵隔内可见多个肿大淋巴结。
+
+            【诊断意见】
+
+            右肺上叶恶性肿瘤。
+
+            纵隔淋巴结转移。
+
+            请对提供的所有报告执行上述操作。
+
+
+            '
+        - id: c67d0967-5e1f-4f2e-bd5b-a31de7807c61
+          role: user
+          text: '请你对
+
+            {{#sys.query#}}
+
+            {{#1756804402464.text#}}
+
+            进行提取'
+        selected: false
+        title: 提取信息
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 88
+      id: '1758186451078'
+      position:
+        x: 244.54938795750934
+        y: 265.94797206002454
+      positionAbsolute:
+        x: 244.54938795750934
+        y: 265.94797206002454
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params:
+            temperature: 0.1
+            thinking: false
+          mode: chat
+          name: glm-4.7
+          provider: langgenius/zhipuai/zhipuai
+        prompt_template:
+        - id: 3bf95c24-9038-49dd-af97-b9438bcb95a4
+          role: system
+          text: '角色与任务
+
+            你现在是一名专攻肺癌分期的肿瘤科医疗信息助理。根据上游 T 提取模块提供的 t_assessment_context（JSON 格式），严格遵循以下的判断规则，准确地判断出
+            T 分期，结果要以规定输出格式输出。对于原发灶尺寸的大小一定要比较正确，结论对应一定要正确。
+
+            工作流程与指令
+
+            先读取 t_assessment_context 数组，识别以下要素：
+
+            原发灶：位置、大小（取长径为肿瘤直径）
+
+            侵犯特征：胸膜（牵拉 / 分界不清 / 累及）、支气管、阻塞性改变（阻塞性肺炎 / 肺不张）、大血管 / 心脏 / 气管 / 隆突 / 椎体
+            / 膈肌等
+
+            同侧播散：同侧不同肺叶结节、癌性淋巴管炎（标注 "同侧播散" 或 "双肺含同侧" 的条目）
+
+            再进行 T 分期判断:
+
+            第一步：肿瘤大小判定（取长径作为肿瘤直径，严格查表匹配）**
+
+            提取数值：从原发灶描述中提取最大径（如 "3.9×3.4×4.6cm" 取 4.6cm）。
+
+            【强制取最大径铁律】 若报告给出多个数值（如 a×b cm 或 a×b×c cm）， 必须从中取出**数值最大的那一个**作为肿瘤最大直径；
+            严禁取短径、较小值、最小值；
+
+            严格查表：必须逐一对照 "一、T 分期核心定义" 中的精确区间：
+
+            T1a：肿瘤直径≤1cm（上限严格为 1cm，超过即不归此类）
+
+            T1b：1cm < 肿瘤直径≤2cm（下限严格为 1cm 但不含 1cm，上限严格为 2cm，如 1.1-2.0cm）
+
+            T1c：2cm < 肿瘤直径≤3cm（下限严格为 2cm 但不含 2cm，上限严格为 3cm，如 2.1-3.0cm）
+
+            T2a：3cm < 肿瘤直径≤4cm（上限严格为 4cm，超过即不归此类）
+
+            T2b：4cm < 肿瘤直径≤5cm（下限严格为 4cm 但不含 4cm，如 4.1-5.0cm）
+
+            边界判定（必须执行）：
+
+            若大小为 4.6cm：4.6>4 → 不满足 T2a 的 "≤4cm"；4.6>4 且 4.6≤5 → 满足 T2b
+
+            【强制大小分期铁律】 肿瘤直径与大小分期是**互斥关系，只能匹配唯一一个正确分期**； **不在数值区间内、不满足的分期，绝对禁止写入 matched_criteria**；
+            严禁列出从低到高所有区间，只保留真实匹配的那一个大小分期。
+
+            第二步：浸润深度与邻近结构判定，并按最高严重程度定级
+
+            第三步：肺内病灶分布判定（同侧肺同肺叶或同侧不同肺叶）
+
+            【新增・强制流程铁律】
+
+            必须先把所有满足的 T 分期标准全部找出，全部写入 matched_criteria，不允许只写大小、不写侵犯 / 转移。
+
+            必须在全部标准检出完成后，再根据最高级别原则确定 final_t_stage。
+
+            严禁先给出低级分期（如 T1b），再在分析里推翻成高级分期（如 T3），输出必须一步到位。
+
+            位置关系判定：
+
+            "其旁"、"周围"、"邻近"：表示同肺叶（原发灶所在肺叶），应归为同侧同肺叶转移（T3）。
+
+            "另见"、"其它肺叶"：表示同侧不同肺叶，应归为 T4。
+
+            强制认定规则：
+
+            若上游提取条目含 "其旁"、"肿块旁"、"周围" 且标注转移 / 待定（如 "考虑不除外转移"），必须认定为同侧同肺叶转移，归为 T3。
+
+            若上游提取条目含 "同侧（左肺）及対侧（右肺）均受累" 或 "含同侧播散"，必须认定为同侧不同肺叶转移，归为 T4。
+
+            注意：对于 T 分期的判定要先在报告的结论位置判定肿瘤是否为恶性，若为恶性，则在描述部分找出原发灶的位置与大小；浸润深度与邻近结构判定一般是在报告的描述部分查找；对于整体逻辑要先看结论然后在描述部分查看具体细节。
+
+            肺癌 T 分期相关规则汇总
+
+            一、T 分期核心定义（按分期级别排序）
+
+            Tx（原发肿瘤无法评价）
+
+            定义：痰或支气管灌洗液发现癌细胞，但影像学检查（如 CT、MRI 等）或支气管镜检查未见原发灶，无法对原发肿瘤进行评估。
+
+            Tis（原位癌）
+
+            定义：肿瘤局限于支气管黏膜层或肺泡上皮层内，未突破基底膜，无浸润性生长，属于早期非浸润性病变。
+
+            T1（肿瘤直径≤3cm，无明显侵犯或转移）
+
+            T1 分期根据肿瘤直径进一步分为 3 个亚期，无其他额外侵犯或转移特征：
+
+            T1a：肿瘤直径≤1cm；
+
+            T1b：1cm < 肿瘤直径≤2cm；
+
+            T1c：2cm < 肿瘤直径≤3cm。
+
+            T2（满足 3cm < 肿瘤直径≤5cm，或伴特定局部侵犯）
+
+            T2 根据肿瘤直径及侵犯特征分为 T2a 和 T2b 两个亚期：
+
+            （1）T2a
+
+            满足以下任一条件即可判定为 T2a：
+
+            3cm < 肿瘤直径≤4cm；
+
+            侵犯脏层胸膜（需满足 PL1 或 PL2 标准：PL1 为肿瘤超出胸膜弹力层但未达胸膜表面，PL2 为肿瘤到达胸膜表面）；
+
+            侵犯主支气管，但未累及气管隆突；（肺门邻近气管受压）
+
+            肿瘤导致阻塞性肺炎（阻塞性改变），可累及肺门；阻塞性改变包含且不限于：阻塞性肺炎、阻塞性肺不张、肺膨胀不全、肺不张（阻塞性）、阻塞性通气障碍、肺实变（阻塞性）；
+
+            肿瘤导致部分肺或全肺肺不张（肺膨胀不全），可累及肺门；肺不张 / 肺膨胀不全无论是否标注 “阻塞性”，均纳入 T2a 的阻塞性改变判定；
+
+            （2）T2b
+
+            定义：仅基于肿瘤直径判定，即 4cm < 肿瘤直径≤5cm，无其他 T2a 相关局部侵犯特征也可归为 T2b。
+
+            T3（5cm < 肿瘤直径≤7cm，或伴较深局部侵犯，或同侧同肺叶转移）
+
+            满足以下任一条件即可判定为 T3：
+
+            5cm < 肿瘤直径≤7cm；
+
+            侵犯胸壁、膈神经（注意：侵犯膈肌属 T4，不可判断为侵犯膈神经）或心包壁层；注意："紧邻"" 贴近 " 上述结构不属于侵犯，不纳入 T3；
+
+            侵犯肋骨；
+
+            同侧肺的同一肺叶内存在转移灶（如同一肺叶内除原发灶外的孤立癌结节）。
+
+            同侧肺的同一肺叶内癌性淋巴管炎。
+
+            T4（肿瘤直径＞7cm，或伴严重局部侵犯，或同侧不同肺叶转移）
+
+            满足以下任一条件即可判定为 T4：
+
+            肿瘤直径＞7cm；
+
+            无论肿瘤大小，侵犯心脏、大血管（包括主动脉、上腔静脉、下腔静脉、心包内肺动脉主干、心包内肺静脉。大血管的定义必须要严格是以上这些）、纵隔、气管、椎体、隆突；
+
+            侵犯膈肌（注意：区别于膈神经，膈神经属 T3）；
+
+            同侧肺的不同肺叶内存在转移灶（如原发灶在右肺上叶，转移灶在右肺下叶）；
+
+            同侧肺的不同肺叶内癌性淋巴管炎，或者没有描述位置的癌性淋巴管炎；
+
+            二、T 分期判断的关键注意事项
+
+            特别注意：胸膜相关的判定：影像描述中出现 "分界不清"、"边界不清"，一律按 "侵犯" 处理；在判定与胸膜相关的条件时需要特别关注侵犯胸膜与否及其程度，以下描述一律按
+            “侵犯脏层胸膜” 处理，直接触发 T2a 判定，严禁漏判：
+
+            直接描述：侵犯胸膜、侵犯脏层胸膜、胸膜受累、胸膜受侵、胸膜浸润、胸膜侵犯；
+
+            模糊 / 间接描述：胸膜分界不清、胸膜边界不清、胸膜与病灶分界欠清、胸膜与肿瘤边界模糊、胸膜与病灶粘连（伴侵犯）；
+
+            排除项："紧邻"" 贴近 "胸膜或" 胸膜下 "或仅" 胸膜增厚 "或者" 胸膜牵拉 "不属于脏层胸膜侵犯，不纳入 T2a；" 胸膜转移 "
+            的情况属于 M 判定，也不属于胸膜侵犯。
+
+            多标准冲突处理：若病例中肿瘤同时满足多个 T 分期标准（如既满足 T2a 的 "侵犯脏层胸膜"，又满足 T3 的 "直径＞5cm 且≤7cm"），需选择最高级别的
+            T 分期（此例中归为 T3）；所有符合的 T 分期标准均需纳入 matched_criteria（匹配依据），不得因最终分期为更高等级而省略低等级符合标准。
+
+            【新增】肺内转移相关标准（T3、T4）优先级高于单纯肿瘤大小分期，必须优先检出，不得遗漏。
+
+            肺内转移的判定逻辑（位置特异性原则）：
+
+            核心原则：首先检查病历中是否提供了具体的肺叶位置信息（如 "右肺上叶"、"左肺下叶"），根据信息的详略程度执行以下分流判定：
+
+            情况 A：位置描述模糊（兜底策略）
+
+            若病历中未提及具体肺叶，仅出现泛指性描述（如 "双肺多发结节"、"肺内转移可能"、"双肺内转移"、"不除外肺内转移"）。
+
+            标签动作：为了防止漏诊，必须同时标记 【同侧肺不同肺叶】 和 【双肺转移 / 对侧肺转移】。
+
+            分期逻辑：默认存在同侧不同肺叶病灶，归为 T4。
+
+            示例："【同侧肺不同肺叶】、【双肺转移 / 对侧肺转移】（原文：双肺多发结节考虑转移）" 判定 T4。
+
+            情况 B：位置描述明确（精确判定）
+
+            请根据解剖关系严格 "对号入座"，执行以下特定逻辑：
+
+            仅同侧肺同肺叶
+
+            标签动作：标记为 【同侧肺同肺叶】。
+
+            分期逻辑：不归为 T4（通常属于 T3 范畴）。
+
+            同侧肺不同肺叶（无对侧病灶）
+
+            定义：原发灶与转移灶位于同一侧，但不同肺叶（如：原发右肺上叶，结节在右肺下叶）。
+
+            标签动作：标记为 【同侧肺不同肺叶】。
+
+            分期逻辑：归为 T4。
+
+            仅对侧肺转移（无同侧不同肺叶病灶）
+
+            定义：原发灶在一侧，转移灶仅位于对侧肺（如：原发左肺，转移仅在右肺）。
+
+            标签动作：仅标记 【双肺转移 / 对侧肺转移】，严禁标记【同侧肺不同肺叶】。
+
+            分期逻辑：属于 M1a，严禁归为 T4。
+
+            示例："【双肺转移 / 对侧肺转移】（原发：左上肺；转移：右下肺）" 判定 M1a（非 T4）。
+
+            混合情况（同侧不同肺叶 + 对侧转移）
+
+            定义：既有同侧不同肺叶的病灶，又有对侧肺的病灶。
+
+            标签动作：同时标记 【同侧肺不同肺叶】 和 【双肺转移 / 对侧肺转移】。
+
+            分期逻辑：归为 T4（同时 M 分期判定为 M1a）。
+
+            结节考虑多种可能：结节要考虑是否为恶性，若恶性则按上述规则判断，若良性则不考虑；若只提到 "多发" 而没提到恶性或者转移，则依旧按照良性考虑；
+
+            肿瘤大小的严谨性：未提及肿瘤大小不要随意猜测，要严格按照报告数据来，没提及就是没给出。
+
+            报告优先级：若病例同时包含 "影像学描述" 和 "诊断意见"，需优先依据 "诊断意见" 判断 T 分期（如描述中提及 "胸膜增厚"，但诊断意见明确
+            "侵犯脏层胸膜"，则按诊断意见归为 T2a）。
+
+            治疗前评估原则：T 分期需基于抗癌治疗前的检查结果（如治疗前 CT、支气管镜），治疗后（如手术、化疗后）的病灶变化不影响初始 T 分期判定。
+
+            胸膜转移的排除："胸膜转移" 不属于脏层胸膜侵犯，属于远处转移 M 分期的判断标准，不作为 T 分期的依据。
+
+            胸壁转移的排除："胸壁转移" 不属于脏层胸壁侵犯，属于远处转移 M 分期的判断标准，不作为 T 分期的依据
+
+            冲突处理：对于某一项描述多个报告间存在冲突时，最终的判定结果都要按照 "病理结果" 优先于 "诊断意见"，"诊断意见" 优先于 "影像学描述"；当输入的报告中存在分期结论时，要审查是否正确，不要盲目相信。
+
+            侵犯和转移：注意区分，不要混淆
+
+            语义理解：对于长文本，思考清楚转移所描述的具体部分是哪里。例如："右肺中叶前侧胸膜软组织密度结节，考虑转移" 是胸膜转移
+
+            模糊表述强制认定（绝对化）：
+
+            含 "转移" 字样的表述（如 "转移可能性大"、"待除外转移"、"不除外转移"、"转移待排"、"考虑转移" 等）：一律按确定转移认定，直接纳入
+            T 分期判定（如同侧同肺叶转移归为 T3，同侧不同肺叶转移归为 T4），不分概率排名先后，严禁以 "可能性"、"待除外" 为由排除、降期。
+
+            "性质待定"：按中性表述处理，在 logic_analysis 中明确说明该不确定性对分期判定的潜在影响，不直接做出肯定或否定的断定。
+
+            其他模糊表述（如 "侵犯... 可能"、"考虑..."、"可疑" 等不含 "转移" 字样）：涉及侵犯特征（如胸膜、支气管、血管）的一律按确定存在
+            / 阳性认定，直接触发对应 T 分期（如 "侵犯胸膜可能" 直接视为侵犯脏层胸膜→T2a）。严禁以 "可能不代表确诊"、"影像学实质未达标准"、"仅为可疑"
+            等理由排除、降期或要求进一步检查确认。
+
+            病理类型关键词强制匹配：
+
+            判定 “阻塞性改变” 时，必须匹配关键词词典：阻塞性肺炎、阻塞性肺不张、肺膨胀不全、肺不张（阻塞性）、阻塞性通气障碍、肺实变（阻塞性），只要出现任一关键词，即判定为满足
+            T2a 的 “阻塞性改变” 条件；
+
+            判定 “侵犯胸膜” 时，必须匹配关键词词典：侵犯胸膜、侵犯脏层胸膜、胸膜受累、胸膜受侵、胸膜浸润、胸膜侵犯、胸膜分界不清、胸膜边界不清、胸膜与病灶分界欠清、胸膜与肿瘤边界模糊，只要出现任一关键词，即判定为满足
+            T2a 的 “侵犯脏层胸膜” 条件（排除项除外）；
+
+            上述关键词的同义词、近义词（如 “分界欠清”=“分界不清”）一律按相同规则判定，严禁因表述细微差异漏判。
+
+            同侧播散绝对化认定（防 T3/T4 漏诊）：
+
+            同肺叶转移（T3）：只要上游提取条目含 "其旁"、"周围"、"邻近" 且提及转移 / 待定（如 "考虑不除外转移"），必须认定为同侧同肺叶转移，归为
+            T3。
+
+            同侧不同肺叶转移（T4）：只要上游提取条目含 "同侧（X 肺）及対侧（Y 肺）均受累" 或 "含同侧播散"，必须认定为同侧不同肺叶转移，归为
+            T4。
+
+            三、输出格式规范 (Output Format)
+
+            请仅输出一个标准的 JSON 对象，不要包含 markdown 代码块标记（如 json ...）或其他解释性文字。JSON 需严格遵守以下结构和定义：
+
+            JSON 字段定义
+
+            final_t_stage (String): 最终判定的最高 T 分期（例如 "T3"、"T1b"）。如果无法评估，输出 "Tx"。
+
+            matched_criteria (Array): 一个列表，包含该病例所有符合的 T 分期标准。无论最终分期级别高低，所有符合的 T 分期标准（如同时符合
+            T2a 和 T2b）均需逐一列入，不得遗漏，即使低级别标准不影响最终分期判定；即使最终分期是 T3，如果它也符合 T2 的某些特征（如大小），也要将
+            T2 的特征列入。
+
+            stage_level (String): 该特征对应的分期级别（如 "T2a"）。
+
+            description (String): 对应的具体病理或影像学证据描述（如 "肿瘤最大径 3.5cm" 或 "侵犯脏层胸膜"）。
+
+            logic_analysis (String): 综合论述。解释为何做出最终判定，特别是当存在多个符合标准时，说明根据 "最高级别原则" 选择了哪一个；若存在冲突信息，说明采信了哪一方（如
+            "依据病理结果优先于影像描述"）。
+
+            输出示例 (Example)
+
+            假设病例： 影像显示肿瘤大小 6cm，且报告提及侵犯脏层胸膜。
+
+            你的输出应如下：
+
+            {
+
+            "final_t_stage": "T3",
+
+            "matched_criteria": [
+
+            {
+
+            "stage_level": "T2a",
+
+            "description": "侵犯脏层胸膜（PL1）"
+
+            },
+
+            {
+
+            "stage_level": "T3",
+
+            "description": "5cm < 肿瘤直径≤ 7cm (实际大小 6cm)"
+
+            }
+
+            ],
+
+            "logic_analysis": "患者病灶同时满足 T2a（脏层胸膜侵犯）和 T3（5cm < 肿瘤直径≤7cm）的标准。根据分期规则中的多标准冲突处理原则，需选择最高级别的
+            T 分期，因此最终判定为 T3。"
+
+            }
+
+            特殊情况处理
+
+            若未提取到任何有效 T 分期信息，final_t_stage 输出 null，matched_criteria 为空数组。
+
+            若发现 "胸膜转移" 或 "胸壁转移" 等属于 M 分期的描述，请在 logic_analysis 中明确指出这些不作为 T 分期依据。'
+        - id: f30116b7-b8e1-4fbf-ad75-5e89946ef8eb
+          role: user
+          text: '对
+
+            {{#1770127481088.t_descriptions#}}
+
+            进行T分期，输出其T分期的判定过程及结果'
+        selected: false
+        title: T分期
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 88
+      id: '1758861864675'
+      position:
+        x: 1907.562679162071
+        y: 169.8943252547112
+      positionAbsolute:
+        x: 1907.562679162071
+        y: 169.8943252547112
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params:
+            temperature: 0.1
+            thinking: false
+          mode: chat
+          name: glm-4.7
+          provider: langgenius/zhipuai/zhipuai
+        prompt_template:
+        - id: 7f8f6cd2-bade-4644-a04b-f4bafd8199f8
+          role: system
+          text: "# 角色与任务\n你现在是一名专攻肺癌分期的肿瘤科医疗信息助理。你的核心任务是根据用户提供的病历信息，严格遵循以下的判断规则，准确地判断出N分期，结果要以论述的形式给出。\n\
+            \n工作流程（全量扫描模式）\n第一步：证据全量盘点（累加原则）\n请遍历输入的每一条描述，对每一个淋巴结进行独立判定，并加入证据列表：\n\
+            扫描 N1 证据：是否有同侧肺门、肺叶、肺段淋巴结？（即使后续发现N3，也要记录N1）。\n扫描 N2 证据：是否有同侧纵隔、隆突下淋巴结？（即使后续发现N3，也要记录N2）。\n\
+            扫描 N3 证据：是否有对侧肺门/纵隔、锁骨上、斜角肌淋巴结？\n第二步：分期定级（最高原则）\n检查收集到的所有证据列表。\nFinal_N =\
+            \ MAX(N1, N2, N3)。\n\n\n# 肺癌N分期相关文档提取\n\n## 一、N分期核心概念\nN分期代表**区域淋巴结转移情况**，是肺癌TNM分期（临床分期cTNM、病理分期pTNM）的三大核心维度之一，用于评估肿瘤是否侵犯及侵犯哪些区域淋巴结，直接影响肺癌综合分期及治疗方案选择。N分期仅针对“区域淋巴结”，非区域淋巴结转移归属于M分期（远处转移）。\n\
+            \n\n## 二、N分期各等级定义\n### 1. Nx（区域淋巴结无法评估）\n- **定义**：通过体格检查、影像学检查（CT、PET-CT等）、病理活检等手段，无法判断区域淋巴结是否存在转移或是否受累。\n\
+            \n\n### 2. N0（无区域淋巴结转移）\n- **定义**：所有区域淋巴结（具体范围见“三、区域淋巴结列表”）均未发现转移迹象，包括无直接侵犯或影像学、病理学证据支持的转移。\n\
+            \n\n### 3. N1（同侧支气管周围/肺门/肺内淋巴结转移）\n- **核心定义**：同侧支气管周围及（或）同侧肺门淋巴结，以及（或）肺内淋巴结存在转移（含肿瘤直接侵犯）。\n\
+            - **对应区域淋巴结组**：同侧第10、11、12、13、14组淋巴结（具体淋巴结位置见“三、区域淋巴结列表”）。\n\n\n### 4.\
+            \ N2（同侧纵隔内/隆突下淋巴结转移）\n- **核心定义**：同侧纵隔内及（或）隆突下淋巴结存在转移。\n- **对应区域淋巴结组**：同侧第2、3、4、5、6、7、8、9组淋巴结（具体淋巴结位置见“三、区域淋巴结列表”）。\n\
+            \n\n### 5. N3\n- **核心定义**：对侧纵隔、对侧肺门(双肺门)、同侧或对侧前斜角肌及锁骨上淋巴结存在转移。\n- **对应区域淋巴结组**：第1组淋巴结（锁骨上淋巴结）。\n\
+            - **侧别判断说明**：\n  - 同侧：病灶所在侧与淋巴结所在侧一致（如“右侧肺占位+右侧肺门淋巴结”为同侧）。\n  - 对侧：病灶所在侧与淋巴结所在侧相反（如“右侧肺占位+左侧肺门淋巴结”为对侧）。\n\
+            - **颈部淋巴结特殊说明**：颈部淋巴结中，仅**锁骨上淋巴结（第1组，归属于颈部V区）** 属于区域淋巴结；其余颈部淋巴结（如颏下、颌下、颈内静脉上/中/下组等，对应颈部Ⅰ-Ⅳ区、Ⅵ区）均不属于区域淋巴结，其转移归为M分期。\n\
+            \n区域淋巴结：\n1前斜角肌及锁骨上淋巴结\n2R右上气管旁淋巴结\n2L左上气管旁淋巴结\n3a血管前淋巴结\n3p气管后淋巴结\n4R右下气管旁淋巴结\n\
+            4L左下气管旁淋巴结\n5主动脉弓下淋巴结\n6主动脉旁淋巴结\n7隆突下淋巴结\n8食管旁淋巴结\n9肺韧带淋巴结\n10肺门淋巴结\n\
+            11肺叶尖淋巴结\n12肺叶淋巴结\n13肺段淋巴结\n14亚段支气管淋巴结\n颈部淋巴结分区：\nⅠ区（颏下及颌下淋巴结区）\nⅡ区（颈内静脉上组淋巴结区）\n\
+            Ⅲ区（颈内静脉中组淋巴结区）\nⅣ区（颈内静脉下组淋巴结区）\nⅤ区（颈后三角区淋巴结区）\nⅥ区（中央淋巴结区）\nⅦ区（上纵隔淋巴结区）\n\
+            锁骨上淋巴结位于V区\n\n\n## 五、N分期相关判断注意事项\n1. **转移证据判断标准**：\n   - 仅描述“淋巴代谢增高”、“淋巴结炎症”、“代谢不均匀”、等，无“转移”相关表述时，按**无转移**\
+            \ 判断。\n   - 如果某一个区域淋巴结“性质待定”等类似的词语，或者只描述“淋巴结肿大”而无其他描述时，均要讨论是否转移的两种情况。\n\
+            \   - 出现“转移可能性大、”“不排除转移”、“考虑转移”、“有转移可能”、“需排除转移”、“不除外转移”等表述包含”转移“的字眼时，均按**存在转移**判断（需结合淋巴结位置进一步明确N1/N2/N3）；仅明确“不考虑转移”时，按无转移判断。\n\
+            \    - 出现“查见癌”、“考虑恶性”等类似说明其为恶性转移的语义字眼也考虑为转移。\n\n2. **分期依据优先级**：若病历同时包含“描述性内容”与“诊断意见”，需**优先依据诊断意见**判断N分期（如诊断意见明确“同侧肺门淋巴结转移”，则直接归为N1）。\n\
+            \n3. **未提及淋巴结情况处理**：若病历未提及任何区域淋巴结相关信息（无转移证据、无无法评估提示），默认按**N0（无区域淋巴结转移）**\
+            \ 判断。\n\n4. **与M分期的区分**：非区域淋巴结转移（如腋窝淋巴结转移、颈部Ⅱ区淋巴结转移）不属于N分期，需纳入M分期评估（如单个非区域淋巴结转移归为M1b，多个非区域淋巴结转移归为M1c）。\n\
+            \n5. **区域淋巴结转移考虑**：注意原发灶的位置，需要考虑2L 2R 4L 4R。如原发灶为左侧，2L为同侧纵隔淋巴结，2R为对侧纵隔淋巴结。但如果只提到2组或纵隔淋巴结则只考虑同侧\n\
+            \n6.. **待定淋巴结处理逻辑（重要）**：\n   - 对于“性质待定”的区域淋巴结，**不计入**当前的 `final_n_stage`\
+            \ 计算。\n   - **必须**将其提取至 `uncertain_nodes` 列表，并推演“如果该淋巴结确诊为阳性”后的分期结果。\n\
+            \n7. **冲突处理**：对于某一项描述多个报告间存在冲突时，最终的判定结果都要按照“病理结果”优先于“诊断意见”，“诊断意见”优先于“影像学描述”；当输入的报告中存在分期结论时，要审查是否正确，不要盲目相信。\n\
+            \n## 六、输出格式规范 (Output Format)\n请仅输出一个标准的 JSON 对象，不要包含 markdown 代码块标记（如 json\
+            \ ...）或其他解释性文字。JSON 需严格遵守以下结构和定义：\n### 1. JSON 字段定义\n*   **final_n_stage**\
+            \ (String): 最终判定的最高 N 分期（例如 \"N2\"）。基于**目前已确认**的转移证据。\n*   **matched_criteria**\
+            \ (Array): 确诊转移的依据列表。\n    *   `stage_level`: 级别（N1/N2/N3）。\n    *   `description`:\
+            \ 具体描述（需指明侧别）。\n*   **uncertain_nodes** (Array): **性质待定/需关注**的淋巴结列表（关键字段）。\n\
+            \    *   `node_name` (String): 淋巴结名称/位置。\n    *   `original_desc` (String):\
+            \ 原文对该淋巴结的描述（如“性质待定”、“稍大”）。\n    *   `projected_stage` (String): **若确诊为转移，该病例的N分期将变为多少**（例如：当前是N1，若此结节确诊升级为N2，则填\
+            \ \"N2\"；若此结节确诊仍为N1，则填 \"N1\"）。\n    *   `impact_description` (String):\
+            \ 对影响的文字说明（如 \"若确诊，分期将从 N1 升级为 N2\" 或 \"若确诊，分期维持 N2 不变\"）。\n*   **logic_analysis**\
+            \ (String): 综合论述。解释为何做出最终判定，并专门讨论待定淋巴结对分期的潜在影响。\n\n### 2. 输出示例 (Example)\n\
+            **输入**：左肺癌。确诊左肺门淋巴结转移。纵隔7区淋巴结性质待定。对侧肺门淋巴结稍大，性质不明。\n\n**输出**：\n{\n  \"\
+            final_n_stage\": \"N1\",\n  \"matched_criteria\": [\n    {\n      \"stage_level\"\
+            : \"N1\",\n      \"description\": \"左侧肺门淋巴结转移（同侧 N1 区域）\"\n    }\n  ],\n\
+            \  \"uncertain_nodes\": [\n    {\n      \"node_name\": \"纵隔7区（隆突下）淋巴结\"\
+            ,\n      \"original_desc\": \"性质待定\",\n      \"projected_stage\": \"N2\"\
+            ,\n      \"impact_description\": \"该淋巴结属同侧N2区域，若确诊转移，分期将从 N1 升级为 N2。\"\
+            \n    },\n    {\n      \"node_name\": \"对侧肺门淋巴结\",\n      \"original_desc\"\
+            : \"稍大，性质不明\",\n      \"projected_stage\": \"N3\",\n      \"impact_description\"\
+            : \"该淋巴结属对侧N3区域，若确诊转移，分期将从 N1 直接升级为 N3。\"\n    }\n  ],\n  \"logic_analysis\"\
+            : \"患者原发灶在左肺，已明确左肺门转移，确立基础分期为N1。同时存在两处待定病灶：7区淋巴结（N2）和对侧肺门（N3）。目前仅按已确诊证据判定为\
+            \ N1，但建议对7区及对侧肺门进行EBUS或穿刺活检，因为它们均具有提升分期的潜力（分别对应N2和N3）。\"\n}\n###3. 特殊情况处理\n\
+            若所有区域淋巴结均无提及或明确无转移，final_n_stage 输出 \"N0\"。\n若发现“腋窝淋巴结”或“颈部II区淋巴结”等非区域淋巴结转移，请在 logic_analysis 中明确指出这些属于\
+            \ M 分期，不影响 N 分期判定。\n若存在冲突信息（如病理结果与影像不符），请在 logic_analysis 中说明采信了优先级更高的证据（病理\
+            \ > 诊断意见 > 影像描述）。\n"
+        - id: 73a5a9e7-47dc-42a7-ad59-b0e6030eff09
+          role: user
+          text: '对
+
+            {{#1769604169192.n_descriptions#}}
+
+            进行N分期，输出其N分期的判定过程及结果'
+        selected: false
+        title: N分期
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 88
+      id: '1758861867069'
+      position:
+        x: 1878.1661799140304
+        y: 420.7404755025976
+      positionAbsolute:
+        x: 1878.1661799140304
+        y: 420.7404755025976
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params:
+            temperature: 0.1
+            thinking: false
+          mode: chat
+          name: glm-4.7
+          provider: langgenius/zhipuai/zhipuai
+        prompt_template:
+        - id: 30ee7454-175b-4df6-801b-f26e4cc74422
+          role: system
+          text: '# 角色与任务
+
+            你现在是一名专攻肺癌分期的肿瘤科医疗信息助理。你的核心任务是根据用户提供的病历信息，严格遵循以下的判断规则，准确地判断出M分期，结果要以论述的形式给出。
+
+
+            # 工作流程与指令
+
+            M分期判断:
+
+            分析所有关于远处转移的信息（肺外器官、非区域淋巴结、转移灶数量、积液性质）。
+
+            根据【肺癌M分期定义】和【M分期判断思维链】，确定M分期。
+
+
+            # M分期判断思维链
+
+            M分期判断思维链 (Step-by-Step)
+
+            第一步：M1a 独立排查（肺内）
+
+            检查是否有恶性胸腔积液、恶性心包积液、胸膜结节。
+
+            检查是否有对侧肺转移。
+
+            注意：M1a的存在与否不影响M1b/M1c的判定逻辑，它们是并行的，但最终分期取最高。
+
+            第二步：肺外器官“全局盘点”（关键步骤）
+
+            请遍历病历，提取所有肺外转移部位和非区域淋巴结，并放入临时清单：
+
+            统计受累器官数量（例如：脑、肝、骨、肾上腺、皮下/肌肉、非区域淋巴结等），注意考虑非区域淋巴结是否有多发转移情况
+
+            统计单器官内的病灶数量。
+
+            第三步：基于盘点结果定级（M1b vs M1c）
+
+            根据第二步的统计结果，严格按以下优先级判定，一旦满足高级别，低级别自动失效：
+
+            判定路径 A：多器官转移（M1c）
+
+            条件：受累肺外器官数量 ≥ 2个（例如：肾上腺有病灶 + 臀部有病灶）。shu
+
+            结论：M分期为 M1c。
+
+            输出要求：此时，所有的肺外转移病灶（无论是单发的臀部结节，还是多发的肾上腺结节）在 matched_criteria 中对应的 stage_level 统一标记为
+            M1c，因为它们共同构成了多器官转移的事实。严禁将其中某一个标记为 M1b。
+
+            判定路径 B：单器官多灶转移（M1c）
+
+            条件：受累肺外器官数量 = 1个，但该器官内有 ≥ 2个病灶（例如：仅脑部有转移，但脑内有3个瘤子）。
+
+            结论：M分期为 M1c。
+
+            输出要求：所有病灶标记为 M1c。
+
+            判定路径 C：单器官单灶转移（M1b）
+
+            条件：受累肺外器官数量 = 1个，且该器官内只有 1个病灶。
+
+            结论：M分期为 M1b。
+
+
+            # 肺癌M分期定义
+
+            肺癌M分期用于评估肿瘤是否存在远处转移，是判断肺癌临床/病理分期的重要维度，具体定义及相关说明如下：
+
+
+            ## 1. M0（无远处转移）
+
+            - 定义：没有远处转移，即未发现肿瘤转移至肺外器官、非区域淋巴结，也无恶性胸腔积液、恶性心包积液、胸膜转移及对侧肺内转移等情况。
+
+
+
+            ## 2. M1（存在远处转移）
+
+            M1根据转移部位、数量进一步分为M1a、M1b、M1c三个亚型，具体标准如下：
+
+
+            ### 2.1 M1a（特定局部远处转移）
+
+            满足以下任一条件即判定为M1a：
+
+            - 对侧肺内转移；
+
+            - 双肺转移（典型描述语句：双肺转移、肺内转移可能、双肺内转移、不除外转移（肺内）可能）；
+
+            - 恶性胸腔积液（需明确提及“恶性”字眼，未提及则不判断为恶性，不归属M1a）；
+
+            - 恶性心包积液（需明确提及“恶性”字眼，未提及则不判断为恶性，不归属M1a）；
+
+            - 恶性胸膜结节（需明确提及“恶性”字眼，未提及则不判断为恶性，不归属M1a）；
+
+            - 胸膜转移
+
+            - 胸壁转移
+
+
+            ### 2.2 M1b（单发远处转移）
+
+            - 定义：肺外单个器官或非区域淋巴结的单发转移灶。
+
+            - 说明：“单发转移灶”指仅在一个肺外器官（如肝、脑、骨等）或一个非区域淋巴结区域（如腋窝淋巴结、腹股沟淋巴结等）发现一处转移，无其他部位转移。
+
+
+            ### 2.3 M1c（多发远处转移）
+
+            满足以下任一条件即判定为M1c：
+
+            - 肺外多个器官转移灶（如同时转移至肝和脑）；
+
+            - 非区域淋巴结多处转移灶（如腋窝淋巴结和腹股沟淋巴结均有转移）；
+
+            - 肺外单个器官的多处转移灶（如肝脏内发现2处及以上转移灶）；
+
+            - 非区域淋巴结的多处转移灶（如同一颈部淋巴结区域内发现2处及以上转移灶）。
+
+
+
+            ## 3. M分期相关关键说明
+
+            ### 3.1 非区域淋巴结界定
+
+            非区域淋巴结指除肺癌区域淋巴结以外的所有淋巴结，
+
+            区域淋巴结详细列表（按编号分类）如下
+
+            | 淋巴结编号 | 具体淋巴结名称       | 所属N分期关联       |
+
+            |------------|----------------------|---------------------|
+
+            | 1          | 锁骨上淋巴结 | N3（核心关联组）    |
+
+            | 2R         | 右上气管旁淋巴结     | N2（核心关联组）    |
+
+            | 2L         | 左上气管旁淋巴结     | N2（核心关联组）    |
+
+            | 3a         | 血管前淋巴结         | N2（核心关联组）    |
+
+            | 3p         | 气管后淋巴结         | N2（核心关联组）    |
+
+            | 4R         | 右下气管旁淋巴结     | N2（核心关联组）    |
+
+            | 4L         | 左下气管旁淋巴结     | N2（核心关联组）    |
+
+            | 5          | 主动脉弓下淋巴结     | N2（核心关联组）    |
+
+            | 6          | 主动脉旁淋巴结       | N2（核心关联组）    |
+
+            | 7          | 隆突下淋巴结         | N2（核心关联组）    |
+
+            | 8          | 食管旁淋巴结         | N2（核心关联组）    |
+
+            | 9          | 肺韧带淋巴结         | N2（核心关联组）    |
+
+            | 10         | 肺门淋巴结           | N1（核心关联组）    |
+
+            | 11         | 肺叶尖淋巴结         | N1（核心关联组）    |
+
+            | 12         | 肺叶淋巴结           | N1（核心关联组）    |
+
+            | 13         | 肺段淋巴结           | N1（核心关联组）    |
+
+            | 14         | 亚段支气管淋巴结     | N1（核心关联组）    |
+
+            区域淋巴结补充：奇食窝淋巴结（第8组或第9组）、心膈角淋巴结（第9组）、上腔静脉右旁淋巴结（3A组
+
+
+            非区域常见类型包括但不限于：
+
+            - **常见非区域淋巴结举例**：
+
+            1、包括腋窝淋巴结（分为胸肌淋巴结、外侧淋巴结、肩胛下淋巴结、中央淋巴结和尖淋巴结五群），锁骨下淋巴结也属于腋窝淋巴结的一部分
+
+            2、除锁骨上淋巴结以外的颈部淋巴结，如颈动脉旁淋巴结
+
+            颈部淋巴结包括：
+
+            Ⅰ区（颏下及颌下淋巴结区）
+
+            Ⅱ区（颈内静脉上组淋巴结区）
+
+            Ⅲ区（颈内静脉中组淋巴结区）
+
+            Ⅳ区（颈内静脉下组淋巴结区）
+
+            Ⅴ区（颈后三角区淋巴结区，含锁骨上淋巴结（不只有锁骨上淋巴结））
+
+            Ⅵ区（中央淋巴结区）
+
+            Ⅶ区（上纵隔淋巴结区）
+
+            3、胸腔内淋巴结：内乳淋巴结（胸骨旁淋巴结，胸腔内）、肋膈角淋巴结（胸腔内）、左前胸壁膜间隙淋巴结（胸腔内）、胸椎骨旁淋巴结->M1a
+
+            4、腹腔内淋巴结：包括腹腔干周围淋巴结（沿腹腔干及其分支包括胃左动脉、肝总动脉、脾动脉排列），肠系膜上、下淋巴结，腰淋巴结（腹后壁、腹主动脉和下腔静脉周围）
+
+            5、腹膜后淋巴结，胸腔外：包括腔静脉后淋巴结、膈肌脚淋巴结、膈脚后淋巴结
+
+            6、盆腔淋巴结：髂外淋巴结、髂内淋巴结、骶淋巴结、髂总淋巴结
+
+            7、下肢淋巴结：腹股沟淋巴结、腘淋巴结
+
+            8、其他：腹股沟淋巴结、肝胃间隙淋巴结
+
+
+            ### 3.2 转移判断原则
+
+            - 若病历中出现“转移可能性大”“不排除转移”“考虑转移”“有转移可能”“需排除转移”等表述，均按转移处理；仅明确“不考虑转移”时，才判定为无转移。
+
+            - 仅描述“淋巴代谢增高”、“炎症”、“代谢升高”等，未提及“转移”相关表述时，按不转移判断。
+
+            -在肺内转移的判断过程中，若病历描述只提到有结节，未明确出现“转移”字眼并表明可能转移时，则不判定为转移
+
+            -出现类似”随诊观察“、”性质待定“等类似不能表明有转移含义的词语，不判定为转移
+
+
+
+            **冲突处理**：对于某一项描述多个报告间存在冲突时，最终的判定结果都要按照“病理结果”优先于“诊断意见”，“诊断意见”优先于“影像学描述”；当输入的报告中存在分期结论时，要审查是否正确，不要盲目相信。当输入的报告中的M分期结论未Mx时，请你按M0判断
+
+
+            三、输出格式规范 (Output Format)
+
+            请仅输出一个标准的 JSON 对象，不要包含 markdown 代码块标记（如 json ...）或其他解释性文字。JSON 需严格遵守以下结构和定义：
+
+            1. JSON 字段定义
+
+            final_m_stage (String): 最终判定的最高 M 分期（优先级：M1c > M1b > M1a > M0）。
+
+            matched_criteria (Array): 一个列表，包含该病例所有符合的远处转移证据。
+
+            stage_level (String): 该证据对应的分期级别（"M1a", "M1b", "M1c"）。
+
+            location (String): 转移的具体部位（如 "脑"、"肝"、"恶性胸水"、"左侧锁骨上淋巴结[非区域]"）。
+
+            count_type (String): 描述数量特征，取值为 "单发" 或 "多发"（仅针对 M1b/M1c 判定重要，M1a 可填 "不适用"）。
+
+            description (String): 对应的具体病历原话（如 "肝脏S6段可见单发转移灶"）。
+
+            uncertain_findings (Array): 一个列表，包含描述模糊、性质待定且按规则被判定为无转移的病灶（对应规则3.2中“随诊观察”、“性质待定”、“仅代谢增高”的情况）。
+
+            description: 病历描述。
+
+            reason: 判定为无转移的原因（如“未明确提及恶性”）。
+
+            logic_analysis (String): 综合论述。解释为何做出最终判定。
+
+            核心要求：必须明确说明是如何区分 M1b 和 M1c 的（基于器官数量还是单器官病灶数量）；
+
+            若涉及非区域淋巴结（如腋窝、颈部非锁骨上），需明确说明其归属 M 分期的理由；
+
+            若同时存在 M1a 和 M1b/c，需说明最终分期选择最高级别的理由。
+
+            结论中不应该包含多个M1c，应该是在一起的。
+
+            2. 输出示例 (Example)
+
+            假设病例： 患者右肺癌。CT显示左侧（对侧）肺内一结节，考虑转移；头部MRI提示脑内多发占位，考虑转移瘤；双侧肾上腺区小结节，随诊观察。
+
+            你的输出应如下：
+
+            {
+
+            "final_m_stage": "M1c",
+
+            "matched_criteria": [
+
+            {
+
+            "stage_level": "M1a",
+
+            "location": "对侧肺",
+
+            "count_type": "单发",
+
+            "description": "左侧肺内一结节，考虑转移"
+
+            },
+
+            {
+
+            "stage_level": "M1c",
+
+            "location": "脑",
+
+            "count_type": "多发",
+
+            "description": "脑内多发占位，考虑转移瘤（单一器官多发灶）"
+
+            }
+
+            ],
+
+            "uncertain_findings": [
+
+            {
+
+            "description": "双侧肾上腺区小结节，随诊观察",
+
+            "reason": "未明确提及恶性或转移，且建议随诊，按规则不判定为转移"
+
+            }
+
+            ],
+
+            "logic_analysis": "患者存在对侧肺转移（符合 M1a）和脑部转移。由于脑部描述为''多发占位''，属于单一器官多发转移灶，符合
+            M1c 标准。根据分期等级 M1c > M1a，最终 M 分期判定为 M1c。肾上腺结节因性质未定且建议随诊，暂不纳入 M 分期计算。"
+
+            }
+
+            3. 特殊情况处理
+
+            M0 的判定：若未发现任何远处转移证据，final_m_stage 输出 "M0"，matched_criteria 为空数组。
+
+            非区域淋巴结：若发现腋窝、腹股沟等淋巴结转移，请务必将其归入 matched_criteria，并在 logic_analysis 中强调这是
+            M 分期而非 N 分期。
+
+            冲突解决：若诊断意见明确“M1b”，但影像描述发现多处转移（符合 M1c），请遵循“诊断意见优先”的原则（除非诊断意见明显违背常理），并在逻辑分析中注明。'
+        - id: ef9ff411-5e8e-41e9-b1bf-49b4e6c26118
+          role: user
+          text: '对
+
+            {{#1769604169192.m_descriptions#}}
+
+            进行M分期，输出其M分期的判定过程及结果'
+        selected: false
+        title: M分期
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 88
+      id: '1758861898205'
+      position:
+        x: 1878.1661799140304
+        y: 593.8133038473281
+      positionAbsolute:
+        x: 1878.1661799140304
+        y: 593.8133038473281
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        code: "import re\n\ndef main(arg1: str) -> dict:\n    \"\"\"\n    输入: 包含 <think>...</think>\
+          \ 标签的 LLM 输出字符串\n    输出: 去除 think 标签及其内容后的纯文本\n    \"\"\"\n    # 1. 安全检查：防止输入为\
+          \ None\n    if arg1 is None:\n        return {\"result\": \"\"}\n    \n\
+          \    # 2. 正则表达式替换\n    # pattern: <think> 开始，.*? 非贪婪匹配任意字符，</think> 结束\n\
+          \    # flags=re.DOTALL: 关键参数，让 '.' 能够匹配换行符(\\n)，因为思维链通常是多行的\n    # flags=re.IGNORECASE:\
+          \ 忽略大小写（防止模型输出 <THINK>）\n    cleaned_text = re.sub(\n        r'<think>.*?</think>',\
+          \ \n        '', \n        str(arg1), \n        flags=re.DOTALL | re.IGNORECASE\n\
+          \    )\n    \n    # 3. 去除首尾可能残留的空白字符（换行、空格）\n    final_text = cleaned_text.strip()\n\
+          \    \n    return {\n        \"result\": final_text\n    }"
+        code_language: python3
+        desc: ''
+        outputs:
+          result:
+            children: null
+            type: string
+        selected: false
+        title: 过滤think
+        type: code
+        variables:
+        - value_selector:
+          - '1758186451078'
+          - text
+          variable: arg1
+      height: 52
+      id: '1764323445709'
+      position:
+        x: 531.0582869850446
+        y: 265.94797206002454
+      positionAbsolute:
+        x: 531.0582869850446
+        y: 265.94797206002454
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        code: "import re\n\ndef main(arg1: str) -> dict:\n    \"\"\"\n    输入: 包含 <think>...</think>\
+          \ 标签的 LLM 输出字符串\n    输出: 去除 think 标签及其内容后的纯文本\n    \"\"\"\n    # 1. 安全检查：防止输入为\
+          \ None\n    if arg1 is None:\n        return {\"result\": \"\"}\n    \n\
+          \    # 2. 正则表达式替换\n    # pattern: <think> 开始，.*? 非贪婪匹配任意字符，</think> 结束\n\
+          \    # flags=re.DOTALL: 关键参数，让 '.' 能够匹配换行符(\\n)，因为思维链通常是多行的\n    # flags=re.IGNORECASE:\
+          \ 忽略大小写（防止模型输出 <THINK>）\n    cleaned_text = re.sub(\n        r'<think>.*?</think>',\
+          \ \n        '', \n        str(arg1), \n        flags=re.DOTALL | re.IGNORECASE\n\
+          \    )\n    \n    # 3. 去除首尾可能残留的空白字符（换行、空格）\n    final_text = cleaned_text.strip()\n\
+          \    \n    return {\n        \"result\": final_text\n    }"
+        code_language: python3
+        desc: ''
+        outputs:
+          result:
+            children: null
+            type: string
+        selected: false
+        title: T
+        type: code
+        variables:
+        - value_selector:
+          - '1758861864675'
+          - text
+          variable: arg1
+      height: 52
+      id: '1764323555201'
+      position:
+        x: 2301.4737843737394
+        y: 265.94797206002454
+      positionAbsolute:
+        x: 2301.4737843737394
+        y: 265.94797206002454
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        code: "import re\n\ndef main(arg1: str) -> dict:\n    \"\"\"\n    输入: 包含 <think>...</think>\
+          \ 标签的 LLM 输出字符串\n    输出: 去除 think 标签及其内容后的纯文本\n    \"\"\"\n    # 1. 安全检查：防止输入为\
+          \ None\n    if arg1 is None:\n        return {\"result\": \"\"}\n    \n\
+          \    # 2. 正则表达式替换\n    # pattern: <think> 开始，.*? 非贪婪匹配任意字符，</think> 结束\n\
+          \    # flags=re.DOTALL: 关键参数，让 '.' 能够匹配换行符(\\n)，因为思维链通常是多行的\n    # flags=re.IGNORECASE:\
+          \ 忽略大小写（防止模型输出 <THINK>）\n    cleaned_text = re.sub(\n        r'<think>.*?</think>',\
+          \ \n        '', \n        str(arg1), \n        flags=re.DOTALL | re.IGNORECASE\n\
+          \    )\n    \n    # 3. 去除首尾可能残留的空白字符（换行、空格）\n    final_text = cleaned_text.strip()\n\
+          \    \n    return {\n        \"result\": final_text\n    }"
+        code_language: python3
+        desc: ''
+        outputs:
+          result:
+            children: null
+            type: string
+        selected: false
+        title: N
+        type: code
+        variables:
+        - value_selector:
+          - '1758861867069'
+          - text
+          variable: arg1
+      height: 52
+      id: '17643235703550'
+      position:
+        x: 2343.5939857230965
+        y: 414.5067026956876
+      positionAbsolute:
+        x: 2343.5939857230965
+        y: 414.5067026956876
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        code: "import re\n\ndef main(arg1: str) -> dict:\n    \"\"\"\n    输入: 包含 <think>...</think>\
+          \ 标签的 LLM 输出字符串\n    输出: 去除 think 标签及其内容后的纯文本\n    \"\"\"\n    # 1. 安全检查：防止输入为\
+          \ None\n    if arg1 is None:\n        return {\"result\": \"\"}\n    \n\
+          \    # 2. 正则表达式替换\n    # pattern: <think> 开始，.*? 非贪婪匹配任意字符，</think> 结束\n\
+          \    # flags=re.DOTALL: 关键参数，让 '.' 能够匹配换行符(\\n)，因为思维链通常是多行的\n    # flags=re.IGNORECASE:\
+          \ 忽略大小写（防止模型输出 <THINK>）\n    cleaned_text = re.sub(\n        r'<think>.*?</think>',\
+          \ \n        '', \n        str(arg1), \n        flags=re.DOTALL | re.IGNORECASE\n\
+          \    )\n    \n    # 3. 去除首尾可能残留的空白字符（换行、空格）\n    final_text = cleaned_text.strip()\n\
+          \    \n    return {\n        \"result\": final_text\n    }"
+        code_language: python3
+        desc: ''
+        outputs:
+          result:
+            children: null
+            type: string
+        selected: false
+        title: M
+        type: code
+        variables:
+        - value_selector:
+          - '1758861898205'
+          - text
+          variable: arg1
+      height: 52
+      id: '17643235815850'
+      position:
+        x: 2266.970531269544
+        y: 593.8133038473281
+      positionAbsolute:
+        x: 2266.970531269544
+        y: 593.8133038473281
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        code: "import json\nimport re\n\n\ndef main(t: str, n: str, m: str) -> dict:\n\
+          \    # --- 1. 基础解析工具 ---\n    def safe_parse(json_str):\n        if not\
+          \ json_str:\n            return {}\n        try:\n            # 1. 转换为字符串并去除首尾空白\n\
+          \            json_str_str = str(json_str).strip()\n\n            # 2. 寻找第一个左大括号和最后一个右大括号\n\
+          \            start_idx = json_str_str.find('{')\n            end_idx = json_str_str.rfind('}')\n\n\
+          \            # 3. 如果找到了成对的大括号，则截取其中的内容\n            if start_idx != -1 and end_idx != -1 and end_idx >= start_idx:\n\
+          \                clean_str = json_str_str[start_idx : end_idx + 1]\n            else:\n                clean_str = json_str_str\n\n\
+          \            # 4. 解析纯净的 JSON 字符串\n            return json.loads(clean_str)\n        except Exception as e:\n\
+          \            # 生产环境中可以把这里的 e 打印出来或者返回给外部看具体报错\n            return {}\n\n    def normalize_stage(stage:\
+          \ str) -> str:\n        \"\"\"\n        标准化 TNM 分期字符串：\n        - 转大写\n\
+          \        - 去空格\n        - 仅去除前缀性的临床/病理/治疗后标记\n          例如：cT3 -> T3, pN2\
+          \ -> N2, ypT1c -> T1C\n        - 不破坏 T1C / M1C 这类合法后缀\n        \"\"\"\n\
+          \        if stage is None:\n            return \"\"\n        s = str(stage).upper().strip()\n\
+          \        s = re.sub(r'\\s+', '', s)\n        # 只移除开头连续出现的前缀标记，不影响后缀 a/b/c\n\
+          \        # 支持常见前缀：c, p, yc, yp, r, rp\n        s = re.sub(r'^(?:Y?P|Y?C|R)+',\
+          \ '', s)\n            # 统一把 X 当成 0\n        if s == 'TX':\n            return\
+          \ 'T0'\n        if s == 'NX':\n            return 'N0'\n        if s ==\
+          \ 'MX':\n            return 'M0'\n        return s\n\n    def format_criteria(criteria_list):\n\
+          \        if not criteria_list:\n            return \"  - *无特定匹配描述*\\n\"\n\
+          \n        lines = []\n        for i in criteria_list:\n            stage_level\
+          \ = i.get('stage_level', '')\n            description = i.get('description',\
+          \ '')\n            location = i.get('location')\n            count_type\
+          \ = i.get('count_type')\n\n            extra_parts = []\n            if\
+          \ location:\n                extra_parts.append(str(location))\n       \
+          \     if count_type:\n                extra_parts.append(str(count_type))\n\
+          \n            if extra_parts and description:\n                text = f\"\
+          {description}（{'，'.join(extra_parts)}）\"\n            elif extra_parts:\n\
+          \                text = \"，\".join(extra_parts)\n            else:\n   \
+          \             text = description\n\n            lines.append(f\"  - **[{stage_level}]**\
+          \ {text}\\n\")\n\n        return \"\".join(lines)\n\n    def format_uncertainty(uncertain_list):\n\
+          \        if not uncertain_list:\n            return \"\"\n\n        lines\
+          \ = []\n        for i in uncertain_list:\n            name = i.get('node_name')\
+          \ or i.get('description', '未知节点')\n            impact = (\n            \
+          \    i.get('impact_description')\n                or i.get('potential_impact')\n\
+          \                or i.get('reason', '')\n            )\n            lines.append(f\"\
+          \  - {name} —— *{impact}*\\n\")\n\n        return \"\\n**⚠️ 待定/需关注:**\\\
+          n\" + \"\".join(lines)\n\n    def get_n_weight(n_stage):\n        clean_n\
+          \ = normalize_stage(n_stage)\n        mapping = {'N0': 0, 'N1': 1, 'N2':\
+          \ 2, 'N3': 3}\n        return mapping.get(clean_n, -1)\n\n    # --- 2. 核心逻辑：基于集合的分期查表器\
+          \ ---\n    def calculate_stage_by_set(final_t, final_n, final_m):\n    \
+          \    T = normalize_stage(final_t)\n        N = normalize_stage(final_n)\n\
+          \        M = normalize_stage(final_m)\n        current_combo = f\"{T}{N}{M}\"\
+          \n\n        # 远处转移优先判断\n        if M == 'M1C':\n            return 'IVB期'\n\
+          \        if M in ('M1A', 'M1B'):\n            return 'IVA期'\n        if\
+          \ M in ('MX', 'M X'):\n            return '无法评估 (Mx)'\n\n        stage_rules\
+          \ = {\n            \"IA1期\": {\"T1AN0M0\"},\n            \"IA2期\": {\"T1BN0M0\"\
+          },\n            \"IA3期\": {\"T1CN0M0\"},\n            \"IB期\":  {\"T2AN0M0\"\
+          },\n            \"IIA期\": {\"T2BN0M0\"},\n            \"IIB期\": {\n    \
+          \            \"T1AN1M0\", \"T1BN1M0\", \"T1CN1M0\",\n                \"\
+          T2AN1M0\", \"T2BN1M0\",\n                \"T3N0M0\"\n            },\n  \
+          \          \"IIIA期\": {\n                \"T1AN2M0\", \"T1BN2M0\", \"T1CN2M0\"\
+          ,\n                \"T2AN2M0\", \"T2BN2M0\",\n                \"T3N1M0\"\
+          ,\n                \"T4N0M0\", \"T4N1M0\"\n            },\n            \"\
+          IIIB期\": {\n                \"T1AN3M0\", \"T1BN3M0\", \"T1CN3M0\",\n   \
+          \             \"T2AN3M0\", \"T2BN3M0\",\n                \"T3N2M0\", \"\
+          T4N2M0\"\n            },\n            \"IIIC期\": {\n                \"T3N3M0\"\
+          , \"T4N3M0\"\n            }\n        }\n\n        for stage_name, combinations\
+          \ in stage_rules.items():\n            if current_combo in combinations:\n\
+          \                return stage_name\n\n        # 容错逻辑：部分 T 分期可能是 T2 / T2A\
+          \ / T2B 这种不完全统一格式\n        if M == 'M0':\n            if N == 'N3':\n  \
+          \              if T.startswith('T1') or T.startswith('T2'):\n          \
+          \          return 'IIIB期'\n                if T.startswith('T3') or T.startswith('T4'):\n\
+          \                    return 'IIIC期'\n\n            if N == 'N2':\n     \
+          \           if T.startswith('T1') or T.startswith('T2'):\n             \
+          \       return 'IIIA期'\n                if T.startswith('T3') or T.startswith('T4'):\n\
+          \                    return 'IIIB期'\n\n            if N == 'N1':\n     \
+          \           if T.startswith('T1') or T.startswith('T2'):\n             \
+          \       return 'IIB期'\n                if T.startswith('T3'):\n        \
+          \            return 'IIIA期'\n                if T.startswith('T4'):\n  \
+          \                  return 'IIIA期'\n\n            if N == 'N0':\n       \
+          \         if T == 'T2A':\n                    return 'IB期'\n           \
+          \     if T == 'T2B':\n                    return 'IIA期'\n              \
+          \  if T.startswith('T2'):\n                    return 'IB期或IIA期'\n     \
+          \           if T.startswith('T3'):\n                    return 'IIB期'\n\
+          \                if T.startswith('T4'):\n                    return 'IIIA期'\n\
+          \n        return \"需人工核定\"\n\n    # --- 3. 执行解析 ---\n    t_data = safe_parse(t)\n\
+          \    n_data = safe_parse(n)\n    m_data = safe_parse(m)\n\n    final_t =\
+          \ t_data.get('final_t_stage', 'Tx')\n    final_n = n_data.get('final_n_stage',\
+          \ 'Nx')\n    final_m = m_data.get('final_m_stage', 'Mx')\n\n    normalized_t\
+          \ = normalize_stage(final_t)\n    normalized_n = normalize_stage(final_n)\n\
+          \    normalized_m = normalize_stage(final_m)\n\n    # --- 4. 计算综合分期（确诊版）\
+          \ ---\n    stage_result = calculate_stage_by_set(final_t, final_n, final_m)\n\
+          \n    # --- 5. 计算潜在分期（多场景版） ---\n    potential_scenarios = {}  # Key: Projected\
+          \ N, Value: {tnm_stage, nodes_list}\n\n    uncertain_nodes = n_data.get('uncertain_nodes',\
+          \ [])\n    current_weight = get_n_weight(final_n)\n\n    if uncertain_nodes:\n\
+          \        for node in uncertain_nodes:\n            proj_stage = node.get('projected_stage')\n\
+          \            proj_weight = get_n_weight(proj_stage)\n\n            # 只要潜在分期比当前分期重，就记录下来\n\
+          \            if proj_weight > current_weight:\n                node_name\
+          \ = node.get('node_name', '未知部位')\n\n                if proj_stage not in\
+          \ potential_scenarios:\n                    calculated_tnm = calculate_stage_by_set(final_t,\
+          \ proj_stage, final_m)\n                    potential_scenarios[proj_stage]\
+          \ = {\n                        \"tnm_stage\": calculated_tnm,\n        \
+          \                \"weight\": proj_weight,\n                        \"nodes\"\
+          : [node_name]\n                    }\n                else:\n          \
+          \          potential_scenarios[proj_stage][\"nodes\"].append(node_name)\n\
+          \n    # 将场景按 N 分期严重程度排序\n    sorted_scenarios = sorted(\n        potential_scenarios.items(),\n\
+          \        key=lambda x: x[1]['weight']\n    )\n\n    # --- 6. 构建 Markdown\
+          \ ---\n    md = \"# \U0001FA7A 肺癌 TNM 分期智能评估报告\\n\\n\"\n\n    md += \"##\
+          \ \U0001F3C1 综合分期结论\\n\"\n    md += f\"### **{stage_result}**\\n\"\n   \
+          \ md += f\"> **当前确诊组合:** {normalized_t} {normalized_n} {normalized_m}\\\
+          n\"\n\n    if sorted_scenarios:\n        md += \"\\n⚠️ **潜在分期变动提示:**\\n\"\
+          \n        for p_n, info in sorted_scenarios:\n            nodes_str = \"\
+          \ 或 \".join(info['nodes'])\n            md += f\"> * 若 **{nodes_str}** 确诊\
+          \ ({normalize_stage(p_n)}) \\n\"\n            md += f\">   分期将升级为：**{info['tnm_stage']}**\
+          \ (组合: {normalized_t}{normalize_stage(p_n)}{normalized_m})\\n\"\n      \
+          \      md += \">\\n\"\n\n    md += \"\\n---\\n\\n\"\n\n    md += f\"###\
+          \ \U0001FAC1 T分期: {normalized_t}\\n\"\n    md += \"**匹配依据:**\\n\" + format_criteria(t_data.get('matched_criteria',\
+          \ []))\n    if t_data.get('logic_analysis'):\n        md += f\"> *分析: {t_data['logic_analysis']}*\\\
+          n\\n\"\n\n    md += f\"### \U0001F9EC N分期: {normalized_n}\\n\"\n    md +=\
+          \ \"**匹配依据:**\\n\" + format_criteria(n_data.get('matched_criteria', []))\n\
+          \    md += format_uncertainty(n_data.get('uncertain_nodes', []))\n    if\
+          \ n_data.get('logic_analysis'):\n        md += f\"> *分析: {n_data['logic_analysis']}*\\\
+          n\\n\"\n\n    md += f\"### \U0001F52D M分期: {normalized_m}\\n\"\n    md +=\
+          \ \"**匹配依据:**\\n\" + format_criteria(m_data.get('matched_criteria', []))\n\
+          \    md += format_uncertainty(m_data.get('uncertain_findings', []))\n  \
+          \  if m_data.get('logic_analysis'):\n        md += f\"> *分析: {m_data['logic_analysis']}*\\\
+          n\"\n\n    return {\n        \"result\": md\n    }"
+        code_language: python3
+        desc: ''
+        outputs:
+          result:
+            children: null
+            type: string
+        selected: true
+        title: 代码执行 5
+        type: code
+        variables:
+        - value_selector:
+          - '1764323555201'
+          - result
+          variable: t
+        - value_selector:
+          - '17643235703550'
+          - result
+          variable: n
+        - value_selector:
+          - '17643235815850'
+          - result
+          variable: m
+      height: 52
+      id: '1768228656389'
+      position:
+        x: 2653.224615918322
+        y: 379.11954528852056
+      positionAbsolute:
+        x: 2653.224615918322
+        y: 379.11954528852056
+      selected: true
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params:
+            temperature: 0.1
+            thinking: false
+          mode: chat
+          name: glm-4.7
+          provider: langgenius/zhipuai/zhipuai
+        prompt_template:
+        - id: ba80ccb2-3588-4d58-9c80-a27c118e3210
+          role: system
+          text: "# 角色\n你是一名专业的病理与影像解剖学数据清洗专家。你的任务是将上游提取的【诊断意见】和【主要描述】中的所有**与分期潜在相关的病灶（含确诊、可疑及待定）**，进行**关联整合**，并根据肺癌\
+            \ TNM 分期的解剖规则，精准分流到“N分期评估池”或“M分期评估池”。\n\n# 核心任务\n读取病历信息，执行以下两步：\n1.  **全量提取与整合**：提取所有**恶性、疑似恶性及性质待定**的病灶，并将【诊断意见】中的结论与【主要描述】中对应的详细特征（大小、代谢值、密度等）合并。\n\
+            2.  **分流**：输出一个 JSON 对象，包含两个字段：`n_assessment_context` 和 `m_assessment_context`。\n\
+            \n# 提取准入标准（关键修改）\n**请务必提取包含以下任意一类关键词的描述，不要遗漏：**\n\n1.  **明确或高度疑似转移（Positive）**：\n\
+            \    *   关键词：“转移”、“考虑转移”、“不除外转移”、“转移可能”、“转移瘤”、“癌”。\n2.  **性质待定/需关注（Uncertain/Suspicious）**：\n\
+            \    *   **这是下游分析的关键，必须提取**\n    *   关键词：“性质待定”、“性质不明”、“随诊观察”、“建议进一步检查”、“显示不清”、“结节（未明确良性）”、“团块（未明确良性）”、“肿大（未定性）”。\n\
+            3.  **排除项（Drop）**：\n * **T 分期相关（原发灶特征）**：\n        *   **原发肿瘤本身**：如“右肺上叶肿块/结节”、“占位性病变”（指原发灶）。\n\
+            \        *   **大小描述**：如“原发灶大小约 3.5cm”。\n        *   **直接侵犯描述（易与转移混淆）**：如“累及胸膜”、“牵拉胸膜”、“紧贴纵隔”、“侵犯胸壁/肋骨/椎体”（注意：这是直接蔓延，非跳跃性转移，不属于N/M）。\n\
+            \        *   *例外：若描述为“胸膜结节”、“对侧肺结节”、“椎体骨破坏（非邻近原发灶）”，则必须提取入 M 池。*\n   \
+            \ *   仅明确描述为“炎症”、“反应性增生”、“囊肿”、“钙化灶”、“血管瘤”、“无代谢增高（且未提及性质待定）”或明确“不考虑转移”的病灶，**不需要提取**（除非该病灶在诊断意见中被特别提及需要关注）。\n\
+            4.  **病理报告**：注意提取淋巴结转移与肺外器官转移的具体解剖位置\n\n# 分流规则（严格执行）\n\n## 1. 归入【N分期评估池】（n_assessment_context）\n\
+            仅包含**区域淋巴结**。只要符合以下列表，无论性质（转移/待定/肿大），必须分流至此：\n区域淋巴结详细列表（按编号分类）\n| 淋巴结编号\
+            \ | 具体淋巴结名称       | 所属N分期关联       |\n|------------|----------------------|---------------------|\n\
+            | 1          | 锁骨上淋巴结 | N3（核心关联组）    |\n| 2R         | 右上气管旁淋巴结     |\
+            \ N2（核心关联组）    |\n| 2L         | 左上气管旁淋巴结     | N2（核心关联组）    |\n| 3a \
+            \        | 血管前淋巴结         | N2（核心关联组）    |\n| 3p         | 气管后淋巴结    \
+            \     | N2（核心关联组）    |\n| 4R         | 右下气管旁淋巴结     | N2（核心关联组）    |\n\
+            | 4L         | 左下气管旁淋巴结     | N2（核心关联组）    |\n| 5          | 主动脉弓下淋巴结\
+            \     | N2（核心关联组）    |\n| 6          | 主动脉旁淋巴结       | N2（核心关联组）    |\n\
+            | 7          | 隆突下淋巴结         | N2（核心关联组）    |\n| 8          | 食管旁淋巴结\
+            \         | N2（核心关联组）    |\n| 9          | 肺韧带淋巴结         | N2（核心关联组）\
+            \    |\n| 10         | 肺门淋巴结           | N1（核心关联组）    |\n| 11        \
+            \ | 肺叶尖淋巴结         | N1（核心关联组）    |\n| 12         | 肺叶淋巴结           |\
+            \ N1（核心关联组）    |\n| 13         | 肺段淋巴结           | N1（核心关联组）    |\n| 14\
+            \         | 亚段支气管淋巴结     | N1（核心关联组）    |\n区域淋巴结补充：奇食窝淋巴结（第8组或第9组）、心膈角淋巴结（第9组）、上腔静脉右旁淋巴结（3A组）\n\
+            \n规则：1、除“锁骨上”和“斜角肌”以外的所有颈部淋巴结，均为非区域淋巴结。\n2、锁骨下淋巴结属于非区域淋巴结\n3、若出现“锁骨上下区”、“锁骨上下”的描述，拆分成“锁骨上（区域）”和“锁骨下（非区域）”两个部位的淋巴结转移\n\
+            4、若仅出现“锁骨区淋巴结”的描述，未明确锁骨上下，则既按照既包括锁骨上也包括锁骨下判断，把锁骨区淋巴结的描述同时分发给N节点和M节点\n\
+            5、若仅出现“颈部Ⅴ区淋巴结”的描述，未明确是否包含锁骨上淋巴结，则按照既包括锁骨上淋巴结判断，把颈部Ⅴ区淋巴结的描述同时分发给N节点和M节点\n\
+            泛指性描述处理（医嘱重点）：若报告中仅出现 “颈部淋巴结”、“颈淋巴结”、“左/右颈部淋巴结” 等泛指描述，且未明确出现“锁骨上”或“斜角肌”字样，一律按非区域淋巴结（M分期）处理，严禁归入\
+            \ N3。\n\n## 2. 归入【M分期评估池】（m_assessment_context）\n*   **包含一切非 N 的病灶**：\n\
+            \        1.  **非区域淋巴结**：颈深部、腋窝、肋膈角、腹膜后等。\n        2.  **胸腔内播散**：胸水、胸膜结节、对侧肺结节。\n\
+            \        3.  **远处器官（兜底归宿）**：如果发现骨、脑、肝、肾上腺、皮下结节等**非淋巴结**病灶，**全部放入此池**。\n\
+            \n***非区域淋巴结（容易误判为N的，必须分流至此）**：\n非区域常见类型包括但不限于：\n- **常见非区域淋巴结举例**：\n1、包括腋窝淋巴结：胸肌淋巴结、外侧淋巴结、肩胛下淋巴结、中央淋巴结、尖淋巴结五群、锁骨下淋巴结\n\
+            2、除锁骨上淋巴结以外的颈部淋巴结，如颈动脉旁淋巴结\n颈部淋巴结包括：\nⅠ区（颏下及颌下淋巴结区）\nⅡ区（颈内静脉上组淋巴结区）\n\
+            Ⅲ区（颈内静脉中组淋巴结区）\nⅣ区（颈内静脉下组淋巴结区）\nⅤ区（颈后三角区淋巴结区，含锁骨上淋巴结（不只有锁骨上淋巴结））\nⅥ区（中央淋巴结区）\n\
+            Ⅶ区（上纵隔淋巴结区）\n3、胸腔内淋巴结：内乳淋巴结（胸骨旁淋巴结，胸腔内）、肋膈角淋巴结（胸腔内）、左前胸壁膜间隙淋巴结（胸腔内）、胸椎骨旁淋巴结->M1a\n\
+            4、腹腔内淋巴结：包括腹腔干周围淋巴结（沿腹腔干及其分支包括胃左动脉、肝总动脉、脾动脉排列），肠系膜上、下淋巴结，腰淋巴结（腹后壁、腹主动脉和下腔静脉周围）\n\
+            5、腹膜后淋巴结，胸腔外：包括腔静脉后淋巴结、膈肌脚淋巴结、膈脚后淋巴结\n6、盆腔淋巴结：髂外淋巴结、髂内淋巴结、骶淋巴结、髂总淋巴结\n\
+            7、下肢淋巴结：腹股沟淋巴结、腘淋巴结\n8、其他：腹股沟淋巴结、肝胃间隙淋巴结\n***胸腔内播散**：胸腔积液、心包积液、胸膜结节、心包结节、对侧肺结节。\n\
+            ***远处器官**：脑、肝、骨、肾上腺、皮下、肾脏等所有肺外器官。\n\n# 处理逻辑（重点执行）\n1.  **宽范围提取**：从【诊断意见】中扫描所有**“转移”**、**“疑似”**及**“性质待定/随诊”**的条目。\n\
+            \    *   *例如：“右肋膈角淋巴结性质待定” -> **必须提取**。*\n    *   *例如：“肝S8段小囊肿” -> **丢弃**（良性）。*\n\
+            2.  **拆解**：将长句拆解为独立病灶。\n3.  **关联与回填**：\n    *   针对提取出的每一个病灶，回到【主要描述】部分查找对应的详细影像学特征（如大小、SUV值、密度）。\n\
+            \    *   **重要**：对于“性质待定”的病灶，详细描述（如“SUVmax 2.5”或“无代谢增高”）对下游判断至关重要，务必回填。\n\
+            \    *   格式：`[诊断意见] (详细描述: [对应原文提取])`。\n4.  **映射与分流**：对处理后的完整描述查表分流。\n\
+            \n# 输出格式 (JSON)\n{\n  \"n_assessment_context\": [\n    \"右侧肺门淋巴结转移 (详细描述:\
+            \ 短径1.2cm，SUVmax 8.5)\",\n    \"纵隔7区淋巴结性质待定 (详细描述: 淋巴结稍大，短径0.9cm，代谢轻度增高，建议随诊)\"\
+            \ \n  ],\n  \"m_assessment_context\": [\n    \"右侧颈深部（III区）淋巴结转移 (详细描述:\
+            \ 可见数个小淋巴结，边界清)\", \n    \"右肋膈角淋巴结性质待定 (详细描述: 见小结节影，直径0.6cm，未见明显强化)\"\
+            ,\n    \"双肾上腺转移 (详细描述: 双侧肾上腺增粗，见结节样软组织影)\",\n    \"左肝小结节随诊观察 (详细描述: 低密度影，界不清，太小定性困难)\"\
+            \n  ]\n}"
+        - id: 501fac74-53a9-4ca3-ae37-aff4ea498446
+          role: user
+          text: 请你完成对{{#1764323445709.result#}}内容的N,M分流
+        selected: false
+        title: N.M分流节点
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 88
+      id: '1769599924411'
+      position:
+        x: 811.3416483724218
+        y: 490.9504563810142
+      positionAbsolute:
+        x: 811.3416483724218
+        y: 490.9504563810142
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        code: "import re\n\ndef main(arg1: str) -> dict:\n    \"\"\"\n    输入: 包含 <think>...</think>\
+          \ 标签的 LLM 输出字符串\n    输出: 去除 think 标签及其内容后的纯文本\n    \"\"\"\n    # 1. 安全检查：防止输入为\
+          \ None\n    if arg1 is None:\n        return {\"result\": \"\"}\n    \n\
+          \    # 2. 正则表达式替换\n    # pattern: <think> 开始，.*? 非贪婪匹配任意字符，</think> 结束\n\
+          \    # flags=re.DOTALL: 关键参数，让 '.' 能够匹配换行符(\\n)，因为思维链通常是多行的\n    # flags=re.IGNORECASE:\
+          \ 忽略大小写（防止模型输出 <THINK>）\n    cleaned_text = re.sub(\n        r'<think>.*?</think>',\
+          \ \n        '', \n        str(arg1), \n        flags=re.DOTALL | re.IGNORECASE\n\
+          \    )\n    \n    # 3. 去除首尾可能残留的空白字符（换行、空格）\n    final_text = cleaned_text.strip()\n\
+          \    \n    return {\n        \"result\": final_text\n    }"
+        code_language: python3
+        desc: ''
+        outputs:
+          result:
+            children: null
+            type: string
+        selected: false
+        title: 过滤think-NM
+        type: code
+        variables:
+        - value_selector:
+          - '1769599924411'
+          - text
+          variable: arg1
+      height: 52
+      id: '1769603565594'
+      position:
+        x: 1123.8440528415608
+        y: 521.2135746343746
+      positionAbsolute:
+        x: 1123.8440528415608
+        y: 521.2135746343746
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        code: "\nimport json\nimport re\n\ndef main(arg1: str) -> dict:\n    \"\"\"\
+          \n    分流节点处理脚本\n    输入: 上游清洗专家输出的 JSON 字符串 (包含 n_assessment_context, m_assessment_context)\n\
+          \    输出: 字典，包含格式化后的 N 分期描述文本和 M 分期描述文本\n    \"\"\"\n\n    # --- 1. 基础解析工具\
+          \ (复用您提供的逻辑) ---\n    def safe_parse(json_input):\n        if not json_input:\
+          \ return {}\n        try:\n            # 兼容输入已经是 dict 的情况\n            if\
+          \ isinstance(json_input, dict):\n                return json_input\n   \
+          \         \n            # 清理 Markdown 代码块标记\n            clean_str = str(json_input).strip()\n\
+          \            clean_str = re.sub(r'^```json\\s*', '', clean_str)\n      \
+          \      clean_str = re.sub(r'\\s*```$', '', clean_str)\n            return\
+          \ json.loads(clean_str)\n        except Exception as e:\n            # 返回空字典或打印错误日志\n\
+          \            print(f\"JSON Parse Error: {e}\")\n            return {}\n\n\
+          \    # --- 2. 格式化工具 ---\n    def format_context_list(data_list, default_msg=\"\
+          未提及相关病灶\"):\n        \"\"\"\n        将 JSON 列表转换为适合 Prompt 的无序列表文本\n   \
+          \     例如: [\"A\", \"B\"] -> \"- A\\n- B\"\n        \"\"\"\n        if not\
+          \ data_list or not isinstance(data_list, list):\n            return default_msg\n\
+          \        \n        # 过滤空字符串并拼接\n        valid_items = [f\"- {str(item)}\"\
+          \ for item in data_list if item]\n        if not valid_items:\n        \
+          \    return default_msg\n            \n        return \"\\n\".join(valid_items)\n\
+          \n    # --- 3. 执行解析 ---\n    data = safe_parse(arg1)\n\n    # 提取 N 和 M 的原始列表\
+          \ (容错处理：如果键不存在，返回空列表)\n    raw_n_list = data.get(\"n_assessment_context\"\
+          , [])\n    raw_m_list = data.get(\"m_assessment_context\", [])\n\n    #\
+          \ --- 4. 格式化为下游变量 ---\n    # 将列表转换为字符串，准备喂给 N/M 分期助手\n    n_context_text\
+          \ = format_context_list(raw_n_list, default_msg=\"未提及区域淋巴结相关异常。\")\n   \
+          \ m_context_text = format_context_list(raw_m_list, default_msg=\"未提及远处转移或非区域淋巴结异常。\"\
+          )\n\n    # --- 5. 返回结果 ---\n    # 这里返回的字典中的 key 可以在工作流中被映射为两个独立的变量\n   \
+          \ return {\n        \"n_descriptions\": n_context_text,\n        \"m_descriptions\"\
+          : m_context_text\n    }\n"
+        code_language: python3
+        desc: ''
+        outputs:
+          m_descriptions:
+            children: null
+            type: string
+          n_descriptions:
+            children: null
+            type: string
+        selected: false
+        title: 代码执行 7
+        type: code
+        variables:
+        - value_selector:
+          - '1769603565594'
+          - result
+          variable: arg1
+      height: 52
+      id: '1769604169192'
+      position:
+        x: 1472.287369086399
+        y: 521.2135746343746
+      positionAbsolute:
+        x: 1472.287369086399
+        y: 521.2135746343746
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params:
+            temperature: 0.1
+            thinking: false
+          mode: chat
+          name: glm-4.7
+          provider: langgenius/zhipuai/zhipuai
+        prompt_template:
+        - id: 8ba5f9b5-b8fb-44aa-b418-65bd6bc854a0
+          role: system
+          text: "# 角色\n病理与影像解剖学数据清洗专家。将【诊断意见】和【主要描述】中与原发肿瘤（T分期）相关的病灶特征，提取并分流至`t_assessment_context`。\n\
+            \n# 核心任务（三步）\n1. **确定基准侧别**：扫描【诊断意见】，以**病理证实的原发灶位置**&gt;**影像最大病灶**&gt;**诊断意见提及**为优先级，确定**唯一基准侧**（左/右肺）。**铁律**：非基准侧（对侧肺）任何病灶一律丢弃（归属M1a）。\n\
+            2. **同侧提取与分流**：提取基准侧病灶，合并【诊断意见】与【主要描述】，分流至T池。\n3. **病理证实整合**：若存在病理报告，优先依据病理证实的原发灶位置验证基准侧别；提取病理诊断中的组织学类型（如腺癌、鳞癌），并入原发灶条目详细描述，格式为`(病理:\
+            \ 右肺腺癌)`。\n\n# 提取准入标准（针对基准侧）\n\n**必须提取（含确诊、可疑及待定）：**\n1. **原发灶**：肿块、结节、占位、肺癌及任何大小数值\n\
+            2. **侵犯相关**：胸膜（累及/侵犯/分界不清/边界不清/紧贴/牵拉）、支气管、胸壁、肋骨、膈神经、膈肌、心包、大血管、心脏、气管、隆突、椎体\
+            \  \n   **强制规则**：\"分界不清\"、\"边界不清\"、\"紧贴\"、\"牵拉\"一律按\"侵犯\"提取\n3. **阻塞性改变**：阻塞性肺炎、肺不张\n\
+            4. **同侧播散**：同肺叶或同侧不同肺叶的结节，**包括\"建议随访除外转移\"\"待除外恶性\"者（即使代谢不高）**\n5. **双肺为著**：若\"\
+            双肺多发\"明确标注\"右侧为著\"（或左侧），仅当\"为著\"侧=基准侧时提取，格式注明\"双肺散在结节，同侧（X肺）为著\"\n\n**6.\
+            \ 双肺解析规则（防T4漏诊关键）：**\n   遇\"双肺多发转移/结节/病灶\"等表述时：\n   - **若详细描述明确提及基准侧具体位置**（如\"\
+            右肺上叶见结节\"）：提取为`\"右肺多发结节（同侧播散） (详细描述: ...)\"`\n   - **若仅泛称\"双肺\"**（如\"\
+            双肺另见多发结节\"），**未明确标注\"左侧为著\"或\"对侧为著\"**：**必须提取并强制标注同侧受累**，格式为：\n     `\"\
+            双肺多发结节（含同侧播散） (详细描述: 双肺另见多发微、小结节，同侧（右肺）及対侧（左肺）均受累，部分代谢增高)\"`\n     **关键要求**：必须在括号内明确写明\"\
+            **同侧（右肺）及対侧（左肺）均受累**\"，确保下游T分期识别T4（同侧不同肺叶）+ M1a（对侧肺）\n   - **若明确标注\"对侧为著\"\
+            或\"左侧为著\"（基准为右肺时）**：整体丢弃归属M1a\n   - **严禁**：不得以\"双肺\"为名单独提取明确的对侧部分\n\n\
+            **严禁提取（无论描述如何）：**\n- 对侧肺所有病灶（非基准侧）\n- **脑、骨、肝、肾上腺等远处器官转移**（M分期）\n- **胸腔积液、心包积液**（M1a）\n\
+            - 淋巴结（N分期）\n- 胸膜转移、胸壁转移（M分期）\n- 囊肿、钙化、单纯炎性条索（除非提及\"待除外转移\"）\n\n# 分流规则（简明对照）\n\
+            \n| 类别 | 入池条件 | 备注 |\n|------|---------|------|\n| **T池** | 仅基准侧肺内的：原发灶、侵犯结构、阻塞性改变、同侧播散结节\
+            \ | \"分界不清/紧贴/牵拉\"一律视为侵犯；未提及大小不得推测 |\n| **严禁** | 对侧肺、远处器官、淋巴结、远处转移、明确良性\
+            \ | 对侧无论\"恶性可能\"或\"炎性\"均不归T |\n\n# 处理逻辑（四步执行）\n\n1. **定位**：扫描【诊断意见】确定\"\
+            XX肺...恶性/肿块\"，标记基准侧别。\n\n2. **过滤与解析**：\n   - **遇\"双肺\"描述**：立即执行准入标准第6条（双肺解析规则），**强制标注同侧受累**，确保下游识别T4\n\
+            \   - **常规描述**：遍历所有描述，先问\"是基准侧吗？\"→ 否（对侧）直接丢弃；是（同侧）进入下一步\n\n3. **拆解与回填**：\n\
+            \   - 仅当【诊断意见】中为独立条目时，才拆分为独立JSON条目\n   - 回到【主要描述】查找详细特征（大小、SUV、密度、牵拉、分界不清等），回填至对应条目\n\
+            \   - 对于\"双肺\"条目：必须在详细描述中补充标注\"**同侧（基准侧）及対侧均受累**\"，即使原文未明确写右肺具体位置\n  \
+            \ - **禁止**：将【主要描述】中的纯特征词（如\"牵拉胸膜\"、\"分界不清\"）作为独立条目，必须并入对应主病灶\n\n4. **合并与核查**：\n\
+            \   - **癌性淋巴管炎**：同一侧肺多肺叶（如上中下叶）的癌性淋巴管炎合并为一条，格式为`\"右肺上中下叶癌性淋巴管炎 (详细描述:\
+            \ ...)\"`\n   - 同一解剖位置的多条描述合并为一条\n   - **最终检查**：删除任何对侧条目；将纯特征词独立条目合并至主病灶\n\
+            \n# 输出格式 (JSON)\n\n```json\n{\n  \"t_assessment_context\": [\n    \"左肺尖软组织密度结节,代谢增高,结合病史,可符合恶性病变表现。\
+            \ (详细描述: 左肺尖可见一软组织密度结节,约2.8×2.0cm,内可见空洞,放射性摄取增高,Suvmax7.0)\"\n  ]\n}"
+        - id: d8c5646d-bfd4-4c1c-8abe-f0a6ebf9616a
+          role: user
+          text: 请你完成对{{#1764323445709.result#}}内容的T分流
+        selected: false
+        title: T提取
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 88
+      id: '1770127326622'
+      position:
+        x: 811.3416483724218
+        y: 149.35927487025515
+      positionAbsolute:
+        x: 811.3416483724218
+        y: 149.35927487025515
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        code: "import re\n\ndef main(arg1: str) -> dict:\n    \"\"\"\n    输入: 包含 <think>...</think>\
+          \ 标签的 LLM 输出字符串\n    输出: 去除 think 标签及其内容后的纯文本\n    \"\"\"\n    # 1. 安全检查：防止输入为\
+          \ None\n    if arg1 is None:\n        return {\"result\": \"\"}\n    \n\
+          \    # 2. 正则表达式替换\n    # pattern: <think> 开始，.*? 非贪婪匹配任意字符，</think> 结束\n\
+          \    # flags=re.DOTALL: 关键参数，让 '.' 能够匹配换行符(\\n)，因为思维链通常是多行的\n    # flags=re.IGNORECASE:\
+          \ 忽略大小写（防止模型输出 <THINK>）\n    cleaned_text = re.sub(\n        r'<think>.*?</think>',\
+          \ \n        '', \n        str(arg1), \n        flags=re.DOTALL | re.IGNORECASE\n\
+          \    )\n    \n    # 3. 去除首尾可能残留的空白字符（换行、空格）\n    final_text = cleaned_text.strip()\n\
+          \    \n    return {\n        \"result\": final_text\n    }"
+        code_language: python3
+        desc: ''
+        outputs:
+          result:
+            children: null
+            type: string
+        selected: false
+        title: 过滤think-t
+        type: code
+        variables:
+        - value_selector:
+          - '1770127326622'
+          - text
+          variable: arg1
+      height: 52
+      id: '1770127431059'
+      position:
+        x: 1130.4993349201918
+        y: 149.35927487025515
+      positionAbsolute:
+        x: 1130.4993349201918
+        y: 149.35927487025515
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        code: "import json\nimport re\n\ndef main(arg1: str) -> dict:\n    \"\"\"\n\
+          \    T分流节点处理脚本\n    输入: 上游T分期清洗专家输出的 JSON 字符串 (包含 t_assessment_context)\n\
+          \    输出: 字典，包含格式化后的 T 分期描述文本\n    \"\"\"\n\n    # --- 1. 基础解析工具 (复用NM分流逻辑)\
+          \ ---\n    def safe_parse(json_input):\n        if not json_input: \n  \
+          \          return {}\n        try:\n            # 兼容输入已经是 dict 的情况\n   \
+          \         if isinstance(json_input, dict):\n                return json_input\n\
+          \            \n            # 清理 Markdown 代码块标记\n            clean_str =\
+          \ str(json_input).strip()\n            clean_str = re.sub(r'^```json\\s*',\
+          \ '', clean_str)\n            clean_str = re.sub(r'\\s*```$', '', clean_str)\n\
+          \            return json.loads(clean_str)\n        except Exception as e:\n\
+          \            print(f\"JSON Parse Error: {e}\")\n            return {}\n\n\
+          \    # --- 2. 格式化工具 ---\n    def format_context_list(data_list, default_msg=\"\
+          未提及相关病灶\"):\n        \"\"\"\n        将 JSON 列表转换为适合 Prompt 的无序列表文本\n   \
+          \     例如: [\"A\", \"B\"] -> \"- A\\n- B\"\n        \"\"\"\n        if not\
+          \ data_list or not isinstance(data_list, list):\n            return default_msg\n\
+          \        \n        # 过滤空字符串并拼接\n        valid_items = [f\"- {str(item)}\"\
+          \ for item in data_list if item]\n        if not valid_items:\n        \
+          \    return default_msg\n            \n        return \"\\n\".join(valid_items)\n\
+          \n    # --- 3. 执行解析 ---\n    data = safe_parse(arg1)\n\n    # 提取 T 的原始列表\
+          \ (容错处理：如果键不存在，返回空列表)\n    raw_t_list = data.get(\"t_assessment_context\"\
+          , [])\n\n    # --- 4. 格式化为下游变量 ---\n    # 将列表转换为字符串，准备喂给 T 分期判定助手\n    t_context_text\
+          \ = format_context_list(raw_t_list, default_msg=\"未提及原发肿瘤相关异常。\")\n\n  \
+          \  # --- 5. 返回结果 ---\n    return {\n        \"t_descriptions\": t_context_text\n\
+          \    }"
+        code_language: python3
+        desc: ''
+        outputs:
+          t_descriptions:
+            children: null
+            type: string
+        selected: false
+        title: 代码执行 9
+        type: code
+        variables:
+        - value_selector:
+          - '1770127431059'
+          - result
+          variable: arg1
+      height: 52
+      id: '1770127481088'
+      position:
+        x: 1491.273613116071
+        y: 149.35927487025515
+      positionAbsolute:
+        x: 1491.273613116071
+        y: 149.35927487025515
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    viewport:
+      x: 84.8450296100977
+      y: 260.90050650083384
+      zoom: 0.38152473474068865

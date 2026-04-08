@@ -1,0 +1,3320 @@
+app:
+  description: 在TNM分期之后进行非小细胞癌治疗
+  icon: 🤖
+  icon_background: '#FFEAD5'
+  mode: advanced-chat
+  name: 非小细胞癌治疗
+  use_icon_as_answer_icon: false
+dependencies:
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: langgenius/zhipuai:0.0.23@7e6213a06c26b17b5dfc2416db36f664d4fb08252bd1644ca54a82a6cc7a8609
+kind: app
+version: 0.3.0
+workflow:
+  conversation_variables: []
+  environment_variables: []
+  features:
+    file_upload:
+      allowed_file_extensions:
+      - .JPG
+      - .JPEG
+      - .PNG
+      - .GIF
+      - .WEBP
+      - .SVG
+      allowed_file_types:
+      - image
+      - document
+      allowed_file_upload_methods:
+      - remote_url
+      - local_file
+      enabled: true
+      fileUploadConfig:
+        audio_file_size_limit: 50
+        batch_count_limit: 5
+        file_size_limit: 15
+        image_file_size_limit: 10
+        video_file_size_limit: 100
+        workflow_file_upload_limit: 10
+      image:
+        enabled: false
+        number_limits: 3
+        transfer_methods:
+        - local_file
+        - remote_url
+      number_limits: 3
+    opening_statement: ''
+    retriever_resource:
+      enabled: true
+    sensitive_word_avoidance:
+      enabled: false
+    speech_to_text:
+      enabled: false
+    suggested_questions: []
+    suggested_questions_after_answer:
+      enabled: false
+    text_to_speech:
+      enabled: false
+      language: ''
+      voice: ''
+  graph:
+    edges:
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: llm
+        targetType: answer
+      id: 1765801828677-source-1765802392061-target
+      selected: false
+      source: '1765801828677'
+      sourceHandle: source
+      target: '1765802392061'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: code
+        targetType: if-else
+      id: 1765802928890-source-1765802320701-target
+      selected: false
+      source: '1765802928890'
+      sourceHandle: source
+      target: '1765802320701'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: llm
+        targetType: code
+      id: llm-source-1765803586857-target
+      selected: false
+      source: llm
+      sourceHandle: source
+      target: '1765803586857'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: code
+        targetType: code
+      id: 1765803586857-source-1765802928890-target
+      selected: false
+      source: '1765803586857'
+      sourceHandle: source
+      target: '1765802928890'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: if-else
+        targetType: code
+      id: 1765802320701-true-1765803788049-target
+      selected: false
+      source: '1765802320701'
+      sourceHandle: 'true'
+      target: '1765803788049'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: code
+        targetType: if-else
+      id: 1765803788049-source-1765804093114-target
+      selected: false
+      source: '1765803788049'
+      sourceHandle: source
+      target: '1765804093114'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: if-else
+        targetType: llm
+      id: 1765804093114-true-1765801828677-target
+      selected: false
+      source: '1765804093114'
+      sourceHandle: 'true'
+      target: '1765801828677'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: llm
+        targetType: answer
+      id: 1765965282258-source-1765965296047-target
+      selected: false
+      source: '1765965282258'
+      sourceHandle: source
+      target: '1765965296047'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: if-else
+        targetType: code
+      id: 1765802320701-false-1765965386780-target
+      selected: false
+      source: '1765802320701'
+      sourceHandle: 'false'
+      target: '1765965386780'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: code
+        targetType: if-else
+      id: 1765965386780-source-1765965555642-target
+      selected: false
+      source: '1765965386780'
+      sourceHandle: source
+      target: '1765965555642'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: if-else
+        targetType: code
+      id: 1765965555642-true-1765965611039-target
+      selected: false
+      source: '1765965555642'
+      sourceHandle: 'true'
+      target: '1765965611039'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: code
+        targetType: if-else
+      id: 1765965611039-source-1765965778951-target
+      selected: false
+      source: '1765965611039'
+      sourceHandle: source
+      target: '1765965778951'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: if-else
+        targetType: llm
+      id: 1765965555642-false-1765965876012-target
+      selected: false
+      source: '1765965555642'
+      sourceHandle: 'false'
+      target: '1765965876012'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: llm
+        targetType: answer
+      id: 1765965790968-source-1765967125774-target
+      selected: false
+      source: '1765965790968'
+      sourceHandle: source
+      target: '1765967125774'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: llm
+        targetType: answer
+      id: 1765965808653-source-1765967134303-target
+      selected: false
+      source: '1765965808653'
+      sourceHandle: source
+      target: '1765967134303'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: llm
+        targetType: answer
+      id: 1765965876012-source-1765967141819-target
+      selected: false
+      source: '1765965876012'
+      sourceHandle: source
+      target: '1765967141819'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: if-else
+        targetType: code
+      id: 1765965778951-true-1765968101036-target
+      selected: false
+      source: '1765965778951'
+      sourceHandle: 'true'
+      target: '1765968101036'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: code
+        targetType: if-else
+      id: 1765968101036-source-1765968201082-target
+      selected: false
+      source: '1765968101036'
+      sourceHandle: source
+      target: '1765968201082'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: if-else
+        targetType: llm
+      id: 1765968201082-true-1765965790968-target
+      selected: false
+      source: '1765968201082'
+      sourceHandle: 'true'
+      target: '1765965790968'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: if-else
+        targetType: llm
+      id: 1765968201082-false-1765968282402-target
+      selected: false
+      source: '1765968201082'
+      sourceHandle: 'false'
+      target: '1765968282402'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: llm
+        targetType: answer
+      id: 1765968282402-source-1765968349855-target
+      selected: false
+      source: '1765968282402'
+      sourceHandle: source
+      target: '1765968349855'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: if-else
+        targetType: code
+      id: 1765965778951-false-1765968378779-target
+      selected: false
+      source: '1765965778951'
+      sourceHandle: 'false'
+      target: '1765968378779'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: code
+        targetType: if-else
+      id: 1765968378779-source-1765968398711-target
+      selected: false
+      source: '1765968378779'
+      sourceHandle: source
+      target: '1765968398711'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: if-else
+        targetType: llm
+      id: 1765968398711-true-1765965808653-target
+      selected: false
+      source: '1765968398711'
+      sourceHandle: 'true'
+      target: '1765965808653'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: if-else
+        targetType: llm
+      id: 1765968398711-false-1765968498971-target
+      selected: false
+      source: '1765968398711'
+      sourceHandle: 'false'
+      target: '1765968498971'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: llm
+        targetType: answer
+      id: 1765968498971-source-1765968546687-target
+      selected: false
+      source: '1765968498971'
+      sourceHandle: source
+      target: '1765968546687'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: if-else
+        targetType: code
+      id: 1765804093114-false-1766937177831-target
+      selected: false
+      source: '1765804093114'
+      sourceHandle: 'false'
+      target: '1766937177831'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: code
+        targetType: if-else
+      id: 1766937177831-source-1766937504505-target
+      selected: false
+      source: '1766937177831'
+      sourceHandle: source
+      target: '1766937504505'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: if-else
+        targetType: llm
+      id: 1766937504505-true-1765965282258-target
+      selected: false
+      source: '1766937504505'
+      sourceHandle: 'true'
+      target: '1765965282258'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: if-else
+        targetType: llm
+      id: 1766937504505-fbe22fcb-9a5f-485e-b0c5-8fe8aa989d64-1766937547562-target
+      selected: false
+      source: '1766937504505'
+      sourceHandle: fbe22fcb-9a5f-485e-b0c5-8fe8aa989d64
+      target: '1766937547562'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: if-else
+        targetType: llm
+      id: 1766937504505-449f0e29-c3cd-4ebb-9303-1ce3c74da5fa-1766937598411-target
+      selected: false
+      source: '1766937504505'
+      sourceHandle: 449f0e29-c3cd-4ebb-9303-1ce3c74da5fa
+      target: '1766937598411'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: llm
+        targetType: answer
+      id: 1766937598411-source-1766938039625-target
+      source: '1766937598411'
+      sourceHandle: source
+      target: '1766938039625'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: llm
+        targetType: answer
+      id: 1766937547562-source-1766938057994-target
+      source: '1766937547562'
+      sourceHandle: source
+      target: '1766938057994'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: start
+        targetType: document-extractor
+      id: 1765799979372-source-1766974885785-target
+      source: '1765799979372'
+      sourceHandle: source
+      target: '1766974885785'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: document-extractor
+        targetType: llm
+      id: 1766974885785-source-llm-target
+      source: '1766974885785'
+      sourceHandle: source
+      target: llm
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    nodes:
+    - data:
+        desc: ''
+        selected: false
+        title: 开始
+        type: start
+        variables:
+        - label: TNM_ret
+          max_length: 111111
+          options: []
+          required: true
+          type: paragraph
+          variable: TNM_ret
+      height: 88
+      id: '1765799979372'
+      position:
+        x: 80
+        y: 282
+      positionAbsolute:
+        x: 80
+        y: 282
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        memory:
+          query_prompt_template: 请根据{{#1766974885785.text#}}，{{#sys.query#}}提取病例中的关键信息,填充字段1-10，根据{{#1765799979372.TNM_ret#}}填充字段11-12
+          role_prefix:
+            assistant: ''
+            user: ''
+          window:
+            enabled: false
+            size: 10
+        model:
+          completion_params:
+            temperature: 0.2
+          mode: chat
+          name: glm-4.6
+          provider: langgenius/zhipuai/zhipuai
+        prompt_template:
+        - id: edb66d02-342b-4ccc-a913-b0d21269f09b
+          role: system
+          text: "# Role\n
+            如果传入的是json结构，直接原样输出。
+            你是一个专业的肿瘤科医疗信息结构化助手。\n\n# Goal\n请仔细分析用户提供的患者病情描述，信息提取关键的治疗决策因子，并以标准的\
+            \ JSON 格式输出。\n\n# Extraction Rules (提取规则)\n请严格按照以下字段进行提取：\n\n1. **病理类型**:\
+            \ 必须区分 \"鳞癌\" 或 \"非鳞癌\"（腺癌归为非鳞癌）。\n2. **体力评分**: 转化为 \"0-1分\"、\"2分\" 或\
+            \ \"3-4分\"。\n3. **驱动基因**: \n   - 若无突变，即驱动基因阴性，则输出数字 \"0\"。\n   - 若有突变，即驱动基因阳性，则输出具体的基因名称\n\
+            \   - 若病历中未提及驱动基因状态，则默认驱动基因状态为阴性，输出数字“0”\n4. **PDL1表达**: 归类为 \"高表达(≥50%)\"\
+            、\"低表达(1-49%)\" 或 \"阴性(<1%)\"。\n5. **高危因素**: (仅针对早期术后) 若提及低分化、脉管癌栓、胸膜侵犯等，输出\
+            \ \"有\"，否则 \"无\"。\n6. **治疗阶段**: 判断是 “根治性术后”还是“根治性术前”，\n“根治性术后”则该字段填”1“，“根治性术前”填”0“\n\
+            7. **既往治疗方案**: 提取晚期患者的治疗方案，若患者未进行过治疗，则输出“1”，若患者进行过治疗，则完整的提取出病历中所有对于患者治疗方案的描述信息\n\
+            8. **免疫禁忌**: 若提及自身免疫病、器官移植、活动性感染，则输出具体类型 ，否则 \"无\"。\n9. **转移类型**: \n \
+            \  - 若病灶 ≤5 个且用户强调寡转移，输出 \"0\"。\n   - 若广泛扩散，输出 \"1\"。\n10.**是否一线治疗**：判断晚期患者是进行一线治疗还是二线治疗。若是一线治疗，输出\"\
+            1\",否则，输出“0”。一线治疗的患者有以下两种：1.未进行过治疗的病人。2.进行过治疗但是病情未进一步进展的病人。病情进展的情况有病灶扩大或者病灶扩散等等\n\
+            11.**TNM分期**：如T4N2M1c\n12.**综合分期**：如IA3,IIIA\n\n# Output Format\n仅输出 JSON，不要包含\
+            \ Markdown 代码块（```json ... ```）或其他解释性文字。\n\n# Example Output\n{\n  \"\
+            病理类型\": \"非鳞癌\",\n  \"体力评分\": \"0-1分\",\n  \"驱动基因\": \"EGFR(19del)\",\n\
+            \  \"PDL1表达\": \"未知\",\n  \"高危因素\": \"无\",\n  \"治疗阶段\": \"1\",\n  \"既往用药\"\
+            : \"无\",\n  \"免疫禁忌\": \"无\",\n  \"转移类型\": \"1\",\n  \"是否一线治疗\":\"1\",\n\
+            \   \"TNM分期\":\"T4N2M1c\",\n    \"综合分期\":\"ⅣB\"\n}"
+        selected: false
+        structured_output:
+          schema:
+            properties:
+              Driver_Gene:
+                properties:
+                  geneName:
+                    enum:
+                    - EGFR
+                    - ALK
+                    - None
+                    type: string
+                  mutation:
+                    enum:
+                    - 19del
+                    - L858R
+                    - T790M
+                    - Exon20
+                    type: string
+                required:
+                - geneName
+                - mutation
+                type: object
+              High_Risk_Factors:
+                description: 仅针对早期术后，如低分化、血管侵犯等
+                enum:
+                - 是
+                - 否
+                type: string
+              Histology:
+                enum:
+                - 鳞癌
+                - 非鳞癌
+                - 不明确
+                type: string
+              IO_Contraindication:
+                description: 自身免疫病等
+                enum:
+                - 是
+                - 否
+                type: string
+              Metastasis_Type:
+                enum:
+                - 寡转移
+                - 脑转移(有/无症状)
+                - 广泛转移
+                - 无
+                type: string
+              PD_L1:
+                enum:
+                - ≥50%
+                - 1-49%
+                - <1%
+                - 未知
+                type: string
+              PS_Score:
+                enum:
+                - 0-1
+                - '2'
+                - 3-4
+                type: string
+              Previous_Drugs:
+                description: 用户之前用过什么药（如“奥希替尼”、“免疫治疗”）
+                items:
+                  type: string
+                type: array
+              Treatment_History:
+                enum:
+                - 初治
+                - 术后
+                - 一线耐药
+                - 二线耐药
+                type: string
+            required:
+            - Histology
+            - PS_Score
+            - Driver_Gene
+            - PD_L1
+            - High_Risk_Factors
+            - Treatment_History
+            - Previous_Drugs
+            - IO_Contraindication
+            - Metastasis_Type
+            type: object
+        structured_output_enabled: false
+        title: 病人信息提取
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 88
+      id: llm
+      position:
+        x: 776.4165643866143
+        y: 282
+      positionAbsolute:
+        x: 776.4165643866143
+        y: 282
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params: {}
+          mode: chat
+          name: glm-4.6
+          provider: langgenius/zhipuai/zhipuai
+        prompt_template:
+        - id: 13be3f12-da45-4ea9-b2e8-2b3a3527252b
+          role: system
+          text: '你是非小细胞肺癌（NSCLC）临床决策支持专家。你的任务是根据提供的【指南文档】和提取的【病人信息】，为患者制定精准的治疗方案。
+
+            回答前先输出**推理过程**：在 <think> 标签内，简要列出做出最终判断的关键依据。要求：
+            - 只包含与最终方案直接相关的判断
+            - 避免重复和与指南无关的内容
+             
+            # Constraints (严格约束)
+
+            1. 仅基于文档：你的所有建议必须严格引用上下文中的内容，严禁使用外部知识或产生幻觉。
+
+
+            2. 缺失信息处理：若病人信息中缺失关键决策因子，不要提示“关键信息缺失”，不要建议补充检查或评估，也不要说明该指标的不同结果将如何影响方案选择。你必须仅基于当前已提供的病人信息和指南内容，直接给出在现有信息下能够明确成立的治疗建议。
+
+
+            3. 对于未提供的决策条件，不得展开“若……则……”形式的条件分支；对于依赖缺失信息才能确定的细化方案，不要臆测，不要补充。当信息不足以支持细化到具体药物组合时，允许仅输出上位治疗路径。
+
+
+            # 数据字段映射说明 (Data Schema Mapping)
+
+            请严格依据以下定义解析输入的 JSON 数据，注意数字代码的特殊含义：
+
+            驱动基因 (0 vs 文本)：
+
+            0：代表驱动基因阴性（无突变），适用化疗/免疫方案
+
+            具体基因名（如 "EGFR"）：代表驱动基因阳性，适用靶向治疗方案。
+
+            治疗阶段 (1 vs 0)：
+
+            1：代表根治性术后
+
+            0：代表根治性术前（
+
+            既往治疗方案 (1 vs 文本)：
+
+            1：代表初治患者（未进行过治疗），适用一线治疗方案。
+
+            具体文本：代表经治患者（已耐药或复发），需根据描述判断处于二线或后线治疗。
+
+            转移类型 (0 vs 1)：
+
+            0：代表寡转移（病灶 ≤5 个），适用局部根治+全身治疗
+
+            1：代表广泛转移，适用全身药物治疗
+
+
+
+
+            # 指南文档-早期已行根治性手术后的非小细胞肺癌患者
+
+
+            首先，我们先介绍几个病理专业名词：
+
+            1. 高危因素：包括分化差、血管侵犯、脉管癌栓、楔形切除、胸膜侵犯、淋巴结状态未知。
+
+            2. PD-L1表达：肺癌均应用TPS，PD-L1表达水平是免疫治疗的疗效预测因子。
+
+
+
+            ## 一、ⅠA期
+
+
+
+            1. IA期患者，NCCN指南及CSCO指南均建议定期复查即可，无论是否有任何基因突变、无论是否有高危因素，均无需任何治疗（包括靶向治疗、化疗、免疫治疗）。
+
+
+
+            ## 二、ⅠB期：根据基因突变类型和高危因素共同决策，分为以下3种情况
+
+
+
+            1. 情况1：若患者有EGFR敏感突变（EGFR19外显子缺失或21外显子L858R突变），NCCN和CSCO指南分别有以下推荐：
+
+
+
+               * NCCN指南推荐：无论是否有高危因素，无论PD-L1状态如何，无论之前是否接受过辅助化疗，推荐使用奥希替尼，疗程至少3年。
+
+               * CSCO指南推荐：无论是否有高危因素，无论PD-L1状态如何，推荐使用奥希替尼。
+
+
+
+            2. 情况2：若患者有ALK融合，无论是否有高危因素、无论PD-L1表达水平如何，仅NCCN指南推荐使用阿来替尼，疗程至少2年。
+
+            3. 情况3：若患者没有EGFR敏感突变（EGFR19外显子缺失或21外显子L858R突变）且没有ALK融合，根据是否有高危因素，有以下2种方案：
+
+
+
+               * 条件1：对于有高危因素的患者，NCCN指南建议行辅助化疗4个周期，CSCO指南建议仅定期复查。辅助化疗可用药物如下：优先推荐：顺铂联合培美曲塞（非鳞癌），顺铂联合吉西他滨（鳞癌），顺铂联合多西他赛（鳞癌）；次选推荐：顺铂联合长春瑞滨，顺铂联合依托泊苷；不能应用卡铂的患者可选择以下药物：卡铂联合紫杉醇，卡铂联合吉西他滨（鳞癌），卡铂联合培美曲塞（非鳞癌）。
+
+               * 条件2：对于无高危因素的患者，无论PD-L1表达水平如何，NCCN和CSCO指南均推荐定期复查。
+
+
+
+            ## 三、ⅡA期：根据基因突变类型、高危因素和PD-L1表达共同决策，分为以下3种情况
+
+
+
+            1. 情况1：若患者有EGFR敏感突变（EGFR19外显子缺失或21外显子L858R突变），NCCN和CSCO指南分别有以下推荐：
+
+
+
+               * NCCN指南推荐：无论是否有高危因素，无论PD-L1状态如何，无论之前是否接受过辅助化疗，推荐使用奥希替尼，疗程至少3年。
+
+               * CSCO指南推荐：无论是否有高危因素，无论PD-L1状态如何，推荐使用奥希替尼或埃克替尼。
+
+
+
+            2. 情况2：若患者有ALK融合，无论是否有高危因素、无论PD-L1表达水平如何，NCCN和CSCO指南均推荐使用阿来替尼，疗程至少2年。
+
+            3. 情况3：若患者没有EGFR敏感突变（EGFR19外显子缺失或21外显子L858R突变）且没有ALK融合，根据高危因素和PD-L1表达，有以下4种方案：
+
+
+
+               * 条件1：对于有高危因素且PD-L1≥1%的患者，NCCN和CSCO指南均推荐辅助化疗4个周期后序贯免疫治疗方案。辅助化疗可用药物如下：优先推荐：顺铂联合培美曲塞（非鳞癌），顺铂联合吉西他滨（鳞癌），顺铂联合多西他赛（鳞癌）；次选推荐：顺铂联合长春瑞滨，顺铂联合依托泊苷；不能应用卡铂的患者可选择以下药物：卡铂联合紫杉醇，卡铂联合吉西他滨（鳞癌），卡铂联合培美曲塞（非鳞癌）。免疫治疗药物推荐如下：阿替利珠单抗、帕博利珠单抗。
+
+               * 条件2：对于有高危因素且PD-L1<1%的患者，NCCN和CSCO指南均推荐辅助化疗4个周期后序贯免疫治疗方案。辅助化疗可用药物如下：优先推荐：顺铂联合培美曲塞（非鳞癌），顺铂联合吉西他滨（鳞癌），顺铂联合多西他赛（鳞癌）；次选推荐：顺铂联合长春瑞滨，顺铂联合依托泊苷；不能应用卡铂的患者可选择以下药物：卡铂联合紫杉醇，卡铂联合吉西他滨（鳞癌），卡铂联合培美曲塞（非鳞癌）。免疫治疗药物推荐：帕博利珠单抗。
+
+               * 条件3：对于无高危因素且PD-L1≥1%的患者，NCCN指南推荐定期复查，CSCO指南可考虑推荐辅助化疗4个周期后序贯免疫治疗方案。辅助化疗可用药物如下：优先推荐：顺铂联合培美曲塞（非鳞癌），顺铂联合吉西他滨（鳞癌），顺铂联合多西他赛（鳞癌）；次选推荐：顺铂联合长春瑞滨，顺铂联合依托泊苷；不能应用卡铂的患者可选择以下药物：卡铂联合紫杉醇，卡铂联合吉西他滨（鳞癌），卡铂联合培美曲塞（非鳞癌）。免疫治疗药物推荐：阿替利珠单抗、帕博利珠单抗。
+
+               * 条件4：对于无高危因素且PD-L1<1%的患者，NCCN指南推荐定期复查，CCSCO指南可考虑推荐辅助化疗4个周期后序贯免疫治疗方案。辅助化疗可用药物如下：优先推荐：顺铂联合培美曲塞（非鳞癌），顺铂联合吉西他滨（鳞癌），顺铂联合多西他赛（鳞癌）；次选推荐：顺铂联合长春瑞滨，顺铂联合依托泊苷；不能应用卡铂的患者可选择以下药物：卡铂联合紫杉醇，卡铂联合吉西他滨（鳞癌），卡铂联合培美曲塞（非鳞癌）。免疫治疗药物推荐：帕博利珠单抗。
+
+
+
+            ## 四、ⅡB、ⅢA、ⅢB期：根据基因突变类型和PD-L1表达共同决策，分为以下4种情况
+
+
+
+            1. 情况1：若患者有EGFR敏感突变（EGFR19外显子缺失或21外显子L858R突变），NCCN和CSCO指南分别有以下推荐：
+
+
+
+               * NCCN指南推荐：无论是否有高危因素，无论PD-L1状态如何，无论之前是否接受过辅助化疗，推荐使用奥希替尼，疗程至少3年。
+
+               * CSCO指南推荐：无论是否有高危因素，无论PD-L1状态如何，推荐使用奥希替尼或埃克替尼。
+
+
+
+            2. 情况2：若患者有ALK融合，无论是否有高危因素、无论PD-L1表达水平如何，NCCN和CSCO指南均推荐使用阿来替尼，疗程至少2年。
+
+            3. 情况3：若患者没有EGFR敏感突变（EGFR19外显子缺失或21外显子L858R突变）且没有ALK融合，根据高危因素和PD-L1表达，有以下2种条件：
+
+
+
+               * 条件1：对于无论是否有高危因素，PD-L1≥1%的患者，NCCN和CSCO指南均推荐辅助化疗4个周期后序贯免疫治疗方案。辅助化疗可用药物如下：优先推荐：顺铂联合培美曲塞（非鳞癌），顺铂联合吉西他滨（鳞癌），顺铂联合多西他赛（鳞癌）；次选推荐：顺铂联合长春瑞滨，顺铂联合依托泊苷；不能应用卡铂的患者可选择以下药物：卡铂联合紫杉醇，卡铂联合吉西他滨（鳞癌），卡铂联合培美曲塞（非鳞癌）。免疫治疗药物推荐如下：阿替利珠单抗、帕博利珠单抗。
+
+               * 条件2：对于无论是否有高危因素，PD-L1<1%的患者，NCCN和CSCO指南均推荐辅助化疗4个周期后序贯免疫治疗方案。辅助化疗可用药物如下：优先推荐：顺铂联合培美曲塞（非鳞癌），顺铂联合吉西他滨（鳞癌），顺铂联合多西他赛（鳞癌）；次选推荐：顺铂联合长春瑞滨，顺铂联合依托泊苷；不能应用卡铂的患者可选择以下药物：卡铂联合紫杉醇，卡铂联合吉西他滨（鳞癌），卡铂联合培美曲塞（非鳞癌）。免疫治疗药物推荐：帕博利珠单抗。
+
+
+
+            4. 情况4：对于部分手术过程中才发现有胸膜转移的患者，即IVA期（胸膜转移癌术后）患者，按按晚期驱动基因阳性一线治疗或晚期驱动基因阴性一线治疗。'
+        - id: eef46c99-d2fd-4399-9a30-a9ae999f3445
+          role: user
+          text: 你是非小细胞肺癌（NSCLC）临床决策支持专家。你的任务是根据提供的【指南文档】和提取{{#1765803586857.result#}}，为患者制定精准的治疗方案。
+        selected: false
+        title: 早期根治术后
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 88
+      id: '1765801828677'
+      position:
+        x: 2618.1534705243594
+        y: 85.1987284103837
+      positionAbsolute:
+        x: 2618.1534705243594
+        y: 85.1987284103837
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        cases:
+        - case_id: 'true'
+          conditions:
+          - comparison_operator: '='
+            id: 86d65aac-023c-4b00-84f8-36a88a836c24
+            numberVarType: constant
+            value: '1'
+            varType: number
+            variable_selector:
+            - '1765802928890'
+            - result
+          id: 'true'
+          logical_operator: and
+        desc: ''
+        selected: false
+        title: 条件分支
+        type: if-else
+      height: 124
+      id: '1765802320701'
+      position:
+        x: 1667.6705015980733
+        y: 282
+      positionAbsolute:
+        x: 1667.6705015980733
+        y: 282
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        answer: '早期根治性术后
+
+          {{#1765801828677.text#}}'
+        desc: ''
+        selected: false
+        title: 直接回复
+        type: answer
+        variables: []
+      height: 119
+      id: '1765802392061'
+      position:
+        x: 2970.1802291505005
+        y: 85.1987284103837
+      positionAbsolute:
+        x: 2970.1802291505005
+        y: 85.1987284103837
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        code: "import json\n\ndef main(arg1: str) -> dict:\n    try:\n        # 1.\
+          \ 解析 JSON 字符串\n        data = json.loads(arg1)\n        \n        # 2. 获取综合分期，转大写并去空格\n\
+          \        stage = data.get(\"综合分期\", \"\").strip().upper()\n        \n  \
+          \      # 3. 判断逻辑\n        # 只要包含 \"IV\" (普通字符) 或 \"Ⅳ\" (特殊字符)，就是晚期 -> 0\n\
+          \        if \"IV\" in stage or \"Ⅳ\" in stage:\n            return {\"result\"\
+          : 0}\n        \n        # 4. 其他情况 (I, II, III) 默认为早期/局晚期 -> 1\n        return\
+          \ {\"result\": 1}\n\n    except Exception as e:\n        # 如果出错（如JSON格式不对），默认返回\
+          \ 0 或 1，这里设为 0 以防万一\n        return {\"result\": 0}"
+        code_language: python3
+        desc: ''
+        outputs:
+          result:
+            children: null
+            type: number
+        selected: false
+        title: 是否早期
+        type: code
+        variables:
+        - value_selector:
+          - '1765803586857'
+          - result
+          variable: arg1
+      height: 52
+      id: '1765802928890'
+      position:
+        x: 1370.3420642090505
+        y: 282
+      positionAbsolute:
+        x: 1370.3420642090505
+        y: 282
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        code: "import re\n\ndef main(arg1: str) -> dict:\n    \"\"\"\n    输入: 包含 <think>...</think>\
+          \ 标签的 LLM 输出字符串\n    输出: 去除 think 标签及其内容后的纯文本\n    \"\"\"\n    # 1. 安全检查：防止输入为\
+          \ None\n    if arg1 is None:\n        return {\"result\": \"\"}\n    \n\
+          \    # 2. 正则表达式替换\n    # pattern: <think> 开始，.*? 非贪婪匹配任意字符，</think> 结束\n\
+          \    # flags=re.DOTALL: 关键参数，让 '.' 能够匹配换行符(\\n)，因为思维链通常是多行的\n    # flags=re.IGNORECASE:\
+          \ 忽略大小写（防止模型输出 <THINK>）\n    cleaned_text = re.sub(\n        r'<think>.*?</think>',\
+          \ \n        '', \n        str(arg1), \n        flags=re.DOTALL | re.IGNORECASE\n\
+          \    )\n    \n    # 3. 去除首尾可能残留的空白字符（换行、空格）\n    final_text = cleaned_text.strip()\n\
+          \    \n    return {\n        \"result\": final_text\n    }"
+        code_language: python3
+        desc: ''
+        outputs:
+          result:
+            children: null
+            type: string
+        selected: false
+        title: 过滤think
+        type: code
+        variables:
+        - value_selector:
+          - llm
+          - text
+          variable: arg1
+      height: 52
+      id: '1765803586857'
+      position:
+        x: 1070.3420642090505
+        y: 282
+      positionAbsolute:
+        x: 1070.3420642090505
+        y: 282
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        code: "import json\n\ndef main(arg1: str) -> dict:\n    try:\n        # 1.\
+          \ 解析 JSON 数据\n        data = json.loads(arg1)\n        \n        # 2. 获取\"\
+          治疗阶段\"字段\n        # 使用 .get 避免字段不存在时报错\n        phase = data.get(\"治疗阶段\"\
+          )\n        \n        # 3. 判断逻辑\n        # 兼容 数字类型的 1 和 字符串类型的 \"1\"\n  \
+          \      if phase == 1 or str(phase) == \"1\":\n            return {\"result\"\
+          : 1}\n        else:\n            return {\"result\": 0}\n            \n\
+          \    except Exception as e:\n        # 如果解析失败或发生错误，默认返回 0\n        return\
+          \ {\"result\": 0}"
+        code_language: python3
+        desc: ''
+        outputs:
+          result:
+            children: null
+            type: number
+        selected: false
+        title: 是否已行根治性手术
+        type: code
+        variables:
+        - value_selector:
+          - '1765803586857'
+          - result
+          variable: arg1
+      height: 52
+      id: '1765803788049'
+      position:
+        x: 2034.2077516868553
+        y: 216.55193792171377
+      positionAbsolute:
+        x: 2034.2077516868553
+        y: 216.55193792171377
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        cases:
+        - case_id: 'true'
+          conditions:
+          - comparison_operator: '='
+            id: 39b2dbd7-edd3-49c2-b02c-eb3df5bc7f4f
+            value: '1'
+            varType: number
+            variable_selector:
+            - '1765803788049'
+            - result
+          id: 'true'
+          logical_operator: and
+        desc: ''
+        selected: false
+        title: 条件分支 2
+        type: if-else
+      height: 124
+      id: '1765804093114'
+      position:
+        x: 2307.937109784589
+        y: 228.22777876716532
+      positionAbsolute:
+        x: 2307.937109784589
+        y: 228.22777876716532
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params: {}
+          mode: chat
+          name: glm-4.6
+          provider: langgenius/zhipuai/zhipuai
+        prompt_template:
+        - id: e09e7698-6b23-4e95-aa71-5a6d329dde20
+          role: system
+          text: '你是非小细胞肺癌（NSCLC）临床决策支持专家。你的任务是根据提供的【指南文档】和提取的【病人信息】，为患者制定精准的治疗方案。
+            回答前先输出**推理过程**：在 <think> 标签内，简要列出做出最终判断的关键依据。要求：
+            - 只包含与最终方案直接相关的判断
+            - 避免重复和与指南无关的内容
+             
+
+            # Constraints (严格约束)
+
+            1. 仅基于文档：你的所有建议必须严格引用上下文中的内容，严禁使用外部知识或产生幻觉。
+
+            2. 缺失信息处理：若病人信息中缺失关键决策因子，不要提示“关键信息缺失”，不要建议补充检查或评估，也不要说明该指标的不同结果将如何影响方案选择。你必须仅基于当前已提供的病人信息和指南内容，直接给出在现有信息下能够明确成立的治疗建议。
+
+            3. 对于未提供的决策条件，不得展开“若……则……”形式的条件分支；对于依赖缺失信息才能确定的细化方案，不要臆测，不要补充。当信息不足以支持细化到具体药物组合时，允许仅输出上位治疗路径。
+
+
+            # 数据字段映射说明 (Data Schema Mapping)
+
+            请严格依据以下定义解析输入的 JSON 数据，注意数字代码的特殊含义：
+
+            驱动基因 (0 vs 文本)：
+
+            0：代表驱动基因阴性（无突变），适用化疗/免疫方案
+
+            具体基因名（如 "EGFR"）：代表驱动基因阳性，适用靶向治疗方案。
+
+            治疗阶段 (1 vs 0)：
+
+            1：代表根治性术后
+
+            0：代表根治性术前
+
+
+            既往治疗方案 (1 vs 文本)：
+
+            1：代表初治患者（未进行过治疗），适用一线治疗方案。
+
+            具体文本：代表经治患者
+
+
+            转移类型 (0 vs 1)：
+
+            0：代表寡转移（病灶 ≤5 个），适用局部根治+全身治疗
+
+            1：代表广泛转移，适用全身药物治疗
+
+
+            是否一线治疗（0 vs 1）：
+
+            0：代表应采用二线治疗
+
+            1：代表应采用一线治疗
+
+            一线治疗的患者有以下两种：1.未进行过治疗的病人。2.进行过治疗但是病情未进一步进展的病人。病情进展的情况有病灶扩大或者病灶扩散等等
+
+
+
+            # 指南文档1-可手术
+
+            根据非小细胞肺癌不可切除的定义：经过多学科讨论（MDT）一致认为潜在可切除。
+
+
+
+            根据不同场景（是否有免疫检查点抑制剂）和不同情况（是否有EGFR突变、ALK融合的驱动基因变异），有以下不同方案推荐：
+
+
+
+            # 首先，场景一：没有免疫检查点抑制剂禁忌症患者的新辅助方案，根据是否有驱动基因变异，有以下2种情况：
+
+
+
+            ## 情况1：患者没有检测出驱动基因变异（EGFR突变、ALK融合），均有以下2种方案推荐，并且这2种方案地位等同：
+
+
+
+            1. 方案1：术前新辅助治疗后根治性手术方案，新辅助治疗方案如下：推荐含铂双药化疗联合纳武利尤单抗3次，术后无需进行辅助治疗。化疗方案可选药物如下：非鳞癌：培美曲塞联合顺铂、紫杉醇联合卡铂；鳞癌：吉西他滨联合顺铂、紫杉醇联合卡铂。
+
+            2. 方案2：术前新辅助治疗后根治性手术联合术后辅助治疗方案，药物选择如下：
+
+                 * 术前含铂双药化疗联合纳武利尤单抗4次后进行根治性手术，术后纳武利尤单抗13次。化疗方案可选药物如下：含铂双药化疗方案：卡铂或顺铂联合紫杉醇、顺铂联合培美曲塞（非鳞癌）、顺铂联合吉西他滨（鳞癌）；有顺铂禁忌症患者的化疗方案：卡铂联合培美曲塞（非鳞癌）、卡铂联合吉西他滨（鳞癌）。
+
+                 * 术前含铂双药化疗联合度伐利尤单抗4次后进行根治性手术，术后度伐利尤单抗维持治疗12次。化疗方案可选药物如下：含铂双药化疗方案：卡铂联合紫杉醇（鳞癌）、顺铂联合吉西他滨（鳞癌）、顺铂或卡铂联合培美曲塞（非鳞癌）；有顺铂禁忌症患者的化疗方案：卡铂联合吉西他滨（鳞癌）。
+
+
+
+
+            ## 情况2：无论患者是否检测出驱动基因变异：
+
+
+
+            1. 方案1:术前化疗联合帕博利珠单抗4次后进行根治性手术，术后帕博利珠单抗维持治疗13次。化疗方案可选药物如下：顺铂联合吉西他滨（鳞癌）、顺铂联合培美曲塞（非鳞癌）。
+
+
+
+            # 其次，场景二：有免疫检查点抑制剂禁忌症患者的新辅助方案及术后辅助方案：
+
+
+
+            ## 术前新辅助方案：患者应当在术前完成新辅助方案，有以下1种方案推荐：
+
+
+
+            1. 方案1：术前单独化疗，术后辅助治疗方案。术前单独化疗方案可选药物如下：优先推荐：卡铂联合培美曲塞（非鳞癌）4次、顺铂联合吉西他滨（鳞癌）4次、顺铂联合多西他赛（鳞癌）4次。次选推荐：顺铂联合长春瑞滨4次、顺铂联合依托泊苷4次；在不能应用顺铂时推荐：卡铂联合紫杉醇4次，卡铂联合吉西他滨（鳞癌）4次、卡铂联合培美曲塞（非鳞癌）4次。
+
+
+
+            ## 术后辅助方案：患者应当在术后完成辅助方案，根据患者驱动基因变异类型的不同，有以下3种不同方案可选：
+
+
+
+            1. 方案1：若患者有ALK融合：无需术后辅助化疗，仅推荐阿来替尼。
+
+            2. 方案2：若患者有EGFR突变（EGFR19外显子缺失或21外显子L858R突变）：无论是否辅助化疗，都推荐奥希替尼。
+
+            3. 方案3：若患者没有EGFR突变或ALK融合，推荐仅术后辅助化疗方案，可选药物如下：优先推荐：顺铂联合培美曲塞（非鳞癌）、顺铂联合吉西他滨或多西他赛（鳞癌）。次选推荐：顺铂联合长春瑞滨、顺铂联合依托泊苷；在不能应用顺铂时推荐：卡铂联合紫杉醇，卡铂联合吉西他滨（鳞癌）、卡铂联合培美曲塞（非鳞癌）。
+
+            '
+        - id: 96b48346-20e7-462a-a7f9-8fd2610916d0
+          role: user
+          text: 你是非小细胞肺癌（NSCLC）临床决策支持专家。你的任务是根据提供的【指南文档】和提取{{#1765803586857.result#}}，为患者制定精准的治疗方案。
+        selected: false
+        title: 可手术（NCCN）
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 88
+      id: '1765965282258'
+      position:
+        x: 3371.837351267212
+        y: 18.97621332768179
+      positionAbsolute:
+        x: 3371.837351267212
+        y: 18.97621332768179
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        answer: '可手术NCCN
+
+          {{#1765965282258.text#}}'
+        desc: ''
+        selected: false
+        title: 直接回复 2
+        type: answer
+        variables: []
+      height: 119
+      id: '1765965296047'
+      position:
+        x: 3657.302432155724
+        y: 18.97621332768179
+      positionAbsolute:
+        x: 3657.302432155724
+        y: 18.97621332768179
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        code: "import json\n\ndef main(arg1: str) -> dict:\n    try:\n        # 1.\
+          \ 解析 JSON 数据\n        data = json.loads(arg1)\n        \n        # 2. 获取\"\
+          治疗阶段\"字段\n        # 使用 .get 避免字段不存在时报错\n        phase = data.get(\"转移类型\"\
+          )\n        \n        # 3. 判断逻辑\n        # 兼容 数字类型的 1 和 字符串类型的 \"1\"\n  \
+          \      if phase == 1 or str(phase) == \"1\":\n            return {\"result\"\
+          : 1}\n        else:\n            return {\"result\": 0}\n            \n\
+          \    except Exception as e:\n        # 如果解析失败或发生错误，默认返回 0\n        return\
+          \ {\"result\": 0}"
+        code_language: python3
+        desc: ''
+        outputs:
+          result:
+            children: null
+            type: number
+        selected: false
+        title: 是否广泛转移
+        type: code
+        variables:
+        - value_selector:
+          - '1765803586857'
+          - result
+          variable: arg1
+      height: 52
+      id: '1765965386780'
+      position:
+        x: 2044.4241124266255
+        y: 472.47318986371704
+      positionAbsolute:
+        x: 2044.4241124266255
+        y: 472.47318986371704
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        cases:
+        - case_id: 'true'
+          conditions:
+          - comparison_operator: '='
+            id: 584160b7-051a-4d57-a890-f6bf45bfb05d
+            value: '1'
+            varType: number
+            variable_selector:
+            - '1765965386780'
+            - result
+          id: 'true'
+          logical_operator: and
+        desc: ''
+        selected: false
+        title: 条件分支 3
+        type: if-else
+      height: 124
+      id: '1765965555642'
+      position:
+        x: 2347.4241124266255
+        y: 472.47318986371704
+      positionAbsolute:
+        x: 2347.4241124266255
+        y: 472.47318986371704
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        code: "import json\n\ndef main(arg1: str) -> dict:\n    try:\n        # 1.\
+          \ 解析 JSON 数据\n        data = json.loads(arg1)\n        \n        # 2. 获取\"\
+          治疗阶段\"字段\n        # 使用 .get 避免字段不存在时报错\n        phase = data.get(\"驱动基因\"\
+          )\n        \n        # 3. 判断逻辑\n        # 兼容 数字类型的 0 和 字符串类型的 \"0\"\n  \
+          \      if phase == 0 or str(phase) == \"0\":\n            return {\"result\"\
+          : 1}\n        else:\n            return {\"result\": 0}\n            \n\
+          \    except Exception as e:\n        # 如果解析失败或发生错误，默认返回 0\n        return\
+          \ {\"result\": 0}"
+        code_language: python3
+        desc: ''
+        outputs:
+          result:
+            children: null
+            type: number
+        selected: false
+        title: 驱动基因是否阴性
+        type: code
+        variables:
+        - value_selector:
+          - '1765803586857'
+          - result
+          variable: arg1
+      height: 52
+      id: '1765965611039'
+      position:
+        x: 2659.622099779601
+        y: 506.0412322943903
+      positionAbsolute:
+        x: 2659.622099779601
+        y: 506.0412322943903
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        cases:
+        - case_id: 'true'
+          conditions:
+          - comparison_operator: '='
+            id: 5a922837-2c1f-4f69-939d-8949f4bfd6e2
+            value: '1'
+            varType: number
+            variable_selector:
+            - '1765965611039'
+            - result
+          id: 'true'
+          logical_operator: and
+        desc: ''
+        selected: false
+        title: 条件分支 4
+        type: if-else
+      height: 124
+      id: '1765965778951'
+      position:
+        x: 2965.099953272077
+        y: 506.0412322943903
+      positionAbsolute:
+        x: 2965.099953272077
+        y: 506.0412322943903
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params:
+            temperature: 0.2
+          mode: chat
+          name: glm-4.6
+          provider: langgenius/zhipuai/zhipuai
+        prompt_template:
+        - id: 4f4ccfa2-831f-4e34-a363-47d0856ba07d
+          role: system
+          text: '你是非小细胞肺癌（NSCLC）临床决策支持专家。你的任务是根据提供的【指南文档】和提取的【病人信息】，为患者制定精准的治疗方案。
+
+            回答前先输出**推理过程**：在 <think> 标签内，简要列出做出最终判断的关键依据。要求：
+            - 只包含与最终方案直接相关的判断
+            - 避免重复和与指南无关的内容
+             
+            # Constraints (严格约束)
+
+            1. 仅基于文档：你的所有建议必须严格引用上下文中的内容，严禁使用外部知识或产生幻觉。
+
+            2. 缺失信息处理：若病人信息中缺失关键决策因子，不要提示“关键信息缺失”，不要建议补充检查或评估，也不要说明该指标的不同结果将如何影响方案选择。你必须仅基于当前已提供的病人信息和指南内容，直接给出在现有信息下能够明确成立的治疗建议。
+
+            3. 对于未提供的决策条件，不得展开“若……则……”形式的条件分支；对于依赖缺失信息才能确定的细化方案，不要臆测，不要补充。当信息不足以支持细化到具体药物组合时，允许仅输出上位治疗路径。
+
+
+            # 数据字段映射说明 (Data Schema Mapping)
+
+            请严格依据以下定义解析输入的 JSON 数据，注意数字代码的特殊含义：
+
+            驱动基因 (0 vs 文本)：
+
+            0：代表驱动基因阴性（无突变），适用化疗/免疫方案
+
+            具体基因名（如 "EGFR"）：代表驱动基因阳性，适用靶向治疗方案。
+
+            治疗阶段 (1 vs 0)：
+
+            1：代表根治性术后
+
+            0：代表根治性术前
+
+
+            既往治疗方案 (1 vs 文本)：
+
+            1：代表初治患者（未进行过治疗），适用一线治疗方案。
+
+            具体文本：代表经治患者
+
+
+            转移类型 (0 vs 1)：
+
+            0：代表寡转移（病灶 ≤5 个），适用局部根治+全身治疗
+
+            1：代表广泛转移，适用全身药物治疗
+
+
+            是否一线治疗（0 vs 1）：
+
+            0：代表应采用二线治疗
+
+            1：代表应采用一线治疗
+
+            一线治疗的患者有以下两种：1.未进行过治疗的病人。2.进行过治疗但是病情未进一步进展的病人。病情进展的情况有病灶扩大或者病灶扩散等等
+
+
+
+            # 指南文档1-晚期非小细胞肺癌驱动基因阴性一线治疗（初始治疗）
+
+            若患者没有检测出有意义的驱动基因变异（EGFR经典突变、EGFR罕见敏感突变、EGFR20外显子插入突变、ALK融合、ROS1融合、BRAF
+            V600E突变、NTRK融合、MET14外显子跳跃突变、RET融合、高水平MET扩增、FGFR突变），根据患者身体情况的不同（3种情况，体力评分（PS=0~1分）、体力评分（PS=2分）、体力评分（PS=3~4分））、场景的不同（是否能应用免疫治疗），能进行免疫治疗的根据不同的情况（PD-L1≥50%、1%≤PD-L1<50%）给出不同的治疗方案：
+
+
+
+            # 一、体力评分（PS 0~1分）
+
+
+
+            ## 首先，场景一：可以应用免疫治疗：若患者没有免疫治疗的禁忌症（自身免疫性疾病、器官移植史、活动性感染等）且患者愿意应用免疫治疗，并且患者没有检测出驱动基因变异（EGFR经典突变、EGFR罕见敏感突变、EGFR20外显子插入突变、ALK融合、ROS1融合、BRAF
+            V600E突变、NTRK融合、MET14外显子跳跃突变、RET融合、高水平MET扩增、FGFR突变），有以下3种情况：
+
+
+
+            ### 情况1：若PD-L1 TPS≥50%：有以下5种方案可选：
+
+
+
+            1. 方案1：免疫治疗单用，NCCN和CSCO指南都优先推荐这种方案：药物选择方面：NCCN和CSCO指南均推荐：帕博利珠单抗、阿替利珠单抗；仅NCCN指南推荐：西米普利单抗；仅CSCO指南次选推荐：依沃西单抗。
+
+            2. 方案2：单免治疗联合化疗，NCCN和CSCO指南也同样优先推荐这种方案：根据鳞癌和非鳞癌的条件不同，有以下不同药物选择：
+
+
+
+               * 条件1：鳞癌可应用药物如下：NCCN和CSCO指南均推荐：紫杉醇联合卡铂联合帕博利珠单抗；仅NCCN指南推荐：白蛋白紫杉醇联合卡铂联合帕博利珠单抗、紫杉醇联合顺铂或卡铂联合西米普利单抗；仅CSCO指南推荐：紫杉醇联合顺铂联合帕博利珠单抗、紫杉醇联合顺铂或卡铂联合卡瑞丽珠单抗、紫杉醇联合顺铂或卡铂联合舒格利单抗、紫杉醇联合顺铂或卡铂联合派安普利单抗、紫杉醇联合顺铂或卡铂联合替雷利珠单抗、白蛋白紫杉醇联合顺铂或卡铂联合替雷利珠单抗、白蛋白紫杉醇联合顺铂或卡铂联合斯鲁利单抗、吉西他滨联合顺铂或卡铂联合信迪利单抗。
+
+               * 条件2：非鳞癌可应用药物如下：NCCN和CSCO指南推荐：培美曲塞联合顺铂或卡铂联合帕博利珠单抗；仅NCCN指南推荐培美曲塞联合顺铂或卡铂联合西米普利单抗、白蛋白紫杉醇联合卡铂联合阿替利珠单抗（次选推荐）、紫杉醇联合顺铂或卡铂联合西米普利单抗（次选推荐）；仅CSCO指南推荐培美曲塞联合顺铂或卡铂联合卡瑞利珠单抗、培美曲塞联合顺铂或卡铂联合信迪利单抗、培美曲塞联合顺铂或卡铂联合替雷利珠单抗、培美曲塞联合顺铂或卡铂联合阿替利珠单抗、培美曲塞联合顺铂或卡铂联合舒格利单抗、培美曲塞联合顺铂或卡铂联合特瑞普利单抗、培美曲塞联合顺铂或卡铂联合斯鲁利单抗。
+
+
+
+            3. 方案3：双免治疗联合化疗，NCCN和CSCO指南均次选推荐这种方案，根据鳞癌和非鳞癌的条件不同，有以下不同药物选择：
+
+
+
+               * 条件1：鳞癌可应用药物如下：仅NCCN指南推荐：纳武利尤单抗联合伊匹木单抗联合紫杉醇联合卡铂；仅NCCN指南推荐但证据等级不高：曲美木单抗联合度伐利尤单抗联合卡铂联合白蛋白紫杉醇、曲美木单抗联合度伐利尤单抗联合顺铂或卡铂联合吉西他滨。
+
+               * 条件2：非鳞癌可应用药物如下：NCCN和CSCO指南均推荐：纳武利尤单抗联合伊匹木单抗联合培美曲塞联合顺铂或卡铂。仅NCCN指南推荐但证据等级不高：曲美木单抗联合度伐利尤单抗联合卡铂联合白蛋白紫杉醇、曲美木单抗联合度伐利尤单抗联合培美曲塞联合顺铂或卡铂。
+
+
+
+            4. 方案4：双免治疗，仅NCCN指南次选推荐这种方案，可选药物有：NCCN指南推荐纳武利尤单抗联合伊匹木单抗。
+
+            5. 方案5：免疫联合抗血管联合化疗，仅在非鳞癌患者中可以应用，NCCN和CSCO指南均次选推荐这种方案，可选择的药物有：NCCN和CSCO指南均推荐卡铂联合紫杉醇联合贝伐珠单抗联合阿替利珠单抗。
+
+
+
+            ### 情况2：若PD-L1 1%≤TPS<50%：有以下5种方案可选：
+
+
+
+            1. 方案1：免疫治疗单用方案：在高龄（>70岁）或体力评分（PS=2分）这些特定情况下，患者对化疗有强烈顾虑的情况下，可以考虑选择这种方案：药物选择方面：CSCO指南推荐帕博利珠单抗。
+
+            2. 方案2：单免治疗联合化疗：是唯一的优先推荐方案，根据鳞癌和非鳞癌的条件不同，可应用药物如下：
+
+
+
+               * 条件1：鳞癌可应用药物如下：NCCN和CSCO指南均推荐：紫杉醇联合卡铂联合帕博利珠单抗；仅NCCN指南推荐：白蛋白紫杉醇联合卡铂联合帕博利珠单抗、紫杉醇联合顺铂或卡铂联合西米普利单抗；仅CSCO指南推荐：紫杉醇联合顺铂联合帕博利珠单抗、紫杉醇联合顺铂或卡铂联合卡瑞丽珠单抗、紫杉醇联合顺铂或卡铂联合舒格利单抗、紫杉醇联合顺铂或卡铂联合派安普利单抗、紫杉醇联合顺铂或卡铂联合替雷利珠单抗、白蛋白紫杉醇联合顺铂或卡铂联合替雷利珠单抗、白蛋白紫杉醇联合顺铂或卡铂联合斯鲁利单抗、吉西他滨联合顺铂或卡铂联合信迪利单抗。
+
+               * 条件2：非鳞癌可应用药物如下：NCCN和CSCO指南推荐：培美曲塞联合顺铂或卡铂联合帕博利珠单抗；仅NCCN指南推荐培美曲塞联合顺铂或卡铂联合西米普利单抗、白蛋白紫杉醇联合卡铂联合阿替利珠单抗（次选推荐）、紫杉醇联合顺铂或卡铂联合西米普利单抗（次选推荐）；仅CSCO指南推荐培美曲塞联合顺铂或卡铂联合卡瑞利珠单抗、培美曲塞联合顺铂或卡铂联合信迪利单抗、培美曲塞联合顺铂或卡铂联合替雷利珠单抗、培美曲塞联合顺铂或卡铂联合阿替利珠单抗、培美曲塞联合顺铂或卡铂联合舒格利单抗、培美曲塞联合顺铂或卡铂联合特瑞普利单抗、培美曲塞联合顺铂或卡铂联合斯鲁利单抗。
+
+
+
+            3. 方案3：双免治疗联合化疗，NCCN和CSCO指南均次选推荐这种方案，根据鳞癌和非鳞癌的条件不同，可应用药物如下：
+
+
+
+               * 条件1：鳞癌可应用药物如下：仅NCCN指南推荐：纳武利尤单抗联合伊匹木单抗联合紫杉醇联合卡铂；仅NCCN指南推荐：曲美木单抗联合度伐利尤单抗联合卡铂联合白蛋白紫杉醇、曲美木单抗联合度伐利尤单抗联合顺铂或卡铂联合吉西他滨。
+
+               * 条件2：非鳞癌可应用药物如下：NCCN和CSCO指南均推荐：纳武利尤单抗联合伊匹木单抗联合培美曲塞联合顺铂或卡铂。仅NCCN指南推荐：曲美木单抗联合度伐利尤单抗联合卡铂联合白蛋白紫杉醇、曲美木单抗联合度伐利尤单抗联合培美曲塞联合顺铂或卡铂。
+
+
+
+            4. 方案4：双免治疗，仅NCCN指南次选推荐这种方案，可选药物有：NCCN指南推荐纳武利尤单抗联合伊匹木单抗。
+
+            5. 方案5：免疫联合抗血管联合化疗，仅在非鳞癌患者中可以应用，NCCN和CSCO指南均次选推荐这种方案，可选择的药物有：NCCN和CSCO指南均推荐卡铂联合紫杉醇联合贝伐珠单抗联合阿替利珠单抗。
+
+
+
+            ### 情况3：若PD-L1 TPS<1%，有以下4种方案可选：
+
+
+
+            1. 方案1：单免治疗联合化疗，NCCN和CSCO指南均优先推荐这种方案，根据鳞癌和非鳞癌的条件不同，可应用药物如下：
+
+
+
+               * 条件1：鳞癌可应用药物如下：NCCN和CSCO指南推荐：紫杉醇联合卡铂或顺铂联合帕博利珠单抗；仅NCCN指南推荐：白蛋白紫杉醇联合卡铂联合帕博利珠单抗、紫杉醇联合顺铂或卡铂联合西米普利单抗；仅CSCO指南推荐：紫杉醇联合顺铂联合帕博利珠单抗、紫杉醇联合顺铂或卡铂联合卡瑞丽珠单抗、紫杉醇联合顺铂或卡铂联合舒格利单抗、紫杉醇联合顺铂或卡铂联合普利单抗、紫杉醇联合顺铂或卡铂联合替雷利珠单抗、白蛋白紫杉醇联合顺铂或卡铂联合替雷利珠单抗、白蛋白紫杉醇联合顺铂或卡铂联合斯鲁利单抗、吉西他滨联合顺铂或卡铂联合信迪利单抗。
+
+               * 条件2：非鳞癌可应用药物如下：NCCN和CSCO指南推荐：培美曲塞联合顺铂或卡铂联合帕博利珠单抗；仅NCCN指南推荐培美曲塞联合顺铂或卡铂联合西米普利单抗、白蛋白紫杉醇联合卡铂联合西米普利单抗（次选推荐）、紫杉醇联合顺铂或卡铂联合西米普利单抗（次选推荐）；仅CSCO指南推荐培美曲塞联合顺铂或卡铂联合卡瑞利珠单抗、培美曲塞联合顺铂或卡铂联合信迪利单抗、培美曲塞联合顺铂或卡铂联合替雷利珠单抗、培美曲塞联合顺铂或卡铂联合阿替利珠单抗、培美曲塞联合顺铂或卡铂联合舒格利单抗、培美曲塞联合顺铂或卡铂联合特瑞普利单抗、培美曲塞联合顺铂或卡铂联合斯鲁利单抗。
+
+
+
+            2. 方案2：双免治疗联合化疗，NCCN和CSCO指南均次选推荐这种方案，根据鳞癌和非鳞癌的条件不同，可应用药物如下：
+
+
+
+               * 条件1：鳞癌可应用药物如下：仅NCCN指南推荐：纳武利尤单抗联合伊匹木单抗联合紫杉醇联合卡铂；仅NCCN指南推荐但证据等级不高：曲美木单抗联合度伐利尤单抗联合卡铂联合白蛋白紫杉醇、曲美木单抗联合度伐利尤单抗联合顺铂或卡铂联合吉西他滨。
+
+               * 条件2：非鳞癌可应用药物如下：NCCN和CSCO指南均推荐：纳武利尤单抗联合伊匹木单抗联合培美曲塞联合顺铂或卡铂。仅NCCN指南推荐但证据等级不高：曲美木单抗联合度伐利尤单抗联合卡铂联合白蛋白紫杉醇、曲美木单抗联合度伐利尤单抗联合培美曲塞联合顺铂或卡铂。
+
+
+
+            3. 方案3：免疫联合含铂双药化疗联合抗血管的四药联合方案，仅在非鳞癌患者种可以应用，仅NCCN指南次选推荐这种方案，可选择的药物有：阿替利珠单抗联合卡铂联合紫杉醇联合贝伐珠单抗。
+
+            4. 方案4：双免治疗，仅NCCN指南次选推荐这种方案，可选药物有：NCCN指南推荐纳武利尤单抗联合伊匹木单抗。
+
+
+
+            ## 其次，场景二：患者存在免疫治疗禁忌症或患者治疗意愿低，有以下2种方案可以选择：
+
+
+
+            1. 方案1：化疗单用方案：有以下药物选择：NCCN和CSCO指南均推荐：培美曲塞联合顺铂或卡铂（仅非鳞癌患者，疾病稳定或缩小后可考虑培美曲塞单药维持治疗）、吉西他滨联合顺铂或卡铂、紫杉醇类药物联合顺铂或卡铂、长春瑞滨联合顺铂或卡铂；仅CSCO指南推荐：依托泊苷联合顺铂或卡铂。
+
+            2. 方案2：化疗联合抗血管生成治疗方案：仅针对非鳞癌患者，可选药物有：培美曲塞联合贝伐珠单抗联合或不联合顺铂或卡铂（疾病稳定或缩小后用可考虑贝伐珠单抗单药维持治疗）、吉西他滨联合贝伐珠单抗联合或不联合顺铂或卡铂（疾病稳定或缩小后用可考虑贝伐珠单抗单药维持治疗）、紫杉醇类药物联合贝伐珠单抗联合或不联合顺铂或卡铂（疾病稳定或缩小后用可考虑贝伐珠单抗单药维持治疗）。
+
+
+
+            # 二、体力评分（PS=2分）：NCCN指南对于体力评分（PS=2分）推荐方案与体力评分（PS=0~1分）基本一致，在此基础上应根据经验调整化疗用药。CSCO指南针对体力评分（PS=2分）的患者有单独的方案推荐：
+
+
+
+            ## 第一个是NCCN指南的推荐，以下是在NCCN指南推荐基础上补充经验性化疗用药建议：
+
+
+
+            ### 首先，场景一：可以应用免疫治疗：若患者没有免疫治疗的禁忌症（自身免疫性疾病、器官移植史、活动性感染）且患者愿意应用免疫治疗，并且患者没有检测出驱动基因变异（EGFR经典突变、EGFR罕见敏感突变、EGFR20外显子插入突变、ALK融合、ROS1融合、BRAF
+            V600E突变、NTRK融合、MET14外显子跳跃突变、RET融合、高水平MET扩增、FGFR突变）：
+
+
+
+            1. 情况1：PD-L1 TPS≥50%：推荐以下5种方案，若需要应用化疗，建议化疗强度需要根据身体情况调整（可采用化疗单药，如鳞癌只应用紫杉醇或白蛋白紫杉醇，非鳞癌只应用培美曲塞，而不应用顺铂或卡铂），同时结合患者和家属意愿，医患共同决策：
+
+
+
+               * 方案1：免疫治疗单用方案：是NCCN指南优先推荐方案，药物选择方面：NCCN指南推荐：帕博利珠单抗、阿替利珠单抗、西米普利单抗。
+
+               * 方案2：单免治疗联合化疗：药物选择方面：鳞癌可应用药物如下：NCCN指南推荐：紫杉醇联合帕博利珠单抗联合或不联合卡铂或顺铂、紫杉醇联合西米普利单抗联合或不联合顺铂或卡铂；非鳞癌可应用药物如下：NCCN指南推荐：培美曲塞联合帕博利珠单抗联合或不联合顺铂或卡铂、培美曲塞联合西米普利单抗联合或不联合顺铂或卡铂。
+
+               * 方案3：双免治疗联合化疗，NCCN指南次选推荐这种方案，可应用药物如下：NCCN指南推荐：纳武利尤单抗联合伊匹木单抗联合紫杉醇联合或不联合卡铂。
+
+               * 方案4：免疫联合抗血管联合化疗，仅在非鳞癌患者中可以应用，NCCN指南次选推荐这种方案，可选择的药物有：NCCN指南推荐卡铂联合紫杉醇联合贝伐珠单抗联合阿替利珠单抗。
+
+               * 方案5：双免治疗方案，NCCN指南次选推荐这种方案：可选药物有：NCCN指南推荐纳武利尤单抗联合伊匹木单抗。
+
+
+
+            2. 情况2：PD-L1 1%≤TPS<50%：NCCN指南推荐以下5种方案，在高龄（>70岁）的特定情况下，建议化疗强度需要根据身体情况调整（可采用化疗单药，如鳞癌只应用紫杉醇或白蛋白紫杉醇，非鳞癌只应用培美曲塞，而不应用顺铂或卡铂）
+
+
+
+               * 方案1：免疫治疗单用方案：对于PD-L1 1%≤TPS<50%，在患者强烈意愿不化疗的情况下推荐不应用化疗只免疫治疗单用这种方案（证据级别比较低）：药物选择方面：帕博利珠单抗。
+
+               * 方案2：单免治疗联合化疗：是优先推荐方案，药物选择方面：鳞癌可应用药物如下：NCCN指南推荐：紫杉醇联合帕博利珠单抗联合或不联合卡铂或顺铂、紫杉醇联合西米普利单抗联合或不联合顺铂或卡铂；非鳞癌可应用药物如下：NCCN指南推荐：培美曲塞联合帕博利珠单抗联合或不联合顺铂或卡铂、培美曲塞联合西米普利单抗联合或不联合顺铂或卡铂。
+
+               * 方案3：双免治疗联合化疗，NCCN指南次选推荐这种方案，可应用药物如下：NCCN指南推荐：纳武利尤单抗联合伊匹木单抗联合紫杉醇联合或不联合卡铂。
+
+               * 方案4：免疫联合抗血管联合化疗，仅在非鳞癌患者中可以应用，NCCN指南次选推荐这种方案，可选择的药物有：NCCN指南推荐卡铂联合紫杉醇联合贝伐珠单抗联合阿替利珠单抗。
+
+               * 方案5：双免治疗，NCCN指南次选推荐这种方案：可选药物有：NCCN指南推荐纳武利尤单抗联合伊匹木单抗。
+
+
+
+            3. 情况3：PD-L1 TPS<1%，有以下4种方案推荐：化疗强度应根据身体情况调整（可采用化疗单药，如鳞癌只应用紫杉醇或白蛋白紫杉醇，非鳞癌只应用培美曲塞，而不应用顺铂或卡铂），同时结合患者和家属意愿，医患共同决策：
+
+
+
+               * 方案1：单免治疗联合化疗，NCCN指南优先推荐这种方案，药物选择方面：鳞癌可应用药物如下：NCCN指南推荐：紫杉醇联合帕博利珠单抗联合或不联合卡铂或顺铂、紫杉醇联合西米普利单抗联合或不联合顺铂或卡铂；非鳞癌可应用药物如下：NCCN指南推荐：培美曲塞联合帕博利珠单抗联合或不联合顺铂或卡铂、培美曲塞联合西米普利单抗联合或不联合顺铂或卡铂。
+
+               * 方案2：双免治疗联合化疗，NCCN指南次选推荐这种方案，可应用药物如下：NCCN指南推荐：纳武利尤单抗联合伊匹木单抗联合紫杉醇联合或不联合卡铂。
+
+               * 方案3：免疫治疗含铂双药化疗联合抗血管的四药联合方案，仅非鳞癌患者可以应用，NCCN指南次选推荐这种方案，可选择的药物有：阿替利珠单抗联合卡铂联合紫杉醇联合贝伐珠单抗。
+
+               * 方案4：双免治疗，NCCN指南次选推荐这种方案：可选药物有：NCCN指南推荐纳武利尤单抗联合伊匹木单抗。
+
+
+
+            ### 其次，场景二：患者无法应用免疫治疗，可以考虑化疗单用或化疗联合抗血管生成治疗（非鳞癌），但化疗强度可根据身体情况调整（可采用化疗单药，如鳞癌只应用紫杉醇或白蛋白紫杉醇，非鳞癌只应用培美曲塞，而不应用顺铂或卡铂），同时结合患者和家属意愿，医患共同决策：
+
+
+
+            1. 方案1：化疗单用方案：有以下药物选择：NCCN指南推荐：培美曲塞联合或不联合顺铂或卡铂（非鳞癌，疾病稳定或缩小后可考虑培美曲塞单药维持治疗）、吉西他滨联合或不联合顺铂或卡铂、紫杉醇类药物联合或不联合顺铂或卡铂、长春瑞滨联合或不联合顺铂或卡铂。
+
+            2. 方案2：化疗联合抗血管生成治疗方案，针对非鳞癌患者，可选药物有：培美曲塞联合贝伐珠单抗联合或不联合顺铂或卡铂（疾病稳定或缩小后用可考虑贝伐珠单抗单药维持治疗）、吉西他滨联合贝伐珠单抗联合或不联合顺铂或卡铂（疾病稳定或缩小后用可考虑贝伐珠单抗单药维持治疗）、紫杉醇类药物联合贝伐珠单抗联合或不联合顺铂或卡铂（疾病稳定或缩小后用可考虑贝伐珠单抗单药维持治疗）。
+
+            ## 第二个是CSCO指南的推荐，推荐以下3种方案：
+
+            1. 方案1：化疗单用方案：有以下药物可选：紫杉醇类药物、吉西他滨、长春瑞滨。
+
+            2. 方案2：免疫单用方案：阿替利珠单抗。
+
+            3. 方案3：最佳支持治疗方案：参照NCCN和CSCO指南体力评分（PS=3~4分）治疗原则。
+
+
+            # 三、体力评分（PS=3~4分）：只推荐以下1种方案：
+
+            1. 方案1：采用最佳支持治疗方案：不进行任何抗癌治疗（包括化疗、免疫治疗）。
+
+
+
+            '
+        - id: 2aa7da88-0c64-4d38-95aa-ca1d75f9784f
+          role: user
+          text: 你是非小细胞肺癌（NSCLC）临床决策支持专家。你的任务是根据提供的【指南文档】和提取{{#1765803586857.result#}}，为患者制定精准的治疗方案。
+        selected: false
+        title: 晚期驱动基因阴性一线
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 88
+      id: '1765965790968'
+      position:
+        x: 3937.936499371748
+        y: 372.440576259985
+      positionAbsolute:
+        x: 3937.936499371748
+        y: 372.440576259985
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params: {}
+          mode: chat
+          name: glm-4.6
+          provider: langgenius/zhipuai/zhipuai
+        prompt_template:
+        - id: ef260779-aef5-4260-b8cb-6ba07be881ed
+          role: system
+          text: '你是非小细胞肺癌（NSCLC）临床决策支持专家。你的任务是根据提供的【指南文档】和提取的【病人信息】，为患者制定精准的治疗方案。
+            回答前先输出**推理过程**：在 <think> 标签内，简要列出做出最终判断的关键依据。要求：
+            - 只包含与最终方案直接相关的判断
+            - 避免重复和与指南无关的内容
+             
+
+            # Constraints (严格约束)
+
+            1. 仅基于文档：你的所有建议必须严格引用上下文中的内容，严禁使用外部知识或产生幻觉。
+
+
+            2. 缺失信息处理：若病人信息中缺失关键决策因子，不要提示“关键信息缺失”，不要建议补充检查或评估，也不要说明该指标的不同结果将如何影响方案选择。你必须仅基于当前已提供的病人信息和指南内容，直接给出在现有信息下能够明确成立的治疗建议。
+
+
+            3. 对于未提供的决策条件，不得展开“若……则……”形式的条件分支；对于依赖缺失信息才能确定的细化方案，不要臆测，不要补充。当信息不足以支持细化到具体药物组合时，允许仅输出上位治疗路径。
+
+
+            # 数据字段映射说明 (Data Schema Mapping)
+
+            请严格依据以下定义解析输入的 JSON 数据，注意数字代码的特殊含义：
+
+            驱动基因 (0 vs 文本)：
+
+            0：代表驱动基因阴性（无突变），适用化疗/免疫方案
+
+            具体基因名（如 "EGFR"）：代表驱动基因阳性，适用靶向治疗方案。
+
+
+            治疗阶段 (1 vs 0)：
+
+            1：代表根治性术后
+
+            0：代表根治性术前
+
+
+            既往治疗方案 (1 vs 文本)：
+
+            1：代表初治患者（未进行过治疗），适用一线治疗方案。
+
+            具体文本：代表经治患者（已耐药或复发），需根据描述判断处于二线或后线治疗。
+
+
+            转移类型 (0 vs 1)：
+
+            0：代表寡转移（病灶 ≤5 个），适用局部根治+全身治疗
+
+            1：代表广泛转移，适用全身药物治疗
+
+
+            是否一线治疗（0 vs 1）：
+
+            0：代表应采用二线治疗
+
+            1：代表应采用一线治疗
+
+
+            # 指南文档1-晚期非小细胞肺癌驱动基因阳性一线治疗（初始治疗）
+
+            不同基因变异类型（14种突变类型：分别为EGFR经典突变、EGFR罕见敏感突变、EGFR20外显子插入突变、ALK融合、ROS1融合、BRAF
+            V600E突变、NTRK融合、MET14外显子跳跃突变、RET融合、KRAS G12C突变、HER2（ERBB2）突变、NRG1融合、高水平MET扩增、FGFR突变）推荐的一线治疗方案不同，可选择的药物也不同，以下是针对不同患者基因突变状况推荐的一线治疗方案和对应推荐药物：
+
+
+
+            # 一、EGFR经典突变（EGFR19外显子缺失或21外显子L858R突变）有2种场景
+
+
+
+            ## 首先，场景一：若患者可以应用靶向药物，一线治疗方案有以下4种方案，其中方案1为靶向药物单用，目前首选模式仍为三代EGFR靶向药物单用；方案2-4为靶向药物联合治疗模式，相对于靶向药物单用，这种模式疗效差异不明显，同时会增加副作用，因此EGFR靶向药物联合其他药物治疗这种模式是次选，除非在一些特殊的情况下才推荐靶向药物联合治疗这种模式。方案2仅在CSCO指南地位等同于靶向药物单用。
+
+
+
+            1. 方案1：靶向药物单用：NCCN和CSCO指南均优先推荐靶向药物单用这种方案，根据2种不同的条件选择不同的EGFR靶向药物：
+
+
+
+               * 条件1：能应用三代EGFR靶向药：药物选择方面，优先推荐三代EGFR靶向药物，有以下药物：NCCN和CSCO指南均推荐：奥希替尼；仅CSCO指南推荐：阿美替尼、伏美替尼、贝福替尼、瑞厄替尼、瑞齐替尼。
+
+               * 条件2：如因各种原因无法应用上述三代EGFR靶向药，可以考虑二代EGFR靶向药或一代EGFR靶向药物，二代EGFR靶向药物有以下药物选择：NCCN和CSCO指南均推荐：达可替尼；仅CSCO指南推荐：阿法替尼。一代EGFR靶向药物有以下药物选择：NCCN和CSCO指南均推荐：吉非替尼、厄洛替尼；仅CSCO指南推荐：埃克替尼。仅CSCO指南推荐：在有脑转移的患者中可以用佐利替尼。
+
+
+
+            2. 方案2：靶向药物联合化疗：联合药物针对非鳞癌可以采用奥希替尼联合培美曲塞和顺铂或卡铂。当非高龄、体力好且瘤负荷大、EGFR L858R突变、脑转移、家属积极要求治疗时考虑靶向药物联合化疗。
+
+            3. 方案3：靶向药物联合抗血管生成治疗：如因各种原因无法应用三代EGFR靶向药物，一代EGFR靶向药物联合抗血管生成也是一个备选方案，药物选择有：NCCN和CSCO指南均推荐：厄洛替尼联合贝伐珠单抗（非鳞癌）；仅NCCN指南推荐厄洛替尼联合雷莫卢单抗。
+
+            4. 方案4：靶向药物联合单抗类药物：药物选择可以有埃万妥单抗联合拉泽替尼。
+
+
+
+            ## 其次，场景二：在无法应用任何EGFR靶向治疗的情况下，CSCO指南还推荐含铂双药化疗联合贝伐珠单抗作为无法应用靶向药的次选方案。
+
+
+
+            # 二、EGFR罕见敏感突变（EGFR18外显子G719X突变或EGFR20外显子S768I突变或EGFR21外显子L861Q突变）：一线治疗只推荐EGFR靶向药物单用，有2种方案可以选择：
+
+
+
+            1. 方案1：NCCN指南优先推荐这两种药物：奥希替尼、阿法替尼。
+
+            2. 方案2：如因各种原因无法应用上述EGFR靶向药，NCCN指南推荐可以考虑达可替尼、吉非替尼、厄洛替尼。
+
+
+
+            # 三、EGFR突变（EGFR20外显子插入突变）：一线治疗推荐以下2种方案
+
+
+
+            1. 方案1：NCCN和CSCO指南均优先推荐在非鳞癌中应用埃万妥单抗联合培美曲塞和卡铂。
+
+            2. 方案2：鳞癌或无法应用埃万妥单抗联合培美曲塞和卡铂的情况，可以考虑按照晚期非小细胞肺癌驱动基因阴性一线方案进行治疗。
+
+
+
+            # 四、ALK融合：一线治疗推荐以下3种方案，其中方案1-2地位均是优先推荐：
+
+
+
+            1. 方案1：NCCN和CSCO指南均优先推荐三代ALK靶向药物单用，可选药物如下：NCCN和CSCO指南均推荐洛拉替尼。
+
+            2. 方案2：NCCN和CSCO指南均推荐二代ALK靶向药物单用，地位等同于三代ALK靶向药物单用：NCCN和CSCO指南均推荐：阿来替尼、布格替尼、恩沙替尼、赛瑞替尼（NCCN指南次选推荐）；仅CSCO指南推荐：伊鲁阿克、依奉阿克。
+
+            3. 方案3：各种原因无法应用上述三代ALK靶向药或二代ALK靶向药，NCCN和CSCO指南推荐使用：一代ALK靶向药物：克唑替尼（NCCN指南次选推荐，CSCO指南优先推荐）。
+
+            4. 方案4：如因各种原因无法应用上述ALK靶向药，CSCO指南次选推荐含铂双药化疗联合贝伐珠单抗（非鳞癌）、含铂双药化疗。
+
+
+
+            # 五、ROS1融合：一线治疗推荐以下3种方案，其中方案1-2地位均是优先推荐：
+
+
+
+            1. 方案1：NCCN和CSCO指南均推荐一代ROS1靶向药物：克唑替尼。
+
+            2. 方案2：NCCN和CSOC指南均推荐二代ROS1靶向药物：恩曲替尼、瑞普替尼、他雷替尼；仅CSCO指南推荐：安奈克替尼。
+
+            3. 方案2：如因各种原因无法应用上述ROS1靶向药，CSCO指南次选推荐含铂双药化疗联合贝伐珠单抗（非鳞癌）、含铂双药化疗。
+
+
+
+            # 六、BRAF V600E突变：一线治疗推荐以下3种方案：
+
+
+
+            1. 方案1：NCCN和CSCO指南均优先推荐双靶药物方案，药物可选择：达拉菲尼联合曲美替尼、康奈非尼联合比美替尼。
+
+            2. 方案2：若无法应用BRAF双靶方案，NCCN指南推荐单靶向药物方案：达拉菲尼、维莫非尼。
+
+            3. 方案3：若无法应用上述BRAF靶向药物，可按照晚期非小细胞肺癌驱动基因阴性一线方案进行治疗。
+
+
+
+            # 七、NTRK融合：一线治疗推荐以下2种方案：
+
+
+
+            1. 方案1：NCCN和CSCO指南均优先推荐NTRK靶向药物单用方案，药物选择：恩曲替尼、拉罗替尼；仅NCCN指南推荐药物：瑞普替尼。
+
+            2. 方案2：若无法应用上述NTRK靶向药物，可按照晚期非小细胞肺癌驱动基因阴性一线方案进行治疗。
+
+
+
+            # 八、MET14外显子跳跃突变：一线治疗推荐以下3种方案：
+
+
+
+            1. 方案1：NCCN和CSCO指南均优先推荐MET靶向药物单用方案，药物选择：卡马替尼、特泊替尼；仅CSCO指南推荐药物：赛沃替尼、谷美替尼、伯瑞替尼。
+
+            2. 方案2：若无法使用上述MET靶向药物，NCCN指南推荐可使用克唑替尼。
+
+            3. 方案3：若无法应用上述所有MET靶向药物，可按照晚期非小细胞肺癌驱动基因阴性一线方案进行治疗。
+
+
+
+            # 九、RET融合：一线治疗推荐以下2种方案：
+
+
+
+            1. 方案1：NCCN和CSCO指南均优先推荐RET靶向药物单用方案，药物选择：赛普替尼、普拉替尼。
+
+            2. 方案2：若无法应用上述RET靶向药物，可按照晚期非小细胞肺癌驱动基因阴性一线方案进行治疗。
+
+
+
+            # 十、KRAS G12C突变：
+
+
+
+            1. 优先推荐按照晚期非小细胞肺癌驱动基因阴性一线方案进行治疗，一线方案失败（进展或不耐受）后推荐KRAS靶向药治疗。
+
+
+
+            # 十一、HER2（ERBB2）突变：
+
+
+
+            1. 优先推荐按照晚期非小细胞肺癌驱动基因阴性一线方案进行治疗，一线方案失败（进展或不耐受）后推荐HER2靶向药治疗。
+
+
+
+            # 十二、NRG1融合：
+
+
+
+            1. 优先推荐按照晚期非小细胞肺癌驱动基因阴性一线方案进行治疗，一线方案失败（进展或不耐受）后推荐NRG1靶向药治疗。
+
+
+
+            # 十三、高水平MET扩增（拷贝数≥10）：一线治疗推荐以下2种方案：
+
+
+
+            1. 方案1：NCCN指南推荐可以应用MET靶向药，药物选择：卡马替尼、特泊替尼、克唑替尼。
+
+            2. 方案2：若无法应用上述MET靶向药物，可按照晚期非小细胞肺癌驱动基因阴性一线方案进行治疗。
+
+
+
+            # 十四、FGFR突变：一线治疗推荐以下2种方案：
+
+
+
+            1. 方案1：NCCN指南推荐可以应用FGFR靶向药，药物选择：厄达替尼。
+
+            2. 方案2：若无法应用上述FGFR靶向药物，可按照晚期非小细胞肺癌驱动基因阴性一线方案进行治疗。
+
+
+
+
+
+
+
+
+
+            '
+        - id: 1d8279f4-1761-4d54-8098-9869fc89c9f5
+          role: user
+          text: 你是非小细胞肺癌（NSCLC）临床决策支持专家。你的任务是根据提供的【指南文档】和提取{{#1765803586857.result#}}，为患者制定精准的治疗方案。
+        selected: false
+        title: 晚期驱动基因阳性一线
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 88
+      id: '1765965808653'
+      position:
+        x: 3937.936499371748
+        y: 701.6367972614183
+      positionAbsolute:
+        x: 3937.936499371748
+        y: 701.6367972614183
+      selected: true
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params: {}
+          mode: chat
+          name: glm-4.6
+          provider: langgenius/zhipuai/zhipuai
+        prompt_template:
+        - id: fbcf3edf-0446-4a21-8646-4b4ae9d728ab
+          role: system
+          text: '你是非小细胞肺癌（NSCLC）临床决策支持专家。你的任务是根据提供的【指南文档】和提取的【病人信息】，为患者制定精准的治疗方案。
+            回答前先输出**推理过程**：在 <think> 标签内，简要列出做出最终判断的关键依据。要求：
+            - 只包含与最终方案直接相关的判断
+            - 避免重复和与指南无关的内容
+             
+
+            # Constraints (严格约束)
+
+            1. 仅基于文档：你的所有建议必须严格引用上下文中的内容，严禁使用外部知识或产生幻觉。
+
+            2. 缺失信息处理：若病人信息中缺失关键决策因子，不要提示“关键信息缺失”，不要建议补充检查或评估，也不要说明该指标的不同结果将如何影响方案选择。你必须仅基于当前已提供的病人信息和指南内容，直接给出在现有信息下能够明确成立的治疗建议。
+
+            3. 对于未提供的决策条件，不得展开“若……则……”形式的条件分支；对于依赖缺失信息才能确定的细化方案，不要臆测，不要补充。当信息不足以支持细化到具体药物组合时，允许仅输出上位治疗路径。
+
+
+            # 数据字段映射说明 (Data Schema Mapping)
+
+            请严格依据以下定义解析输入的 JSON 数据，注意数字代码的特殊含义：
+
+            驱动基因 (0 vs 文本)：
+
+            0：代表驱动基因阴性（无突变），适用化疗/免疫方案
+
+            具体基因名（如 "EGFR"）：代表驱动基因阳性，适用靶向治疗方案。
+
+            治疗阶段 (1 vs 0)：
+
+            1：代表根治性术后
+
+            0：代表根治性术前（
+
+            既往治疗方案 (1 vs 文本)：
+
+            1：代表初治患者（未进行过治疗），适用一线治疗方案。
+
+            具体文本：代表经治患者（已耐药或复发），需根据描述判断处于二线或后线治疗。
+
+            转移类型 (0 vs 1)：
+
+            0：代表寡转移（病灶 ≤5 个），适用局部根治+全身治疗
+
+            1：代表广泛转移，适用全身药物治疗
+
+
+            # 指南文档-晚期孤立性转移或寡转移非小细胞肺癌治疗
+
+            寡转移定义：诊断时就已经存在的转移灶，并且病灶≤5个；寡转移中，一类比较特殊的情况，称之为孤立性转移，定义是：诊断时就已经存在的转移灶，并且病灶数目仅1个。非小细胞肺癌寡转移虽然是Ⅳ期，但部分寡转移或孤立转移患者有根治性治疗机会。根据患者的肺部病灶能否根治性治疗，分为以下2个场景：
+
+
+
+            # 首先，场景一、肺部病灶可以根治性手术或放疗，NCCN和CSCO指南分别有以下推荐：
+
+
+
+            ## NCCN指南：针对脑部寡转移或其他部位寡转移并且肺部病灶可根治性治疗的患者，推荐进行以下治疗。根据体力评分的不同，有以下2种情况：
+
+
+
+            ### 情况1：体力评分（PS=0-2分），推荐这部分患者分别进行转移灶的处理和肺部病灶的根治性治疗。
+
+
+
+            * 转移灶的处理：根据转移部位的不同，有以下2种方案：
+
+
+
+              1. 方案1：对于孤立性脑转移或脑部寡转移患者：优先推荐：先进行脑部局部放疗，再针对肺部病灶进行根治性治疗；在脑部症状需要手术缓解或诊断需要手术取得病理的情况下，推荐先进行脑部手术治疗，后进行脑部局部放疗，再针对肺部病灶进行根治性治疗。
+
+              2. 方案2：对于其他部位孤立转移或寡转移患者：推荐在针对肺部病灶根治性治疗后，再针对转移病灶进行根治性局部治疗（手术、放疗、消融）。
+
+
+
+            * 肺部病灶的根治性治疗：根据不同的病理分期，有以下3种方案。全身治疗方案参考晚期非小细胞肺癌驱动基因阴性一线治疗方案或晚期非小细胞肺癌驱动基因阳性一线治疗方案，可在根治性手术或放疗之前或之后进行。
+
+
+
+              1. 方案1：病理分期为T1-T3N0：推荐手术切除或根治性放疗。
+
+              2. 方案2：病理分期为T1-T3N1：优先推荐同步放化疗，次选推荐手术治疗、根治性放疗。
+
+              3. 方案3：病理分期为T1-T3N2，T4N0-N2：仅推荐根治性同步放化疗。
+
+
+
+            ### 情况2：体力评分（PS=3-4分）：推荐仅进行最佳支持治疗，不做抗癌治疗。
+
+
+
+            ## CSCO指南：针对孤立性脑转移、孤立性肾上腺或孤立性骨转移并且肺部病灶可根治性治疗的患者，推荐进行以下治疗。根据体力评分的不同，有以下3种情况：
+
+
+
+            ### 情况1：体力评分（PS=0-1分），根据转移灶的不同，有以下2种条件：
+
+
+
+            1. 条件1：对于孤立性脑转移或肾上腺转移的患者，根据肺部病灶能否手术治疗，分为以下2种情境：
+
+
+
+               1. 模式1：肺部病灶为N0-N1且可完全性切除：有以下2种方案：
+
+
+
+                  1. 方案1：脑或肾上腺病灶手术切除，联合肺原发病灶完全性切除，联合辅助化疗，这种方案是优先推荐方案；对于孤立性脑转移的患者，还可考虑以下方案：脑部病灶局部放疗，联合肺原发病灶完全性切除，联合辅助化疗。
+
+                  2. 方案2：脑或肾上腺病灶局部放疗，联合肺原发病灶局部放疗，联合辅助化疗，这种方案是次选推荐方案。
+
+
+
+               2. 模式2：肺部病灶为T4或N2且可行根治性放疗的患者，推荐以下治疗：脑部或肾上腺病灶局部放疗，联合肺原发病灶同步或序贯放化疗。
+
+
+
+            2. 条件2：对于孤立性骨转移的患者，根据肺部病灶能否手术治疗，分为以下2种情境：
+
+
+
+               1. 模式1：肺部病灶为N0-N1且可完全性切除的患者，推荐以下方案：肺部原发病灶完全性切除，联合骨转移病变放疗，联合辅助化疗，联合双膦酸盐或地舒单抗治疗。
+
+               2. 模式2：肺部病灶为N2或T4的患者，推荐以下方案：肺部原发病灶序贯或同步放化疗，联合骨转移病变放疗，联合辅助化疗，联合双膦酸盐或地舒单抗治疗。
+
+
+
+            ### 情况2：体力评分（PS=2分）：推荐按照晚期非小细胞肺癌驱动基因阴性一线治疗方案或晚期非小细胞肺癌驱动基因阳性一线治疗方案进行治疗。
+
+
+
+            ### 情况3：体力评分（PS=3-4分）：推荐仅进行最佳支持治疗，不做抗癌治疗。
+
+
+
+            # 其次，场景二、肺部病灶无法根治性手术或放疗
+
+
+
+            NCCN和CSCO指南均推荐：按照按照晚期非小细胞肺癌驱动基因阴性一线治疗方案或晚期非小细胞肺癌驱动基因阳性一线治疗方案进行治疗。
+
+
+            '
+        - id: 7694d7a8-b854-4273-8adc-30b19a60245f
+          role: user
+          text: 你是非小细胞肺癌（NSCLC）临床决策支持专家。你的任务是根据提供的【指南文档】和提取{{#1765803586857.result#}}，为患者制定精准的治疗方案。
+        selected: false
+        title: 寡转移
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 88
+      id: '1765965876012'
+      position:
+        x: 2610.7792499192187
+        y: 785.1380275459427
+      positionAbsolute:
+        x: 2610.7792499192187
+        y: 785.1380275459427
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        answer: '晚期驱动基因阴性一线
+
+          {{#1765965790968.text#}}'
+        desc: ''
+        selected: false
+        title: 直接回复 3
+        type: answer
+        variables: []
+      height: 119
+      id: '1765967125774'
+      position:
+        x: 4263.700101700386
+        y: 419.9319060591852
+      positionAbsolute:
+        x: 4263.700101700386
+        y: 419.9319060591852
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        answer: '晚期驱动基因阳性一线
+
+          {{#1765965808653.text#}}'
+        desc: ''
+        selected: false
+        title: 直接回复 4
+        type: answer
+        variables: []
+      height: 119
+      id: '1765967134303'
+      position:
+        x: 4250.564780749252
+        y: 708.9341977898255
+      positionAbsolute:
+        x: 4250.564780749252
+        y: 708.9341977898255
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        answer: '寡转移
+
+          {{#1765965876012.text#}}'
+        desc: ''
+        selected: false
+        title: 直接回复 5
+        type: answer
+        variables: []
+      height: 103
+      id: '1765967141819'
+      position:
+        x: 2947.5681969890106
+        y: 785.1380275459427
+      positionAbsolute:
+        x: 2947.5681969890106
+        y: 785.1380275459427
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        code: "import json\n\ndef main(arg1: str) -> dict:\n    try:\n        # 1.\
+          \ 解析 JSON 数据\n        data = json.loads(arg1)\n        \n        # 2. 获取\"\
+          治疗阶段\"字段\n        # 使用 .get 避免字段不存在时报错\n        phase = data.get(\"是否一线治疗\"\
+          )\n        \n        # 3. 判断逻辑\n        # 兼容 数字类型的 0 和 字符串类型的 \"0\"\n  \
+          \      if phase == 1 or str(phase) == \"1\":\n            return {\"result\"\
+          : 1}\n        else:\n            return {\"result\": 0}\n            \n\
+          \    except Exception as e:\n        # 如果解析失败或发生错误，默认返回 0\n        return\
+          \ {\"result\": 0}\n"
+        code_language: python3
+        desc: ''
+        outputs:
+          result:
+            children: null
+            type: number
+        selected: false
+        title: 是否一线治疗
+        type: code
+        variables:
+        - value_selector:
+          - '1765803586857'
+          - result
+          variable: arg1
+      height: 52
+      id: '1765968101036'
+      position:
+        x: 3332.3170779220604
+        y: 384.90438352283036
+      positionAbsolute:
+        x: 3332.3170779220604
+        y: 384.90438352283036
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        cases:
+        - case_id: 'true'
+          conditions:
+          - comparison_operator: '='
+            id: 5ca151e8-f28e-48d9-b8a1-abe8ca516464
+            value: '1'
+            varType: number
+            variable_selector:
+            - '1765968101036'
+            - result
+          id: 'true'
+          logical_operator: and
+        desc: ''
+        selected: false
+        title: 是否一线治疗
+        type: if-else
+      height: 124
+      id: '1765968201082'
+      position:
+        x: 3619.2627967595645
+        y: 384.90438352283036
+      positionAbsolute:
+        x: 3619.2627967595645
+        y: 384.90438352283036
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params:
+            temperature: 0.2
+          mode: chat
+          name: glm-4.6
+          provider: langgenius/zhipuai/zhipuai
+        prompt_template:
+        - id: e5951da6-72ef-4bdd-a95a-a818f05c8bdf
+          role: system
+          text: '
+
+            你是非小细胞肺癌（NSCLC）临床决策支持专家。你的任务是根据提供的【指南文档】和提取的【病人信息】，为患者制定精准的治疗方案。
+
+            回答前先输出**推理过程**：在 <think> 标签内，简要列出做出最终判断的关键依据。要求：
+            - 只包含与最终方案直接相关的判断
+            - 避免重复和与指南无关的内容
+             
+            # Constraints (严格约束)
+
+            1. 仅基于文档：你的所有建议必须严格引用上下文中的内容，严禁使用外部知识或产生幻觉。
+
+            2. 缺失信息处理：若病人信息中缺失关键决策因子，不要提示“关键信息缺失”，不要建议补充检查或评估，也不要说明该指标的不同结果将如何影响方案选择。你必须仅基于当前已提供的病人信息和指南内容，直接给出在现有信息下能够明确成立的治疗建议。
+
+            3. 对于未提供的决策条件，不得展开“若……则……”形式的条件分支；对于依赖缺失信息才能确定的细化方案，不要臆测，不要补充。当信息不足以支持细化到具体药物组合时，允许仅输出上位治疗路径。
+
+
+            # 数据字段映射说明 (Data Schema Mapping)
+
+            请严格依据以下定义解析输入的 JSON 数据，注意数字代码的特殊含义：
+
+            驱动基因 (0 vs 文本)：
+
+            0：代表驱动基因阴性（无突变），适用化疗/免疫方案
+
+            具体基因名（如 "EGFR"）：代表驱动基因阳性，适用靶向治疗方案。
+
+            治疗阶段 (1 vs 0)：
+
+            1：代表根治性术后
+
+            0：代表根治性术前
+
+            既往治疗方案 (1 vs 文本)：
+
+            1：代表初治患者（未进行过治疗），适用一线治疗方案。
+
+            具体文本：代表经治患者（已耐药或复发），需根据描述判断处于二线或后线治疗。
+
+            转移类型 (0 vs 1)：
+
+            0：代表寡转移（病灶 ≤5 个），适用局部根治+全身治疗
+
+            1：代表广泛转移，适用全身药物治疗
+
+
+            # 指南文档2-晚期非小细胞肺癌驱动基因阴性后线治疗（二线或二线以上治疗）
+
+            对于晚期非小细胞肺癌驱动基因阴性患者，经过一线治疗后，根据身体情况的不同（体力评分（PS=0~2分）、体力评分（PS=3~4分））和既往治疗情况的不同，有以下不同推荐方案：
+
+
+
+            # 一、体力评分（PS=0~2分），根据既往治疗方案及病理类型、分子病理类型的不同，有以下方案：
+
+
+
+            1. 方案1：单药免疫治疗，NCCN和CSCO指南均推荐在既往没有应用过免疫检查点抑制剂治疗的患者中采用这种方案，有以下药物可以选择：NCCN和CSCO均推荐：纳武利尤单抗、帕博利珠单抗（CSCO次选，且仅在PD-L1≥1%条件下）、阿替利珠单抗（CSCO次选）；仅CSCO推荐：替雷利珠单抗。
+
+            2. 方案2：单独化疗，在无论既往是否使用过免疫检查点抑制剂治疗的患者当中，NCCN和CSCO指南均推荐可采用这种方案，化疗药物尽量选择一线治疗未使用过的化疗药物，根据患者病理类型的不同，可选择的化疗药物如下：
+
+
+
+               * 条件1：若患者为非鳞癌：NCCN和CSCO指南均推荐：多西他赛、培美曲塞；仅NCCN指南推荐：吉西他滨、白蛋白紫杉醇。
+
+               * 条件2：若患者为鳞癌，NCCN和CSCO指南均推荐：多西他赛、吉西他滨（CSCO指南次选推荐，且证据等级不高）；仅NCCN指南推荐：白蛋白紫杉醇；仅CSCO指南推荐：长春瑞滨（但证据等级不高）。
+
+
+
+            3. 方案3：NCCN指南还可推荐化疗联合抗血管治疗方案：雷莫卢单抗联合多西他赛。
+
+            4. 方案4：在HER2高表达（HER2 IHC 3+）的患者中，NCCN指南推荐可应用德曲妥珠单抗治疗。
+
+            5. 方案5：在MET 高表达（c-Met/MET ≥50% IHC 3+）且EGFR野生型的非鳞癌患者中，NCCN指南推荐可应用维汀-特立妥珠单抗（Telisotuzumab
+            vedotin-tllv）治疗。
+
+            6. 方案6：CSCO指南推荐：若患者为非鳞癌且需2个化疗方案治疗失败后，可使用安罗替尼。若患者为鳞癌且是外周型鳞癌，三线或三线以上可使用安罗替尼。
+
+
+
+            # 二、体力评分（PS=3~4分），仅推荐1种方案：
+
+
+
+            1. 方案1：采用最佳支持治疗方案：不进行任何抗癌治疗（包括化疗、免疫治疗）。'
+        - id: 6ee99b36-cf8a-4fd8-a531-aef40402df10
+          role: user
+          text: 你是非小细胞肺癌（NSCLC）临床决策支持专家。你的任务是根据提供的【指南文档】和提取{{#1765803586857.result#}}，为患者制定精准的治疗方案。
+        selected: false
+        title: 晚期驱动基因阴性后线
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 88
+      id: '1765968282402'
+      position:
+        x: 3944.558525610826
+        y: 512.684628738142
+      positionAbsolute:
+        x: 3944.558525610826
+        y: 512.684628738142
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        answer: '晚期驱动基因阳性后线
+
+          {{#1765968282402.text#}}'
+        desc: ''
+        selected: false
+        title: 直接回复 6
+        type: answer
+        variables: []
+      height: 119
+      id: '1765968349855'
+      position:
+        x: 4247.64582053789
+        y: 562.524415385359
+      positionAbsolute:
+        x: 4247.64582053789
+        y: 562.524415385359
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        code: "import json\n\ndef main(arg1: str) -> dict:\n    try:\n        # 1.\
+          \ 解析 JSON 数据\n        data = json.loads(arg1)\n        \n        # 2. 获取\"\
+          治疗阶段\"字段\n        # 使用 .get 避免字段不存在时报错\n        phase = data.get(\"是否一线治疗\"\
+          )\n        \n        # 3. 判断逻辑\n        # 兼容 数字类型的 0 和 字符串类型的 \"0\"\n  \
+          \      if phase == 1 or str(phase) == \"1\":\n            return {\"result\"\
+          : 1}\n        else:\n            return {\"result\": 0}\n            \n\
+          \    except Exception as e:\n        # 如果解析失败或发生错误，默认返回 0\n        return\
+          \ {\"result\": 0}\n"
+        code_language: python3
+        desc: ''
+        outputs:
+          result:
+            children: null
+            type: number
+        selected: false
+        title: 是否一线治疗
+        type: code
+        variables:
+        - value_selector:
+          - '1765803586857'
+          - result
+          variable: arg1
+      height: 52
+      id: '1765968378779'
+      position:
+        x: 3323.5601972879717
+        y: 701.6367972614183
+      positionAbsolute:
+        x: 3323.5601972879717
+        y: 701.6367972614183
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        cases:
+        - case_id: 'true'
+          conditions:
+          - comparison_operator: '='
+            id: 9aae422f-462c-4fc2-aaff-af7fa1ce2c6c
+            value: '1'
+            varType: number
+            variable_selector:
+            - '1765968378779'
+            - result
+          id: 'true'
+          logical_operator: and
+        desc: ''
+        selected: false
+        title: 是否一线治疗
+        type: if-else
+      height: 124
+      id: '1765968398711'
+      position:
+        x: 3626.5601972879713
+        y: 701.6367972614183
+      positionAbsolute:
+        x: 3626.5601972879713
+        y: 701.6367972614183
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params:
+            temperature: 0.2
+          mode: chat
+          name: glm-4.6
+          provider: langgenius/zhipuai/zhipuai
+        prompt_template:
+        - id: c45e2366-7d69-446a-9a22-ff7aa1470e83
+          role: system
+          text: '你是非小细胞肺癌（NSCLC）临床决策支持专家。你的任务是根据提供的【指南文档】和提取的【病人信息】，为患者制定精准的治疗方案。
+            回答前先输出**推理过程**：在 <think> 标签内，简要列出做出最终判断的关键依据。要求：
+            - 只包含与最终方案直接相关的判断
+            - 避免重复和与指南无关的内容
+             
+
+            # Constraints (严格约束)
+
+            1. 仅基于文档：你的所有建议必须严格引用上下文中的内容，严禁使用外部知识或产生幻觉。
+
+
+            2. 缺失信息处理：若病人信息中缺失关键决策因子，不要提示“关键信息缺失”，不要建议补充检查或评估，也不要说明该指标的不同结果将如何影响方案选择。你必须仅基于当前已提供的病人信息和指南内容，直接给出在现有信息下能够明确成立的治疗建议。
+
+
+            3. 对于未提供的决策条件，不得展开“若……则……”形式的条件分支；对于依赖缺失信息才能确定的细化方案，不要臆测，不要补充。当信息不足以支持细化到具体药物组合时，允许仅输出上位治疗路径。
+
+
+            # 数据字段映射说明 (Data Schema Mapping)
+
+            请严格依据以下定义解析输入的 JSON 数据，注意数字代码的特殊含义：
+
+            驱动基因 (0 vs 文本)：
+
+            0：代表驱动基因阴性（无突变），适用化疗/免疫方案
+
+            具体基因名（如 "EGFR"）：代表驱动基因阳性，适用靶向治疗方案。
+
+            治疗阶段 (1 vs 0)：
+
+            1：代表根治性术后
+
+            0：代表根治性术前（
+
+            既往治疗方案 (1 vs 文本)：
+
+            1：代表初治患者（未进行过治疗），适用一线治疗方案。
+
+            具体文本：代表经治患者
+
+
+            转移类型 (0 vs 1)：
+
+            0：代表寡转移（病灶 ≤5 个），适用局部根治+全身治疗
+
+            1：代表广泛转移，适用全身药物治疗
+
+
+            是否一线治疗（0 vs 1）：
+
+            0：代表应采用二线治疗
+
+            1：代表应采用一线治疗
+
+
+            # 指南文档2-晚期非小细胞肺癌驱动基因阳性二线治疗
+
+            不同基因变异类型（14种突变类型：分别为EGFR经典突变、EGFR罕见敏感突变、EGFR20外显子插入突变、ALK融合、ROS1融合、BRAF
+            V600E突变、NTRK融合、MET14外显子跳跃突变、RET融合、KRAS G12C突变、HER2（ERBB2）突变、NRG1融合、高水平MET扩增、FGFR突变）和不同进展情况（6种进展情况分别为：寡进展无症状、寡进展有症状、脑转移有症状、脑转移无症状、广泛进展有症状、广泛进展无症状）的患者选用的方案不同，以下是针对不同基因变异类型的情况，通过不同的场景和进展情况，给出不同的治疗方案，并列举不同方案所用的治疗药物。
+
+
+
+            ## 一、EGFR敏感突变（EGFR经典突变：EGFR19外显子缺失或21外显子L858R突变；EGFR罕见敏感突变：EGFR18外显子G719X突变或EGFR20外显子S768I突变或EGFR21外显子L861Q突变）一线治疗时应用一代或二代EGFR靶向药进展后，再次进行基因检测，根据T790M突变状态分为T790M突变阴性和阳性两种场景：
+
+
+
+            ### 首先，场景一：若应用一代EGFR靶向药或二代EGFR靶向药一线治疗后进展，并检测出T790M突变阳性，有以下两种情况：
+
+
+
+            1. 情况1：若应用一代EGFR靶向药或二代EGFR靶向药一线治疗后进展，出现寡进展（全身进展灶≤5个）或中枢神经系统进展（脑转移），无论是否有相关症状，有2种可选方案（优先推荐方案2）：
+
+
+
+               * 方案1：可继续原一代或二代EGFR靶向药物治疗，同时针对进展部位联合局部治疗（局部治疗主要是立体定向放疗）。
+
+               * 方案2：可更换三代EGFR靶向药物治疗，有以下药物可选：NCCN和CSCO指南均推荐奥希替尼；仅CSCO指南推荐的药物有：阿美替尼、伏美替尼、贝福替尼、瑞厄替尼、瑞齐替尼。
+
+
+
+            2. 情况2：若应用一代EGFR靶向药或二代EGFR靶向药一线治疗后进展，出现疾病广泛进展（非寡进展，全身进展灶＞5个）无论是否有相关症状，更换三代EGFR靶向药物治疗，有以下药物可选：NCCN和CSCO指南均推荐奥希替尼；仅CSCO指南推荐的药物有：阿美替尼、伏美替尼、贝福替尼、瑞厄替尼、瑞齐替尼。
+
+
+
+            ### 其次，场景二：若一线治疗时未应用过三代EGFR靶向药物后进展并检测出T790M突变阴性，或一线治疗应用过三代EGFR靶向药物治疗后进展，经医患共同决策后，根据身体情况的不同，可以给出不同方案：
+
+
+
+            1. 情况1：应用一代EGFR靶向药或二代EGFR靶向药一线治疗后检测T790M突变阴性，或应用过三代EGFR靶向药后进展，若出现寡进展（全身进展灶≤5个）且无相关症状，或中枢神经系统进展（脑转移）且无论是否有相关症状，都可以继续原EGFR靶向药治疗，同时针对进展部位联合局部治疗（局部治疗主要是立体定向放疗）。
+
+            2. 情况2：应用一代EGFR靶向药或二代EGFR靶向药一线治疗后检测T790M突变阴性，或应用过三代EGFR靶向药后进展，若出现寡进展（全身进展灶≤5个）且有相关症状，可以继续原EGFR靶向药物治疗，同时针对进展部位联合局部治疗（局部治疗主要是立体定向放疗）。还可以选择按照情况3列举的方案进行治疗。
+
+            3. 情况3：若应用一代EGFR靶向药或二代EGFR靶向药一线治疗后检测T790M突变阴性，或应用过三代EGFR靶向药后进展，出现肿瘤相关症状且疾病广泛进展（非寡进展，全身进展灶＞5个），无论是否有相关症状，都建议更换方案，经医患共同决策后，有以下6种方案可选：
+
+
+
+               * 方案1：若之前从未应用过埃万妥单抗，NCCN指南优先推荐埃万妥单抗联合培美曲塞和卡铂（非鳞癌）。
+
+               * 方案2：NCCN和CSCO指南均推荐在非鳞癌患者中，可应用含铂双药化疗联合贝伐珠单抗方案，有以下药物可选：卡铂联合紫杉醇联合贝伐珠单抗、卡铂联合培美曲塞联合贝伐珠单抗、顺铂联合培美曲塞联合贝伐珠单抗。
+
+               * 方案3：NCCN和CSCO指南均推荐可应用单独化疗方案，有以下药物可选：白蛋白紫杉醇联合卡铂、多西他赛联合卡铂、依托泊苷联合卡铂、吉西他滨联合卡铂、紫杉醇联合卡铂、培美曲塞联合卡铂（非鳞癌）、多西他赛联合顺铂、依托泊苷联合顺铂、吉西他滨联合顺铂、紫杉醇联合顺铂、培美曲塞联合顺铂（非鳞癌）。
+
+               * 方案4：NCCN和CSCO指南均推荐四药联合方案，药物有：NCCN指南推荐：紫杉醇联合卡铂联合贝伐珠单抗联合阿替利珠单抗；CSCO指南推荐：培美曲塞联合顺铂联合贝伐珠单抗联合信迪利单抗（非鳞癌）。
+
+               * 方案5：CSCO指南推荐可应用培美曲塞联合卡铂联合依沃西单抗（非鳞癌）。
+
+               * 方案6：CSCO指南推荐可应用ADC类药物，药物有：芦康沙妥珠单抗。
+
+
+
+            ## 二、EGFR突变（EGFR20外显子插入突变）进展后，根据一线治疗方案的不同，有不同方案推荐：
+
+
+
+            1. 情况1：之前按照晚期非小细胞肺癌驱动基因阴性一线方案进行治疗进展后，推荐靶向药方案，NCCN指南和CSCO指南均推荐可选择药物：埃万妥单抗、舒沃替尼。
+
+            2. 情况2：之前应用过埃万妥单抗联合培美曲塞和卡铂后进展，推荐换用靶向药方案，NCCN和CSCO指南均推荐换用舒沃替尼治疗。
+
+
+
+            ## 三、ALK融合进展后，根据进展情况不同，有以下推荐方案：
+
+
+
+            1. 情况1：若应用ALK靶向药物一线治疗后，若出现寡进展（全身进展灶≤5个）且无相关症状，或中枢神经系统进展（脑转移）且无论是否有相关症状，经过医患共同决策后，有以下3种可选方案：
+
+
+
+               * 方案1：可继续原ALK靶向药物治疗，同时针对进展部位联合局部治疗（局部治疗主要是立体定向放疗）。
+
+               * 方案2：若之前只应用过一代ALK靶向药，NCCN和CSCO指南均推荐换用二代或三代ALK靶向药：二代ALK靶向药物推荐如下：NCCN和CSCO指南均推荐：阿来替尼、布格替尼、恩沙替尼、赛瑞替尼（NCCN指南次选推荐）；仅CSCO指南推荐：伊鲁阿克、依奉阿克；三代ALK靶向药物推荐如下：NCCN和CSCO指南均推荐：洛拉替尼。
+
+               * 方案3：若之前只应用过二代ALK靶向药，NCCN和CSCO指南均推荐换用三代ALK靶向药：洛拉替尼。
+
+
+
+            2. 情况2：若寡进展（全身进展灶≤5个）的患者有相关症状，除了可以应用上述情况1的方案，还有以下3种方案可选：
+
+
+
+               * 方案1：NCCN指南推荐四药联合方案，药物有：紫杉醇联合卡铂联合贝伐珠单抗联合阿替利珠单抗。
+
+               * 方案2：NCCN和CSCO指南均推荐在非鳞癌患者中，可应用含铂双药化疗联合贝伐珠单抗方案，有以下药物可选：卡铂联合紫杉醇联合贝伐珠单抗、卡铂联合培美曲塞联合贝伐珠单抗、顺铂联合培美曲塞联合贝伐珠单抗。
+
+               * 方案3：NCCN和CSCO指南均推荐可应用单独化疗方案，有以下药物可选：白蛋白紫杉醇联合卡铂、多西他赛联合卡铂、依托泊苷联合卡铂、吉西他滨联合卡铂、紫杉醇联合卡铂、培美曲塞联合卡铂（非鳞癌）、多西他赛联合顺铂、依托泊苷联合顺铂、吉西他滨联合顺铂、紫杉醇联合顺铂、培美曲塞联合顺铂（非鳞癌）。
+
+
+
+            3. 情况3：若应用ALK靶向药物一线治疗后，出现肿瘤相关症状且疾病广泛进展（非寡进展，全身进展灶＞5个），无论是否有相关症状，根据以下3种不同条件，有不同方案：
+
+
+
+               * 条件1：若之前只应用过一代ALK靶向药，CSCO指南推荐换用二代ALK靶向药或三代ALK靶向药。
+
+
+
+                 * 方案1：二代ALK靶向药物推荐如下：阿来替尼、布格替尼、恩沙替尼、赛瑞替尼、伊鲁阿克、依奉阿克
+
+                 * 方案2：三代ALK靶向药物推荐如下：洛拉替尼。
+
+
+
+               * 条件2：若之前只应用过二代ALK靶向药，CSCO指南推荐换用三代ALK靶向药：洛拉替尼。
+
+               * 条件3：无论一线治疗应用何种ALK靶向药后进展，还有以下3种方案可选：
+
+
+
+                 * 方案1：NCCN指南推荐四药联合方案，药物有：紫杉醇联合卡铂联合贝伐珠单抗联合阿替利珠单抗。
+
+                 * 方案2：NCCN和CSCO指南均推荐在非鳞癌患者中，可应用含铂双药化疗联合贝伐珠单抗方案，有以下药物可选：卡铂联合紫杉醇联合贝伐珠单抗、卡铂联合培美曲塞联合贝伐珠单抗、顺铂联合培美曲塞联合贝伐珠单抗。
+
+                 * 方案3：NCCN和CSCO指南均推荐可应用单独化疗方案，有以下药物可选：白蛋白紫杉醇联合卡铂、多西他赛联合卡铂、依托泊苷联合卡铂、吉西他滨联合卡铂、紫杉醇联合卡铂、培美曲塞联合卡铂（非鳞癌）、多西他赛联合顺铂、依托泊苷联合顺铂、吉西他滨联合顺铂、紫杉醇联合顺铂、培美曲塞联合顺铂（非鳞癌）。
+
+
+
+            ## 四、ROS1融合进展后，根据进展情况不同，有以下推荐方案：
+
+
+
+            1. 情况1：若应用ROS1靶向药物一线治疗后，若出现寡进展（全身进展灶≤5个）且无相关症状，或中枢神经系统进展（脑转移）且没有相关症状，经过医患共同决策后，有以下2种条件：
+
+
+
+               * 条件1：继续原ROS1靶向药物治疗，同时针对进展部位联合局部治疗（局部治疗主要是立体定向放疗）。
+
+               * 条件2：根据一线用药的不同，换用不同药物：
+
+
+
+                 * 方案1：之前一线用药是克唑替尼：可换用瑞普替尼、他雷替尼、洛拉替尼。
+
+                 * 方案2：之前一线用药是恩曲替尼：可换用瑞普替尼、洛拉替尼。
+
+                 * 方案3：之前一线用药是瑞普替尼：可换用洛拉替尼。
+
+                 * 方案4：之前一线用药是他雷替尼：可换用洛拉替尼。
+
+
+
+            2. 情况2：若寡进展（全身进展灶≤5个）的患者有相关症状，除了上述情况1所提供的方案外，还有其他2种方案可选：
+
+
+
+               * 方案1：NCCN和CSCO指南均推荐在非鳞癌患者中，可应用含铂双药化疗联合贝伐珠单抗方案，有以下药物可选：卡铂联合紫杉醇联合贝伐珠单抗、卡铂联合培美曲塞联合贝伐珠单抗、顺铂联合培美曲塞联合贝伐珠单抗。
+
+               * 方案2：NCCN和CSCO指南均推荐可应用单独化疗方案，有以下药物可选：白蛋白紫杉醇联合卡铂、多西他赛联合卡铂、依托泊苷联合卡铂、吉西他滨联合卡铂、紫杉醇联合卡铂、培美曲塞联合卡铂（非鳞癌）、多西他赛联合顺铂、依托泊苷联合顺铂、吉西他滨联合顺铂、紫杉醇联合顺铂、培美曲塞联合顺铂（非鳞癌）。
+
+
+
+            3. 情况3：若应用ROS1靶向药物一线治疗后出现中枢神经系统进展（脑转移）且有相关症状，则需要换用对脑转移病灶敏感的药物，有以下2种tiaoj：
+
+
+
+               * 条件1：NCCN指南推荐：根据一线治疗用药方案的不同，有以下不同方案
+
+
+
+                 * 方案1：原一线应用的ROS1靶向药是克唑替尼，必须换用ROS1靶向药，可选药物如下：优先推荐：洛拉替尼、瑞普替尼、他雷替尼；次选推荐恩曲替尼。
+
+                 * 方案2：原一线应用的ROS1靶向药不是克唑替尼，可以继续应用原ROS1靶向药同时针对脑转移部位联合局部治疗（局部治疗主要是立体定向放疗）。也可以换用洛拉替尼。
+
+
+
+               * 条件2：NCCN指南推荐还可以参加临床试验。
+
+
+
+            4. 情况4：若应用ROS1靶向药物一线治疗后，出现肿瘤相关症状且疾病广泛进展（非寡进展，全身进展灶＞5个），有以下3种条件：
+
+
+
+               * 条件1：根据一线用药的不同，换用不同药物：
+
+
+
+                 * 方案1：之前一线用药是克唑替尼：可换用瑞普替尼、他雷替尼、洛拉替尼。
+
+                 * 方案2：之前一线用药是恩曲替尼：可换用瑞普替尼、洛拉替尼。
+
+                 * 方案3：之前一线用药是瑞普替尼：可换用洛拉替尼。
+
+                 * 方案4：之前一线用药是他雷替尼：可换用洛拉替尼。
+
+
+
+               * 条件2：NCCN和CSCO指南均推荐在非鳞癌患者中，可应用含铂双药化疗联合贝伐珠单抗方案，有以下药物可选：卡铂联合紫杉醇联合贝伐珠单抗、卡铂联合培美曲塞联合贝伐珠单抗、顺铂联合培美曲塞联合贝伐珠单抗。
+
+               * 条件3：NCCN和CSCO指南均推荐可应用单独化疗方案，有以下药物可选：白蛋白紫杉醇联合卡铂、多西他赛联合卡铂、依托泊苷联合卡铂、吉西他滨联合卡铂、紫杉醇联合卡铂、培美曲塞联合卡铂（非鳞癌）、多西他赛联合顺铂、依托泊苷联合顺铂、吉西他滨联合顺铂、紫杉醇联合顺铂、培美曲塞联合顺铂（非鳞癌）。
+
+
+
+            ## 五、BRAF V600E突变进展后：
+
+
+
+            1. 方案1：若之前应用过BRAF靶向药一线治疗后进展，按照晚期非小细胞肺癌驱动基因阴性一线方案进行治疗。
+
+
+
+            ## 六、NTRK融合进展后：
+
+
+
+            1. 方案1：若之前应用过NTRK靶向药一线治疗后进展，按照晚期非小细胞肺癌驱动基因阴性一线方案进行治疗。
+
+
+
+            ## 七、MET14外显子跳跃突变进展后：
+
+
+
+            1. 方案1：若之前应用过MET靶向药一线治疗后进展，按照晚期非小细胞肺癌驱动基因阴性一线方案进行治疗。
+
+
+
+            ## 八、RET融合进展后：
+
+
+
+            1. 方案1：若之前应用过RET靶向药一线治疗后进展，按照晚期非小细胞肺癌驱动基因阴性一线方案进行治疗。
+
+
+
+            ## 九、KRAS G12C突变进展后：
+
+
+
+            1. 方案1：之前按照晚期非小细胞肺癌驱动基因阴性一线方案进行治疗进展后，可以应用KRAS G12C靶向药，药物选择：NCCN和CSCO均推荐阿达格拉西布（CSCO指南次选推荐）；仅NCCN指南推荐索托拉西布；仅CSCO指南推荐：氟泽雷塞、格索雷塞。
+
+
+
+            ## 十、HER2（ERBB2）突变进展后：
+
+
+
+            1. 方案1：之前按照晚期非小细胞肺癌驱动基因阴性一线方案进行治疗进展后，可以应用HER2靶向药物，药物选择：NCCN和CSCO指南均优先推荐德曲妥珠单抗；仅NCCN指南优先推荐：宗格替尼；仅CSCO指南次选推荐吡格替尼。
+
+            2. 方案1：之前按照晚期非小细胞肺癌驱动基因阴性一线方案进行治疗进展后，若上述德曲妥珠单抗、宗格替尼、吡格替尼都不可用，NCCN指南推荐可选择恩美曲妥珠单抗，也是一个次选方案。
+
+
+
+            ## 十一、NRG1融合进展后：
+
+
+
+            1. 方案1：之前按照晚期非小细胞肺癌驱动基因阴性一线方案进行治疗进展后，可以应用NRG1靶向药物，药物选择：NCCN和CSCO指南均推荐泽妥珠单抗。
+
+
+
+            ## 十二、高水平MET扩增（拷贝数≥10）：
+
+
+
+            1. 方案1：若之前应用过MET靶向药一线治疗后进展，按照晚期非小细胞肺癌驱动基因阴性一线方案进行治疗。
+
+
+
+            ## 十三、FGFR突变进展后：
+
+            1. 方案1：若之前应用过FGFR靶向药一线治疗进展后，按照晚期非小细胞肺癌驱动基因阴性一线方案进行治疗。
+
+
+            # 指南文档3-晚期非小细胞肺癌驱动基因阳性后线治疗
+
+            对于晚期非小细胞肺癌驱动基因阳性经过一线和二线治疗后的患者，根据身体情况的不同（体力评分（PS=0~2分）、体力评分（PS=3~4分））和既往治疗方案的不同，有以下不同方案推荐：
+
+
+
+            # 一、体力评分（PS=0~2分），根据既往治疗方案及病理类型、分子病理类型的不同，有以下方案：
+
+
+
+            1. 方案1：单药免疫治疗方案，NCCN指南推荐在既往没有应用过免疫检查点抑制剂治疗的患者中采用这种方案，有以下药物可以选择：纳武利尤单抗、帕博利珠单抗、阿替利珠单抗。
+
+            2. 方案2：单独化疗方案，在无论既往是否使用过免疫检查点抑制剂治疗的患者当中，NCCN和CSCO指南均优先推荐采用这种方案，化疗药物尽量选择一二线未使用过的化疗药物，药物选择如下：多西他赛、培美曲塞（非鳞癌）、吉西他滨、白蛋白紫杉醇。
+
+            3. 方案3：NCCN指南还可推荐化疗联合抗血管治疗方案：雷莫卢单抗联合多西他赛。
+
+            4. 方案4：在HER2高表达（HER2 IHC 3+）的患者中，NCCN指南推荐可应用德曲妥珠单抗治疗。
+
+            5. 方案5：在MET 高表达（c-Met/MET ≥50% IHC 3+）且EGFR野生型的非鳞癌患者中，NCCN指南推荐可应用维汀-特立妥珠单抗（Telisotuzumab
+            vedotin-tllv）治疗。
+
+            6. 方案6：CSCO指南推荐在三线或三线以上可应用安罗替尼。
+
+            7. 方案7：NCCN指南推荐：在EGFR19外显子缺失或21外显子L858R突变患者（既往接受过靶向和含铂化疗）中可以应用ADC药物德达博妥单抗。
+
+
+
+            # 二、体力评分（PS=3~4分），仅推荐1种方案：
+
+
+
+            1. 方案1：采用最佳支持治疗模式：不进行任何抗癌治疗（包括化疗、免疫治疗）。
+
+            '
+        - id: 644c907a-9c74-40db-8c19-514a7e3f21ea
+          role: user
+          text: 你是非小细胞肺癌（NSCLC）临床决策支持专家。你的任务是根据提供的【指南文档】和提取{{#1765803586857.result#}}，为患者制定精准的治疗方案。
+        selected: false
+        title: 晚期驱动基因阳性二线及后线
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 88
+      id: '1765968498971'
+      position:
+        x: 3937.936499371748
+        y: 846.1505585295956
+      positionAbsolute:
+        x: 3937.936499371748
+        y: 846.1505585295956
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        answer: '晚期驱动基因阳性二线及后线
+
+          {{#1765968498971.text#}}'
+        desc: ''
+        selected: false
+        title: 直接回复 7
+        type: answer
+        variables: []
+      height: 119
+      id: '1765968546687'
+      position:
+        x: 4253.483740960615
+        y: 846.1505585295956
+      positionAbsolute:
+        x: 4253.483740960615
+        y: 846.1505585295956
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        code: "import json\nimport re\n\ndef main(arg1: str) -> dict:\n    try:\n\
+          \        data = json.loads(arg1)\n        tnm_input = data.get(\"TNM分期\"\
+          , \"\")\n        if not tnm_input:\n            return {\"result\": 0}\n\
+          \n        s = str(tnm_input).lower().replace(\" \", \"\")\n\n        t_match\
+          \ = re.search(r't([0-4x])', s)\n        n_match = re.search(r'n([0-3x])',\
+          \ s)\n        m_match = re.search(r'm(0|1a|1b|1c|1|x)', s)\n\n        t\
+          \ = t_match.group(0) if t_match else \"\"\n        n = n_match.group(0)\
+          \ if n_match else \"\"\n        m = m_match.group(0) if m_match else \"\"\
+          \n\n        if not t or not n:\n            return {\"result\": 0}\n\n \
+          \       # 若有漏网的 IV 期，直接不进入本节点判断\n        if m in [\"m1\", \"m1a\", \"m1b\"\
+          , \"m1c\"]:\n            return {\"result\": 0}\n\n        # Tx 当 T0，Nx\
+          \ 当 N0\n        if t == \"tx\":\n            t = \"t0\"\n        if n ==\
+          \ \"nx\":\n            n = \"n0\"\n\n        # 3 = 蓝色：不可切（局部晚期）\n      \
+          \  if n == \"n3\":\n            return {\"result\": 3}\n\n        # 2 =\
+          \ 灰色：潜在可切\n        if n == \"n2\":\n            return {\"result\": 2}\n\
+          \n        if t in [\"t3\", \"t4\"] and n in [\"n0\", \"n1\"]:\n        \
+          \    return {\"result\": 2}\n\n        # 1 = 绿色：可手术\n        if t in [\"\
+          t0\", \"t1\", \"t2\"] and n in [\"n0\", \"n1\"]:\n            return {\"\
+          result\": 1}\n\n        return {\"result\": 0}\n\n    except Exception:\n\
+          \        return {\"result\": 0}"
+        code_language: python3
+        desc: ''
+        outputs:
+          result:
+            children: null
+            type: number
+        selected: false
+        title: MDT讨论
+        type: code
+        variables:
+        - value_selector:
+          - '1765803586857'
+          - result
+          variable: arg1
+      height: 52
+      id: '1766937177831'
+      position:
+        x: 2628.3698312641295
+        y: 282
+      positionAbsolute:
+        x: 2628.3698312641295
+        y: 282
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        cases:
+        - case_id: 'true'
+          conditions:
+          - comparison_operator: '='
+            id: 64c0b881-2f34-4710-9860-561cf51384cd
+            value: '1'
+            varType: number
+            variable_selector:
+            - '1766937177831'
+            - result
+          id: 'true'
+          logical_operator: and
+        - case_id: fbe22fcb-9a5f-485e-b0c5-8fe8aa989d64
+          conditions:
+          - comparison_operator: '='
+            id: 97f142ed-0a98-4e79-8592-1144cb396407
+            numberVarType: constant
+            value: '2'
+            varType: number
+            variable_selector:
+            - '1766937177831'
+            - result
+          id: fbe22fcb-9a5f-485e-b0c5-8fe8aa989d64
+          logical_operator: and
+        - case_id: 449f0e29-c3cd-4ebb-9303-1ce3c74da5fa
+          conditions:
+          - comparison_operator: '='
+            id: c62e0252-b835-4fce-8a43-78b173edddaa
+            numberVarType: constant
+            value: '3'
+            varType: number
+            variable_selector:
+            - '1766937177831'
+            - result
+          id: 449f0e29-c3cd-4ebb-9303-1ce3c74da5fa
+          logical_operator: and
+        desc: ''
+        selected: false
+        title: 条件分支 7
+        type: if-else
+      height: 220
+      id: '1766937504505'
+      position:
+        x: 2939.3402490420785
+        y: 228.22777876716532
+      positionAbsolute:
+        x: 2939.3402490420785
+        y: 228.22777876716532
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params: {}
+          mode: chat
+          name: glm-4.6
+          provider: langgenius/zhipuai/zhipuai
+        prompt_template:
+        - id: f9c2a85e-c7b0-4b5b-a46f-6fea45e6ff71
+          role: system
+          text: '你是非小细胞肺癌（NSCLC）临床决策支持专家。你的任务是根据提供的【指南文档】和提取的【病人信息】，为患者制定精准的治疗方案。
+            回答前先输出**推理过程**：在 <think> 标签内，简要列出做出最终判断的关键依据。要求：
+            - 只包含与最终方案直接相关的判断
+            - 避免重复和与指南无关的内容
+             
+
+            # Constraints (严格约束)
+
+            1. 仅基于文档：你的所有建议必须严格引用上下文中的内容，严禁使用外部知识或产生幻觉。
+
+            2. 缺失信息处理：若病人信息中缺失关键决策因子，不要提示“关键信息缺失”，不要建议补充检查或评估，也不要说明该指标的不同结果将如何影响方案选择。你必须仅基于当前已提供的病人信息和指南内容，直接给出在现有信息下能够明确成立的治疗建议。
+
+            3. 对于未提供的决策条件，不得展开“若……则……”形式的条件分支；对于依赖缺失信息才能确定的细化方案，不要臆测，不要补充。当信息不足以支持细化到具体药物组合时，允许仅输出上位治疗路径。
+
+
+            # 数据字段映射说明 (Data Schema Mapping)
+
+            请严格依据以下定义解析输入的 JSON 数据，注意数字代码的特殊含义：
+
+            驱动基因 (0 vs 文本)：
+
+            0：代表驱动基因阴性（无突变），适用化疗/免疫方案
+
+            具体基因名（如 "EGFR"）：代表驱动基因阳性，适用靶向治疗方案。
+
+            治疗阶段 (1 vs 0)：
+
+            1：代表根治性术后
+
+            0：代表根治性术前
+
+
+            既往治疗方案 (1 vs 文本)：
+
+            1：代表初治患者（未进行过治疗），适用一线治疗方案。
+
+            具体文本：代表经治患者
+
+
+            转移类型 (0 vs 1)：
+
+            0：代表寡转移（病灶 ≤5 个），适用局部根治+全身治疗
+
+            1：代表广泛转移，适用全身药物治疗
+
+
+            是否一线治疗（0 vs 1）：
+
+            0：代表应采用二线治疗
+
+            1：代表应采用一线治疗
+
+            一线治疗的患者有以下两种：1.未进行过治疗的病人。2.进行过治疗但是病情未进一步进展的病人。病情进展的情况有病灶扩大或者病灶扩散等等
+
+
+            # 指南文档1-潜在可切除治疗
+
+            根据非小细胞肺癌不可切除的定义：经过多学科讨论（MDT）一致认为潜在可切除。
+
+            根据不同场景（是否有免疫检查点抑制剂）和不同情况（是否有EGFR突变、ALK融合的驱动基因变异），有以下不同方案推荐：
+
+            # 首先，场景一：没有免疫检查点抑制剂禁忌症患者的新辅助方案，根据是否有驱动基因变异，有以下2种情况：
+
+            ## 情况1：患者没有检测出驱动基因变异（EGFR突变、ALK融合），有以下2种方案推荐，并且这2种方案地位等同：
+
+            1. 方案1：术前新辅助治疗后根治性手术方案，新辅助治疗方案如下：推荐含铂双药化疗联合纳武利尤单抗3次，术后无需进行辅助治疗。化疗方案可选药物如下：非鳞癌：培美曲塞联合顺铂、紫杉醇联合卡铂；鳞癌：吉西他滨联合顺铂、紫杉醇联合卡铂。
+
+            2. 方案2：术前新辅助治疗后根治性手术联合术后辅助治疗方案，药物选择如下：
+
+
+
+                 * 术前含铂双药化疗联合纳武利尤单抗4次后进行根治性手术，术后纳武利尤单抗13次。化疗方案可选药物如下：含铂双药化疗方案：卡铂或顺铂联合紫杉醇、顺铂联合培美曲塞（非鳞癌）、顺铂联合吉西他滨（鳞癌）；有顺铂禁忌症患者的化疗方案：卡铂联合培美曲塞（非鳞癌）、卡铂联合吉西他滨（鳞癌）。
+
+                 * 术前含铂双药化疗联合度伐利尤单抗4次后进行根治性手术，术后度伐利尤单抗维持治疗12次。化疗方案可选药物如下：含铂双药化疗方案：卡铂联合紫杉醇（鳞癌）、顺铂联合吉西他滨（鳞癌）、顺铂或卡铂联合培美曲塞（非鳞癌）；有顺铂禁忌症患者的化疗方案：卡铂联合吉西他滨（鳞癌）。
+
+
+
+                 * 术前含铂双药化疗联合替雷利珠单抗4次后进行根治性手术，术后替雷利珠单抗8次，化疗方案可选药物如下：紫杉醇或多西他赛联合顺铂或卡铂（鳞癌）、培美曲塞联合顺铂或卡铂（非鳞癌）。
+
+                 * 术前含铂双药化疗联合特瑞普利单抗4次后进行根治性手术，术后特瑞普利单抗13次，化疗方案可选药物如下：紫杉醇联合顺铂或卡铂（鳞癌）、培美曲塞联合顺铂或卡铂（非鳞癌）。
+
+
+
+            ## 情况2：无论患者是否检测出驱动基因变异：
+
+
+
+            1. 方案1：术前化疗联合帕博利珠单抗4次后进行根治性手术，术后帕博利珠单抗维持治疗13次。化疗方案可选药物如下：顺铂联合吉西他滨（鳞癌）、顺铂联合培美曲塞（非鳞癌）。
+
+
+
+            # 其次，场景二：有免疫检查点抑制剂禁忌症患者的新辅助方案及术后辅助方案：
+
+
+
+
+            ## 术后辅助方案：患者应当在术后完成辅助方案，根据患者驱动基因变异类型的不同，有以下3种不同方案可选：
+
+
+
+            1. 方案1：若患者有ALK融合：无需术后辅助化疗，仅推荐阿来替尼。
+
+            2. 方案2：若患者有EGFR突变（EGFR19外显子缺失或21外显子L858R突变）：无论是否辅助化疗，都推荐奥希替尼。
+
+            3. 方案3：若患者没有EGFR突变或ALK融合，推荐仅术后辅助化疗方案，可选药物如下：优先推荐：顺铂联合培美曲塞（非鳞癌）、顺铂联合吉西他滨或多西他赛（鳞癌）。次选推荐：顺铂联合长春瑞滨、顺铂联合依托泊苷；在不能应用顺铂时推荐：卡铂联合紫杉醇，卡铂联合吉西他滨（鳞癌）、卡铂联合培美曲塞（非鳞癌）。
+
+
+
+
+            '
+        - id: 4e6858c7-64a3-4ded-8dee-9e17dbbd6f93
+          role: user
+          text: 你是非小细胞肺癌（NSCLC）临床决策支持专家。你的任务是根据提供的【指南文档】和提取{{#1765803586857.result#}}，为患者制定精准的治疗方案。
+        selected: false
+        title: 潜在可切除(CSCO)
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 88
+      id: '1766937547562'
+      position:
+        x: 3354.302432155724
+        y: 138.00579554973274
+      positionAbsolute:
+        x: 3354.302432155724
+        y: 138.00579554973274
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params: {}
+          mode: chat
+          name: glm-4.6
+          provider: langgenius/zhipuai/zhipuai
+        prompt_template:
+        - id: 66fa0633-fd97-4d0a-8316-e485b0399b39
+          role: system
+          text: '你是非小细胞肺癌（NSCLC）临床决策支持专家。你的任务是根据提供的【指南文档】和提取的【病人信息】，为患者制定精准的治疗方案。
+
+            回答前先输出**推理过程**：在 <think> 标签内，简要列出做出最终判断的关键依据。要求：
+            - 只包含与最终方案直接相关的判断
+            - 避免重复和与指南无关的内容
+             
+            # Constraints (严格约束)
+
+            1. 仅基于文档：你的所有建议必须严格引用上下文中的内容，严禁使用外部知识或产生幻觉。
+
+            2. 缺失信息处理：若病人信息中缺失关键决策因子，不要提示“关键信息缺失”，不要建议补充检查或评估，也不要说明该指标的不同结果将如何影响方案选择。你必须仅基于当前已提供的病人信息和指南内容，直接给出在现有信息下能够明确成立的治疗建议。
+
+            3. 对于未提供的决策条件，不得展开“若……则……”形式的条件分支；对于依赖缺失信息才能确定的细化方案，不要臆测，不要补充。当信息不足以支持细化到具体药物组合时，允许仅输出上位治疗路径。
+
+
+            # 数据字段映射说明 (Data Schema Mapping)
+
+            请严格依据以下定义解析输入的 JSON 数据，注意数字代码的特殊含义：
+
+            驱动基因 (0 vs 文本)：
+
+            0：代表驱动基因阴性（无突变），适用化疗/免疫方案
+
+            具体基因名（如 "EGFR"）：代表驱动基因阳性，适用靶向治疗方案。
+
+            治疗阶段 (1 vs 0)：
+
+            1：代表根治性术后
+
+            0：代表根治性术前
+
+
+            既往治疗方案 (1 vs 文本)：
+
+            1：代表初治患者（未进行过治疗），适用一线治疗方案。
+
+            具体文本：代表经治患者
+
+
+            转移类型 (0 vs 1)：
+
+            0：代表寡转移（病灶 ≤5 个），适用局部根治+全身治疗
+
+            1：代表广泛转移，适用全身药物治疗
+
+
+            是否一线治疗（0 vs 1）：
+
+            0：代表应采用二线治疗
+
+            1：代表应采用一线治疗
+
+            一线治疗的患者有以下两种：1.未进行过治疗的病人。2.进行过治疗但是病情未进一步进展的病人。病情进展的情况有病灶扩大或者病灶扩散等等
+
+
+            # 指南文档1-局部晚期不可切除非小细胞肺癌治疗
+
+            非小细胞肺癌不可切除的定义：经过多学科讨论（MDT）一致认为不可切除，之后经放疗科判断是否可以进行根治性放疗，可分为可行根治性放疗或不可行根治性放疗2种场景：
+
+
+
+            # 首先，场景一：可行根治性放疗的患者，NCCN和CSCO指南有以下不同推荐：
+
+
+
+            ## NCCN指南推荐：根治性同步放化疗，化疗方案有以下可选药物： 培美曲塞联合顺铂或卡铂（非鳞癌）、紫杉醇联合卡铂、依托泊苷联合顺铂。根治性同步放化疗后，根据是否有EGFR敏感突变，有以下2种条件：
+
+
+
+            * 条件1：若患者有EGFR敏感突变（EGFR19外显子缺失或21外显子L858R突变），应用奥希替尼至疾病进展。
+
+            * 条件2：若患者没有EGFR敏感突变（EGFR19外显子缺失或21外显子L858R突变），应用度伐利尤单抗至少1年。
+
+
+
+            ## CSCO指南推荐：CSCO指南根据不同的体力情况，有不同的情况：
+
+
+
+            ### 情况1：体力评分（PS=0-1分），有以下2种方案：
+
+
+
+            1. 方案1：根治性同步放化疗：CSCO指南优先推荐此方案。化疗方案有以下可选药物： 培美曲塞联合顺铂或卡铂（非鳞癌）、紫杉醇联合顺铂或卡铂、依托泊苷联合顺铂、多西他赛联合顺铂。根治性同步放化疗后，根据是否有EGFR敏感突变，有以下2种条件：
+
+
+
+               * 条件1：若患者有EGFR敏感突变（EGFR19外显子缺失或21外显子L858R突变），有以下药物选择： 应用奥希替尼或阿美替尼至疾病进展。
+
+               * 条件2：若患者没有EGFR敏感突变（EGFR19外显子缺失或21外显子L858R突变），有以下药物选择：应用度伐利尤单抗或应用舒格利单抗。
+
+
+
+            2. 方案2：化疗序贯根治性放疗：CSCO指南次选推荐此方案。化疗方案有以下可选药物：紫杉醇联合顺铂、长春瑞滨联合顺铂。化疗序贯根治性放疗后，根据是否有EGFR敏感突变，有以下2种条件：
+
+
+
+               * 条件1：若患者有EGFR敏感突变（EGFR19外显子缺失或21外显子L858R突变），有以下药物选择：应用奥希替尼或阿美替尼至疾病进展。
+
+               * 条件2：若患者没有EGFR敏感突变（EGFR19外显子缺失或21外显子L858R突变），有以下药物选择：应用度伐利尤单抗或舒格利单抗。
+
+
+
+            ### 情况2：对于体力评分（PS=2分）、无法耐受同步放化疗的患者，CSCO指南推荐单纯放疗或根治性放疗序贯化疗，化疗方案有以下可选药物：CSCO指南推荐：紫杉醇联合卡铂、培美曲塞联合顺铂或卡铂（非鳞癌）。
+
+
+
+            # 其次，场景二：不可行根治性放疗的患者，按照晚期非小细胞肺癌驱动基因阳性一线治疗或晚期非小细胞肺癌驱动基因阴性一线治疗进行治疗。
+
+
+
+
+
+            '
+        - id: a179bdd4-8626-42ff-8755-105778c23597
+          role: user
+          text: 你是非小细胞肺癌（NSCLC）临床决策支持专家。你的任务是根据提供的【指南文档】和提取{{#1765803586857.result#}}，为患者制定精准的治疗方案。
+        selected: false
+        title: 不可切除(局晚期)
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 88
+      id: '1766937598411'
+      position:
+        x: 3354.302432155724
+        y: 258.6294613273735
+      positionAbsolute:
+        x: 3354.302432155724
+        y: 258.6294613273735
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        answer: '局晚期
+
+          {{#1766937598411.text#}}'
+        desc: ''
+        selected: false
+        title: 直接回复 8
+        type: answer
+        variables: []
+      height: 103
+      id: '1766938039625'
+      position:
+        x: 3657.302432155724
+        y: 258.6294613273735
+      positionAbsolute:
+        x: 3657.302432155724
+        y: 258.6294613273735
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        answer: '潜在可切除
+
+          {{#1766937547562.text#}}'
+        desc: ''
+        selected: false
+        title: 直接回复 9
+        type: answer
+        variables: []
+      height: 103
+      id: '1766938057994'
+      position:
+        x: 3662.0846828224935
+        y: 138.00579554973274
+      positionAbsolute:
+        x: 3662.0846828224935
+        y: 138.00579554973274
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        desc: ''
+        is_array_file: true
+        selected: false
+        title: 文档提取器
+        type: document-extractor
+        variable_selector:
+        - sys
+        - files
+      height: 90
+      id: '1766974885785'
+      position:
+        x: 476.41656438661425
+        y: 282
+      positionAbsolute:
+        x: 476.41656438661425
+        y: 282
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    viewport:
+      x: -1274.463233221185
+      y: 86.86795654107829
+      zoom: 0.6273196870777873

@@ -1,0 +1,1749 @@
+app:
+  description: 在TNM分期之后进行非小细胞癌治疗
+  icon: 🤖
+  icon_background: '#FFEAD5'
+  mode: advanced-chat
+  name: 非小细胞癌治疗
+  use_icon_as_answer_icon: false
+dependencies:
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: langgenius/zhipuai:0.0.23@7e6213a06c26b17b5dfc2416db36f664d4fb08252bd1644ca54a82a6cc7a8609
+kind: app
+version: 0.3.0
+workflow:
+  conversation_variables: []
+  environment_variables: []
+  features:
+    file_upload:
+      allowed_file_extensions:
+      - .JPG
+      - .JPEG
+      - .PNG
+      - .GIF
+      - .WEBP
+      - .SVG
+      allowed_file_types:
+      - image
+      - document
+      allowed_file_upload_methods:
+      - remote_url
+      - local_file
+      enabled: true
+      fileUploadConfig:
+        audio_file_size_limit: 50
+        batch_count_limit: 5
+        file_size_limit: 15
+        image_file_size_limit: 10
+        video_file_size_limit: 100
+        workflow_file_upload_limit: 10
+      image:
+        enabled: false
+        number_limits: 3
+        transfer_methods:
+        - local_file
+        - remote_url
+      number_limits: 3
+    opening_statement: ''
+    retriever_resource:
+      enabled: true
+    sensitive_word_avoidance:
+      enabled: false
+    speech_to_text:
+      enabled: false
+    suggested_questions: []
+    suggested_questions_after_answer:
+      enabled: false
+    text_to_speech:
+      enabled: false
+      language: ''
+      voice: ''
+  graph:
+    edges:
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: llm
+        targetType: answer
+      id: 1765801828677-source-1765802392061-target
+      selected: false
+      source: '1765801828677'
+      sourceHandle: source
+      target: '1765802392061'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: code
+        targetType: if-else
+      id: 1765802928890-source-1765802320701-target
+      selected: false
+      source: '1765802928890'
+      sourceHandle: source
+      target: '1765802320701'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: llm
+        targetType: code
+      id: llm-source-1765803586857-target
+      selected: false
+      source: llm
+      sourceHandle: source
+      target: '1765803586857'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: code
+        targetType: code
+      id: 1765803586857-source-1765802928890-target
+      selected: false
+      source: '1765803586857'
+      sourceHandle: source
+      target: '1765802928890'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: if-else
+        targetType: code
+      id: 1765802320701-true-1765803788049-target
+      selected: false
+      source: '1765802320701'
+      sourceHandle: 'true'
+      target: '1765803788049'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: code
+        targetType: if-else
+      id: 1765803788049-source-1765804093114-target
+      selected: false
+      source: '1765803788049'
+      sourceHandle: source
+      target: '1765804093114'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: if-else
+        targetType: llm
+      id: 1765804093114-true-1765801828677-target
+      selected: false
+      source: '1765804093114'
+      sourceHandle: 'true'
+      target: '1765801828677'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: llm
+        targetType: answer
+      id: 1765965282258-source-1765965296047-target
+      selected: false
+      source: '1765965282258'
+      sourceHandle: source
+      target: '1765965296047'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: if-else
+        targetType: code
+      id: 1765802320701-false-1765965386780-target
+      selected: false
+      source: '1765802320701'
+      sourceHandle: 'false'
+      target: '1765965386780'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: code
+        targetType: if-else
+      id: 1765965386780-source-1765965555642-target
+      selected: false
+      source: '1765965386780'
+      sourceHandle: source
+      target: '1765965555642'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: if-else
+        targetType: code
+      id: 1765965555642-true-1765965611039-target
+      selected: false
+      source: '1765965555642'
+      sourceHandle: 'true'
+      target: '1765965611039'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: code
+        targetType: if-else
+      id: 1765965611039-source-1765965778951-target
+      selected: false
+      source: '1765965611039'
+      sourceHandle: source
+      target: '1765965778951'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: if-else
+        targetType: llm
+      id: 1765965555642-false-1765965876012-target
+      selected: false
+      source: '1765965555642'
+      sourceHandle: 'false'
+      target: '1765965876012'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: llm
+        targetType: answer
+      id: 1765965790968-source-1765967125774-target
+      selected: false
+      source: '1765965790968'
+      sourceHandle: source
+      target: '1765967125774'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: llm
+        targetType: answer
+      id: 1765965808653-source-1765967134303-target
+      selected: false
+      source: '1765965808653'
+      sourceHandle: source
+      target: '1765967134303'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: llm
+        targetType: answer
+      id: 1765965876012-source-1765967141819-target
+      selected: false
+      source: '1765965876012'
+      sourceHandle: source
+      target: '1765967141819'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: if-else
+        targetType: code
+      id: 1765965778951-true-1765968101036-target
+      selected: false
+      source: '1765965778951'
+      sourceHandle: 'true'
+      target: '1765968101036'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: code
+        targetType: if-else
+      id: 1765968101036-source-1765968201082-target
+      selected: false
+      source: '1765968101036'
+      sourceHandle: source
+      target: '1765968201082'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: if-else
+        targetType: llm
+      id: 1765968201082-true-1765965790968-target
+      selected: false
+      source: '1765968201082'
+      sourceHandle: 'true'
+      target: '1765965790968'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: if-else
+        targetType: llm
+      id: 1765968201082-false-1765968282402-target
+      selected: false
+      source: '1765968201082'
+      sourceHandle: 'false'
+      target: '1765968282402'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: llm
+        targetType: answer
+      id: 1765968282402-source-1765968349855-target
+      selected: false
+      source: '1765968282402'
+      sourceHandle: source
+      target: '1765968349855'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: if-else
+        targetType: code
+      id: 1765965778951-false-1765968378779-target
+      selected: false
+      source: '1765965778951'
+      sourceHandle: 'false'
+      target: '1765968378779'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: code
+        targetType: if-else
+      id: 1765968378779-source-1765968398711-target
+      selected: false
+      source: '1765968378779'
+      sourceHandle: source
+      target: '1765968398711'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: if-else
+        targetType: llm
+      id: 1765968398711-true-1765965808653-target
+      selected: false
+      source: '1765968398711'
+      sourceHandle: 'true'
+      target: '1765965808653'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: if-else
+        targetType: llm
+      id: 1765968398711-false-1765968498971-target
+      selected: false
+      source: '1765968398711'
+      sourceHandle: 'false'
+      target: '1765968498971'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: llm
+        targetType: answer
+      id: 1765968498971-source-1765968546687-target
+      selected: false
+      source: '1765968498971'
+      sourceHandle: source
+      target: '1765968546687'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: if-else
+        targetType: code
+      id: 1765804093114-false-1766937177831-target
+      selected: false
+      source: '1765804093114'
+      sourceHandle: 'false'
+      target: '1766937177831'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: code
+        targetType: if-else
+      id: 1766937177831-source-1766937504505-target
+      selected: false
+      source: '1766937177831'
+      sourceHandle: source
+      target: '1766937504505'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: if-else
+        targetType: llm
+      id: 1766937504505-true-1765965282258-target
+      selected: false
+      source: '1766937504505'
+      sourceHandle: 'true'
+      target: '1765965282258'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: if-else
+        targetType: llm
+      id: 1766937504505-fbe22fcb-9a5f-485e-b0c5-8fe8aa989d64-1766937547562-target
+      selected: false
+      source: '1766937504505'
+      sourceHandle: fbe22fcb-9a5f-485e-b0c5-8fe8aa989d64
+      target: '1766937547562'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: if-else
+        targetType: llm
+      id: 1766937504505-449f0e29-c3cd-4ebb-9303-1ce3c74da5fa-1766937598411-target
+      selected: false
+      source: '1766937504505'
+      sourceHandle: 449f0e29-c3cd-4ebb-9303-1ce3c74da5fa
+      target: '1766937598411'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: llm
+        targetType: answer
+      id: 1766937598411-source-1766938039625-target
+      source: '1766937598411'
+      sourceHandle: source
+      target: '1766938039625'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: llm
+        targetType: answer
+      id: 1766937547562-source-1766938057994-target
+      source: '1766937547562'
+      sourceHandle: source
+      target: '1766938057994'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: start
+        targetType: document-extractor
+      id: 1765799979372-source-1766974885785-target
+      source: '1765799979372'
+      sourceHandle: source
+      target: '1766974885785'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: document-extractor
+        targetType: llm
+      id: 1766974885785-source-llm-target
+      source: '1766974885785'
+      sourceHandle: source
+      target: llm
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    nodes:
+    - data:
+        desc: ''
+        selected: false
+        title: 开始
+        type: start
+        variables:
+        - label: TNM_ret
+          max_length: 111111
+          options: []
+          required: true
+          type: paragraph
+          variable: TNM_ret
+      height: 88
+      id: '1765799979372'
+      position:
+        x: 80
+        y: 282
+      positionAbsolute:
+        x: 80
+        y: 282
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        memory:
+          query_prompt_template: 请根据{{#1766974885785.text#}}，{{#sys.query#}}提取病例中的关键信息,填充字段1-10，根据{{#1765799979372.TNM_ret#}}填充字段11-12
+          role_prefix:
+            assistant: ''
+            user: ''
+          window:
+            enabled: false
+            size: 10
+        model:
+          completion_params:
+            temperature: 0.2
+          mode: chat
+          name: glm-4.6
+          provider: langgenius/zhipuai/zhipuai
+        prompt_template:
+        - id: edb66d02-342b-4ccc-a913-b0d21269f09b
+          role: system
+          text: "# If the input is in JSON format, output it as-is.Role\nYou are a professional oncology medical information structuring assistant.\n\n# Goal\nPlease carefully analyze the patient condition description provided by the user, extract key treatment decision factors, and output them in a standard JSON format.\n\n# Extraction Rules\nPlease strictly extract according to the following fields:\n\n1. **Histology**: Must distinguish between \"squamous\" or \"non-squamous\" (adenocarcinoma should be classified as non-squamous).\n\n2. **Performance Status**: Convert to \"0-1\", \"2\", or \"3-4\".\n\n3. **Driver Gene**:\n   - If no mutation (driver-negative), output the number \"0\".\n   - If mutation exists (driver-positive), output the specific gene name.\n   - If the medical record does not mention driver gene status, default to driver-negative and output \"0\".\n\n4. **PDL1 Expression**: Categorize as \"high expression (≥50%)\", \"low expression (1-49%)\", or \"negative (<1%)\".\n\n5. **High-Risk Factors**: (only for early postoperative cases) If poorly differentiated, vascular tumor thrombus, pleural invasion, etc. are mentioned, output \"yes\", otherwise \"no\".\n\n6. **Treatment Stage**: Determine whether it is \"curative postoperative\" or \"curative preoperative\".\n   If \"curative postoperative\", fill in \"1\"; if \"curative preoperative\", fill in \"0\".\n\n7. **Previous Treatment Regimen**: Extract treatment regimens for advanced patients. If the patient has not received treatment, output \"1\". If the patient has received treatment, extract all treatment descriptions from the medical record.\n\n8. **Immunotherapy Contraindications**: If autoimmune disease, organ transplantation, or active infection is mentioned, output the specific type; otherwise \"none\".\n\n9. **Metastasis Type**:\n   - If lesions ≤5 and oligometastasis is emphasized, output \"0\".\n   - If widely disseminated, output \"1\".\n\n10. **First-line Treatment**: Determine whether the advanced patient is receiving first-line or second-line treatment.\n   If first-line, output \"1\"; otherwise output \"0\".\n   First-line patients include:\n   1. Patients who have not received treatment.\n   2. Patients who have received treatment but whose disease has not progressed.\n   Disease progression includes tumor enlargement or metastasis spread.\n\n11. **TNM Stage**: e.g., T4N2M1c\n\n12. **Overall Stage**: e.g., IA3, IIIA\n\n# Output Format\nOutput only JSON. Do not include Markdown code blocks (```json ... ```) or any explanatory text.\n\n# Example Output\n{\n  \"Histology\": \"non-squamous\",\n  \"Performance Status\": \"0-1\",\n  \"Driver Gene\": \"EGFR(19del)\",\n  \"PDL1 Expression\": \"unknown\",\n  \"High-Risk Factors\": \"none\",\n  \"Treatment Stage\": \"1\",\n  \"Previous Medication\": \"none\",\n  \"Immunotherapy Contraindications\": \"none\",\n  \"Metastasis Type\": \"1\",\n  \"First-line Treatment\": \"1\",\n  \"TNM Stage\": \"T4N2M1c\",\n  \"Overall Stage\": \"IVB\"\n}"
+        selected: false
+        structured_output:
+          schema:
+            properties:
+              Driver_Gene:
+                properties:
+                  geneName:
+                    enum:
+                    - EGFR
+                    - ALK
+                    - None
+                    type: string
+                  mutation:
+                    enum:
+                    - 19del
+                    - L858R
+                    - T790M
+                    - Exon20
+                    type: string
+                required:
+                - geneName
+                - mutation
+                type: object
+              High_Risk_Factors:
+                description: 仅针对早期术后，如低分化、血管侵犯等
+                enum:
+                - 是
+                - 否
+                type: string
+              Histology:
+                enum:
+                - 鳞癌
+                - 非鳞癌
+                - 不明确
+                type: string
+              IO_Contraindication:
+                description: 自身免疫病等
+                enum:
+                - 是
+                - 否
+                type: string
+              Metastasis_Type:
+                enum:
+                - 寡转移
+                - 脑转移(有/无症状)
+                - 广泛转移
+                - 无
+                type: string
+              PD_L1:
+                enum:
+                - ≥50%
+                - 1-49%
+                - <1%
+                - 未知
+                type: string
+              PS_Score:
+                enum:
+                - 0-1
+                - '2'
+                - 3-4
+                type: string
+              Previous_Drugs:
+                description: 用户之前用过什么药（如“奥希替尼”、“免疫治疗”）
+                items:
+                  type: string
+                type: array
+              Treatment_History:
+                enum:
+                - 初治
+                - 术后
+                - 一线耐药
+                - 二线耐药
+                type: string
+            required:
+            - Histology
+            - PS_Score
+            - Driver_Gene
+            - PD_L1
+            - High_Risk_Factors
+            - Treatment_History
+            - Previous_Drugs
+            - IO_Contraindication
+            - Metastasis_Type
+            type: object
+        structured_output_enabled: false
+        title: 病人信息提取
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 88
+      id: llm
+      position:
+        x: 776.4165643866143
+        y: 282
+      positionAbsolute:
+        x: 776.4165643866143
+        y: 282
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params: {}
+          mode: chat
+          name: glm-4.6
+          provider: langgenius/zhipuai/zhipuai
+        prompt_template:
+        - id: 13be3f12-da45-4ea9-b2e8-2b3a3527252b
+          role: system
+          text: 'You are a non-small cell lung cancer (NSCLC) clinical decision support expert. Your task is to formulate a precise treatment plan for the patient based on the provided [Guideline Document] and the extracted [Patient Information].\n\nBefore answering, first output the **reasoning process**: within <think> tags, briefly list the key evidence used to make the final decision. Requirements:\n- Only include judgments directly related to the final plan\n- Avoid repetition and content unrelated to the guidelines\n- Total word count should not exceed 200 words\n\n# Constraints (Strict Constraints)\n\n1. Based only on the document: All your recommendations must strictly reference the content in the context. The use of external knowledge or hallucination is strictly prohibited.\n\n2. Handling missing information: If key decision factors are missing in the patient information, do not state \"missing key information\", do not suggest additional tests or evaluations, and do not explain how different values of that factor would affect treatment selection. You must directly provide treatment recommendations that can be clearly determined based only on the currently provided patient information and guideline content.\n\n3. For decision conditions that are not provided, do not expand into \"if...then...\" conditional branches. For detailed plans that depend on missing information, do not speculate or supplement. When information is insufficient to specify exact drug combinations, it is allowed to output only the higher-level treatment pathway.\n\n# Data Schema Mapping (Data Schema Mapping)\n\nPlease strictly interpret the input JSON data according to the following definitions, paying attention to the special meanings of numeric codes:\n\nDriver Gene (0 vs text):\n0: represents driver-negative (no mutation), suitable for chemotherapy/immunotherapy regimens\nSpecific gene name (e.g., \"EGFR\"): represents driver-positive, suitable for targeted therapy\n\nTreatment Stage (1 vs 0):\n1: represents postoperative after curative surgery\n0: represents preoperative before curative surgery\n\nPrevious Treatment Regimen (1 vs text):\n1: represents treatment-naive patients (no prior treatment), suitable for first-line therapy\nSpecific text: represents previously treated patients (drug resistance or relapse), further determine second-line or later-line based on description\n\nMetastasis Type (0 vs 1):\n0: represents oligometastasis (≤5 lesions), suitable for local curative + systemic therapy\n1: represents widespread metastasis, suitable for systemic drug therapy\n\n# Guideline Document – NSCLC Patients After Curative Surgery (Early Stage)\n\nFirst, we introduce several pathological terms:\n\n1. High-risk factors: include poor differentiation, vascular invasion, tumor emboli, wedge resection, pleural invasion, unknown lymph node status.\n\n2. PD-L1 expression: TPS is used in lung cancer; PD-L1 expression level is a predictive factor for immunotherapy efficacy.\n\n## I. Stage IA\n\n1. For stage IA patients, both NCCN and CSCO guidelines recommend regular follow-up only. Regardless of gene mutation status or presence of high-risk factors, no treatment is required (including targeted therapy, chemotherapy, or immunotherapy).\n\n## II. Stage IB: Decision based on gene mutation type and high-risk factors, divided into 3 scenarios\n\n1. Scenario 1: If the patient has EGFR-sensitive mutations (EGFR exon 19 deletion or exon 21 L858R mutation), recommendations are as follows:\n\n* NCCN: Regardless of high-risk factors, PD-L1 status, or prior adjuvant chemotherapy, osimertinib is recommended for at least 3 years.\n* CSCO: Regardless of high-risk factors or PD-L1 status, osimertinib is recommended.\n\n2. Scenario 2: If the patient has ALK fusion, regardless of high-risk factors or PD-L1 expression, NCCN recommends alectinib for at least 2 years.\n\n3. Scenario 3: If no EGFR-sensitive mutation and no ALK fusion:\n\n* Condition 1: With high-risk factors:\n  NCCN: adjuvant chemotherapy for 4 cycles\n  CSCO: follow-up only\n  Recommended regimens:\n  Preferred: cisplatin + pemetrexed (non-squamous), cisplatin + gemcitabine (squamous), cisplatin + docetaxel (squamous)\n  Alternative: cisplatin + vinorelbine, cisplatin + etoposide\n  If cisplatin not suitable: carboplatin + paclitaxel, carboplatin + gemcitabine (squamous), carboplatin + pemetrexed (non-squamous)\n\n* Condition 2: Without high-risk factors:\n  NCCN and CSCO: follow-up only\n\n## III. Stage IIA: Decision based on gene mutation, high-risk factors, and PD-L1 expression\n\n1. Scenario 1: EGFR-sensitive mutation:\n\n* NCCN: osimertinib ≥3 years regardless of factors\n* CSCO: osimertinib or icotinib\n\n2. Scenario 2: ALK fusion:\n\n* NCCN and CSCO: alectinib ≥2 years\n\n3. Scenario 3: No EGFR mutation and no ALK fusion:\n\n* Condition 1: High-risk + PD-L1 ≥1%\n  chemo (4 cycles) → immunotherapy\n  Immunotherapy: atezolizumab, pembrolizumab\n\n* Condition 2: High-risk + PD-L1 <1%\n  chemo → immunotherapy\n  Drug: pembrolizumab\n\n* Condition 3: No high-risk + PD-L1 ≥1%\n  NCCN: follow-up\n  CSCO: chemo → immunotherapy\n\n* Condition 4: No high-risk + PD-L1 <1%\n  NCCN: follow-up\n  CSCO: chemo → immunotherapy\n\n## IV. Stage IIB, IIIA, IIIB\n\n1. Scenario 1: EGFR mutation:\n* NCCN: osimertinib ≥3 years\n* CSCO: osimertinib or icotinib\n\n2. Scenario 2: ALK fusion:\n* NCCN & CSCO: alectinib ≥2 years\n\n3. Scenario 3: No EGFR/ALK:\n\n* Condition 1: PD-L1 ≥1%\n  chemo → immunotherapy\n  Drugs: atezolizumab, pembrolizumab\n\n* Condition 2: PD-L1 <1%\n  chemo → immunotherapy\n  Drug: pembrolizumab\n\n4. Scenario 4: Intraoperative pleural metastasis (stage IVA post-op)\n→ treat as advanced driver-positive first-line or driver-negative first-line\n```'
+        - id: eef46c99-d2fd-4399-9a30-a9ae999f3445
+          role: user
+          text: You are a non-small cell lung cancer (NSCLC) clinical decision support expert. Your task is to formulate a precise treatment plan for the patient based on the provided [Guideline Document] and the extracted {{#1765803586857.result#}}.。
+        selected: false
+        title: 早期根治术后
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 88
+      id: '1765801828677'
+      position:
+        x: 2618.1534705243594
+        y: 85.1987284103837
+      positionAbsolute:
+        x: 2618.1534705243594
+        y: 85.1987284103837
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        cases:
+        - case_id: 'true'
+          conditions:
+          - comparison_operator: '='
+            id: 86d65aac-023c-4b00-84f8-36a88a836c24
+            numberVarType: constant
+            value: '1'
+            varType: number
+            variable_selector:
+            - '1765802928890'
+            - result
+          id: 'true'
+          logical_operator: and
+        desc: ''
+        selected: false
+        title: 条件分支
+        type: if-else
+      height: 124
+      id: '1765802320701'
+      position:
+        x: 1667.6705015980733
+        y: 282
+      positionAbsolute:
+        x: 1667.6705015980733
+        y: 282
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        answer: '早期根治性术后
+
+          {{#1765801828677.text#}}'
+        desc: ''
+        selected: false
+        title: 直接回复
+        type: answer
+        variables: []
+      height: 119
+      id: '1765802392061'
+      position:
+        x: 2970.1802291505005
+        y: 85.1987284103837
+      positionAbsolute:
+        x: 2970.1802291505005
+        y: 85.1987284103837
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        code: "import json\n\ndef main(arg1: str) -> dict:\n    try:\n        # 1.\
+          \ 解析 JSON 字符串\n        data = json.loads(arg1)\n        \n        # 2. 获取综合分期，转大写并去空格\n\
+          \        stage = data.get(\"综合分期\", \"\").strip().upper()\n        \n  \
+          \      # 3. 判断逻辑\n        # 只要包含 \"IV\" (普通字符) 或 \"Ⅳ\" (特殊字符)，就是晚期 -> 0\n\
+          \        if \"IV\" in stage or \"Ⅳ\" in stage:\n            return {\"result\"\
+          : 0}\n        \n        # 4. 其他情况 (I, II, III) 默认为早期/局晚期 -> 1\n        return\
+          \ {\"result\": 1}\n\n    except Exception as e:\n        # 如果出错（如JSON格式不对），默认返回\
+          \ 0 或 1，这里设为 0 以防万一\n        return {\"result\": 0}"
+        code_language: python3
+        desc: ''
+        outputs:
+          result:
+            children: null
+            type: number
+        selected: false
+        title: 是否早期
+        type: code
+        variables:
+        - value_selector:
+          - '1765803586857'
+          - result
+          variable: arg1
+      height: 52
+      id: '1765802928890'
+      position:
+        x: 1370.3420642090505
+        y: 282
+      positionAbsolute:
+        x: 1370.3420642090505
+        y: 282
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        code: "import re\n\ndef main(arg1: str) -> dict:\n    \"\"\"\n    输入: 包含 <think>...</think>\
+          \ 标签的 LLM 输出字符串\n    输出: 去除 think 标签及其内容后的纯文本\n    \"\"\"\n    # 1. 安全检查：防止输入为\
+          \ None\n    if arg1 is None:\n        return {\"result\": \"\"}\n    \n\
+          \    # 2. 正则表达式替换\n    # pattern: <think> 开始，.*? 非贪婪匹配任意字符，</think> 结束\n\
+          \    # flags=re.DOTALL: 关键参数，让 '.' 能够匹配换行符(\\n)，因为思维链通常是多行的\n    # flags=re.IGNORECASE:\
+          \ 忽略大小写（防止模型输出 <THINK>）\n    cleaned_text = re.sub(\n        r'<think>.*?</think>',\
+          \ \n        '', \n        str(arg1), \n        flags=re.DOTALL | re.IGNORECASE\n\
+          \    )\n    \n    # 3. 去除首尾可能残留的空白字符（换行、空格）\n    final_text = cleaned_text.strip()\n\
+          \    \n    return {\n        \"result\": final_text\n    }"
+        code_language: python3
+        desc: ''
+        outputs:
+          result:
+            children: null
+            type: string
+        selected: false
+        title: 过滤think
+        type: code
+        variables:
+        - value_selector:
+          - llm
+          - text
+          variable: arg1
+      height: 52
+      id: '1765803586857'
+      position:
+        x: 1070.3420642090505
+        y: 282
+      positionAbsolute:
+        x: 1070.3420642090505
+        y: 282
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        code: "import json\n\ndef main(arg1: str) -> dict:\n    try:\n        # 1.\
+          \ 解析 JSON 数据\n        data = json.loads(arg1)\n        \n        # 2. 获取\"\
+          治疗阶段\"字段\n        # 使用 .get 避免字段不存在时报错\n        phase = data.get(\"治疗阶段\"\
+          )\n        \n        # 3. 判断逻辑\n        # 兼容 数字类型的 1 和 字符串类型的 \"1\"\n  \
+          \      if phase == 1 or str(phase) == \"1\":\n            return {\"result\"\
+          : 1}\n        else:\n            return {\"result\": 0}\n            \n\
+          \    except Exception as e:\n        # 如果解析失败或发生错误，默认返回 0\n        return\
+          \ {\"result\": 0}"
+        code_language: python3
+        desc: ''
+        outputs:
+          result:
+            children: null
+            type: number
+        selected: false
+        title: 是否已行根治性手术
+        type: code
+        variables:
+        - value_selector:
+          - '1765803586857'
+          - result
+          variable: arg1
+      height: 52
+      id: '1765803788049'
+      position:
+        x: 2034.2077516868553
+        y: 216.55193792171377
+      positionAbsolute:
+        x: 2034.2077516868553
+        y: 216.55193792171377
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        cases:
+        - case_id: 'true'
+          conditions:
+          - comparison_operator: '='
+            id: 39b2dbd7-edd3-49c2-b02c-eb3df5bc7f4f
+            value: '1'
+            varType: number
+            variable_selector:
+            - '1765803788049'
+            - result
+          id: 'true'
+          logical_operator: and
+        desc: ''
+        selected: false
+        title: 条件分支 2
+        type: if-else
+      height: 124
+      id: '1765804093114'
+      position:
+        x: 2307.937109784589
+        y: 228.22777876716532
+      positionAbsolute:
+        x: 2307.937109784589
+        y: 228.22777876716532
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params: {}
+          mode: chat
+          name: glm-4.6
+          provider: langgenius/zhipuai/zhipuai
+        prompt_template:
+        - id: e09e7698-6b23-4e95-aa71-5a6d329dde20
+          role: system
+          text: 'You are a non-small cell lung cancer (NSCLC) clinical decision support expert. Your task is to formulate a precise treatment plan for the patient based on the provided [Guideline Document] and the extracted [Patient Information].\nBefore answering, first output the **reasoning process**: within the <think> tags, briefly list the key basis for making the final judgment. Requirements:\n- Only include judgments directly related to the final plan\n- Avoid repetition and content unrelated to the guidelines\n- Total word count must not exceed 200 words\n\n# Constraints (Strict Constraints)\n\n1. Based only on the document: All your recommendations must strictly cite the content in the context. The use of external knowledge or hallucination is strictly prohibited.\n\n2. Handling missing information: If key decision factors are missing in the patient information, do not state “key information is missing,” do not suggest supplementary examinations or evaluations, and do not explain how different results of that indicator would affect plan selection. You must directly provide treatment recommendations that can be clearly established under the currently available information, based only on the patient information and guideline content already provided.\n\n3. For decision conditions that are not provided, do not expand into conditional branches in the form of “if… then…”. For detailed plans that depend on missing information to determine, do not speculate and do not supplement. When the information is insufficient to support refinement to a specific drug combination, it is allowed to output only the higher-level treatment pathway.\n\n# Data Schema Mapping (Data Schema Mapping)\n\nPlease strictly parse the input JSON data according to the following definitions, paying attention to the special meanings of the numeric codes:\n\nDriver Gene (0 vs text):\n\n0: indicates driver-gene negative (no mutation), suitable for chemotherapy / immunotherapy regimens\n\nSpecific gene name (such as \"EGFR\"): indicates driver-gene positive, suitable for targeted therapy regimens.\n\nTreatment Stage (1 vs 0):\n\n1: indicates curative postoperative\n\n0: indicates curative preoperative\n\nPrevious Treatment Regimen (1 vs text):\n\n1: indicates treatment-naive patients (have not received treatment), suitable for first-line treatment regimens.\n\nSpecific text: indicates previously treated patients\n\nMetastasis Type (0 vs 1):\n\n0: indicates oligometastasis (≤5 lesions), suitable for local curative + systemic treatment\n\n1: indicates widespread metastasis, suitable for systemic drug treatment\n\nWhether First-line Treatment (0 vs 1):\n\n0: indicates second-line treatment should be adopted\n\n1: indicates first-line treatment should be adopted\n\nThere are two types of first-line treatment patients: 1. patients who have not received treatment. 2. patients who have received treatment but whose disease has not further progressed. Disease progression includes tumor enlargement or metastasis spread, etc.\n\n# Guideline Document 1 - Resectable\n\nAccording to the definition of unresectable non-small cell lung cancer: after multidisciplinary discussion (MDT), it is unanimously considered potentially resectable.\n\nAccording to different scenarios (whether there are contraindications to immune checkpoint inhibitors) and different conditions (whether there are driver gene alterations such as EGFR mutation or ALK fusion), the following different regimen recommendations are provided:\n\n# First, Scenario 1: Neoadjuvant regimens for patients without contraindications to immune checkpoint inhibitors. According to whether there are driver gene alterations, there are the following 2 situations:\n\n## Situation 1: If the patient has no detected driver gene alterations (EGFR mutation, ALK fusion), there are the following 2 recommended regimens, and these 2 regimens have equal status:\n\n1. Regimen 1: Curative surgery after preoperative neoadjuvant treatment. The neoadjuvant treatment regimen is as follows: platinum-doublet chemotherapy combined with nivolumab for 3 cycles is recommended, and no postoperative adjuvant treatment is required. Optional chemotherapy drugs are as follows: non-squamous: pemetrexed plus cisplatin, paclitaxel plus carboplatin; squamous: gemcitabine plus cisplatin, paclitaxel plus carboplatin.\n\n2. Regimen 2: Curative surgery after preoperative neoadjuvant treatment combined with postoperative adjuvant treatment. Drug selection is as follows:\n\n     * Curative surgery after 4 cycles of preoperative platinum-doublet chemotherapy combined with nivolumab, followed by 13 cycles of postoperative nivolumab. Optional chemotherapy drugs are as follows: platinum-doublet chemotherapy regimens: carboplatin or cisplatin plus paclitaxel, cisplatin plus pemetrexed (non-squamous), cisplatin plus gemcitabine (squamous); chemotherapy regimens for patients with cisplatin contraindications: carboplatin plus pemetrexed (non-squamous), carboplatin plus gemcitabine (squamous).\n\n     * Curative surgery after 4 cycles of preoperative platinum-doublet chemotherapy combined with durvalumab, followed by 12 cycles of durvalumab maintenance treatment postoperatively. Optional chemotherapy drugs are as follows: platinum-doublet chemotherapy regimens: carboplatin plus paclitaxel (squamous), cisplatin plus gemcitabine (squamous), cisplatin or carboplatin plus pemetrexed (non-squamous); chemotherapy regimens for patients with cisplatin contraindications: carboplatin plus gemcitabine (squamous).\n\n## Situation 2: Regardless of whether the patient has detected driver gene alterations:\n\n1. Regimen 1: Curative surgery after 4 cycles of preoperative chemotherapy combined with pembrolizumab, followed by 13 cycles of pembrolizumab maintenance treatment postoperatively. Optional chemotherapy drugs are as follows: cisplatin plus gemcitabine (squamous), cisplatin plus pemetrexed (non-squamous).\n\n# Second, Scenario 2: Neoadjuvant regimens and postoperative adjuvant regimens for patients with contraindications to immune checkpoint inhibitors:\n\n## Preoperative neoadjuvant regimen: The patient should complete the neoadjuvant regimen before surgery, and the following 1 regimen is recommended:\n\n1. Regimen 1: Preoperative chemotherapy alone, followed by a postoperative adjuvant treatment regimen. Optional drugs for the preoperative chemotherapy-alone regimen are as follows: preferred recommendations: carboplatin plus pemetrexed (non-squamous) for 4 cycles, cisplatin plus gemcitabine (squamous) for 4 cycles, cisplatin plus docetaxel (squamous) for 4 cycles. Alternative recommendations: cisplatin plus vinorelbine for 4 cycles, cisplatin plus etoposide for 4 cycles; when cisplatin cannot be used, carboplatin plus paclitaxel for 4 cycles, carboplatin plus gemcitabine (squamous) for 4 cycles, and carboplatin plus pemetrexed (non-squamous) for 4 cycles are recommended.\n\n## Postoperative adjuvant regimen: The patient should complete the adjuvant regimen after surgery. According to the type of driver gene alteration, there are the following 3 different regimen options:\n\n1. Regimen 1: If the patient has ALK fusion: no postoperative adjuvant chemotherapy is required, and only alectinib is recommended.\n\n2. Regimen 2: If the patient has EGFR mutation (EGFR exon 19 deletion or exon 21 L858R mutation): osimertinib is recommended regardless of whether adjuvant chemotherapy is given.\n\n3. Regimen 3: If the patient has no EGFR mutation or ALK fusion, only postoperative adjuvant chemotherapy is recommended. Optional drugs are as follows: preferred recommendations: cisplatin plus pemetrexed (non-squamous), cisplatin plus gemcitabine or docetaxel (squamous). Alternative recommendations: cisplatin plus vinorelbine, cisplatin plus etoposide; when cisplatin cannot be used, carboplatin plus paclitaxel, carboplatin plus gemcitabine (squamous), and carboplatin plus pemetrexed (non-squamous) are recommended.'
+        - id: 96b48346-20e7-462a-a7f9-8fd2610916d0
+          role: user
+          text: You are a non-small cell lung cancer (NSCLC) clinical decision support expert. Your task is to formulate a precise treatment plan for the patient based on the provided [Guideline Document] and the extracted {{#1765803586857.result#}}.
+        selected: false
+        title: 可手术（NCCN）
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 88
+      id: '1765965282258'
+      position:
+        x: 3371.837351267212
+        y: 18.97621332768179
+      positionAbsolute:
+        x: 3371.837351267212
+        y: 18.97621332768179
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        answer: '可手术NCCN
+
+          {{#1765965282258.text#}}'
+        desc: ''
+        selected: false
+        title: 直接回复 2
+        type: answer
+        variables: []
+      height: 119
+      id: '1765965296047'
+      position:
+        x: 3657.302432155724
+        y: 18.97621332768179
+      positionAbsolute:
+        x: 3657.302432155724
+        y: 18.97621332768179
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        code: "import json\n\ndef main(arg1: str) -> dict:\n    try:\n        # 1.\
+          \ 解析 JSON 数据\n        data = json.loads(arg1)\n        \n        # 2. 获取\"\
+          治疗阶段\"字段\n        # 使用 .get 避免字段不存在时报错\n        phase = data.get(\"转移类型\"\
+          )\n        \n        # 3. 判断逻辑\n        # 兼容 数字类型的 1 和 字符串类型的 \"1\"\n  \
+          \      if phase == 1 or str(phase) == \"1\":\n            return {\"result\"\
+          : 1}\n        else:\n            return {\"result\": 0}\n            \n\
+          \    except Exception as e:\n        # 如果解析失败或发生错误，默认返回 0\n        return\
+          \ {\"result\": 0}"
+        code_language: python3
+        desc: ''
+        outputs:
+          result:
+            children: null
+            type: number
+        selected: false
+        title: 是否广泛转移
+        type: code
+        variables:
+        - value_selector:
+          - '1765803586857'
+          - result
+          variable: arg1
+      height: 52
+      id: '1765965386780'
+      position:
+        x: 2044.4241124266255
+        y: 472.47318986371704
+      positionAbsolute:
+        x: 2044.4241124266255
+        y: 472.47318986371704
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        cases:
+        - case_id: 'true'
+          conditions:
+          - comparison_operator: '='
+            id: 584160b7-051a-4d57-a890-f6bf45bfb05d
+            value: '1'
+            varType: number
+            variable_selector:
+            - '1765965386780'
+            - result
+          id: 'true'
+          logical_operator: and
+        desc: ''
+        selected: false
+        title: 条件分支 3
+        type: if-else
+      height: 124
+      id: '1765965555642'
+      position:
+        x: 2347.4241124266255
+        y: 472.47318986371704
+      positionAbsolute:
+        x: 2347.4241124266255
+        y: 472.47318986371704
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        code: "import json\n\ndef main(arg1: str) -> dict:\n    try:\n        # 1.\
+          \ 解析 JSON 数据\n        data = json.loads(arg1)\n        \n        # 2. 获取\"\
+          治疗阶段\"字段\n        # 使用 .get 避免字段不存在时报错\n        phase = data.get(\"驱动基因\"\
+          )\n        \n        # 3. 判断逻辑\n        # 兼容 数字类型的 0 和 字符串类型的 \"0\"\n  \
+          \      if phase == 0 or str(phase) == \"0\":\n            return {\"result\"\
+          : 1}\n        else:\n            return {\"result\": 0}\n            \n\
+          \    except Exception as e:\n        # 如果解析失败或发生错误，默认返回 0\n        return\
+          \ {\"result\": 0}"
+        code_language: python3
+        desc: ''
+        outputs:
+          result:
+            children: null
+            type: number
+        selected: false
+        title: 驱动基因是否阴性
+        type: code
+        variables:
+        - value_selector:
+          - '1765803586857'
+          - result
+          variable: arg1
+      height: 52
+      id: '1765965611039'
+      position:
+        x: 2659.622099779601
+        y: 506.0412322943903
+      positionAbsolute:
+        x: 2659.622099779601
+        y: 506.0412322943903
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        cases:
+        - case_id: 'true'
+          conditions:
+          - comparison_operator: '='
+            id: 5a922837-2c1f-4f69-939d-8949f4bfd6e2
+            value: '1'
+            varType: number
+            variable_selector:
+            - '1765965611039'
+            - result
+          id: 'true'
+          logical_operator: and
+        desc: ''
+        selected: false
+        title: 条件分支 4
+        type: if-else
+      height: 124
+      id: '1765965778951'
+      position:
+        x: 2965.099953272077
+        y: 506.0412322943903
+      positionAbsolute:
+        x: 2965.099953272077
+        y: 506.0412322943903
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params:
+            temperature: 0.2
+          mode: chat
+          name: glm-4.6
+          provider: langgenius/zhipuai/zhipuai
+        prompt_template:
+        - id: 4f4ccfa2-831f-4e34-a363-47d0856ba07d
+          role: system
+          text: 'You are a non-small cell lung cancer (NSCLC) clinical decision support expert. Your task is to formulate a precise treatment plan for the patient based on the provided [Guideline Document] and the extracted [Patient Information].\nBefore answering, first output the **reasoning process**: within <think> tags, briefly list the key basis for making the final judgment. Requirements:\n- Only include judgments directly related to the final plan\n- Avoid repetition and content unrelated to the guidelines\n- Total word count must not exceed 200 words\n\n# Constraints (Strict Constraints)\n\n1. Based only on the document: All your recommendations must strictly cite the content in the context. The use of external knowledge or hallucination is strictly prohibited.\n\n2. Handling missing information: If key decision factors are missing in the patient information, do not state \"key information is missing\", do not suggest supplementary examinations or evaluations, and do not explain how different results of that indicator would affect plan selection. You must directly provide treatment recommendations that can be clearly established under the currently available information, based only on the provided patient information and guideline content.\n\n3. For decision conditions that are not provided, do not expand into conditional branches in the form of \"if... then...\". For detailed plans that depend on missing information, do not speculate or supplement. When information is insufficient to refine to specific drug combinations, it is allowed to output only higher-level treatment pathways.\n\n# Data Schema Mapping\n\nPlease strictly parse the input JSON data according to the following definitions, paying attention to the special meanings of numeric codes:\n\nDriver Gene (0 vs text):\n\n0: indicates driver-negative (no mutation), suitable for chemotherapy/immunotherapy regimens\n\nSpecific gene name (e.g., \"EGFR\"): indicates driver-positive, suitable for targeted therapy regimens\n\nTreatment Stage (1 vs 0):\n\n1: indicates curative postoperative\n\n0: indicates curative preoperative\n\nPrevious Treatment Regimen (1 vs text):\n\n1: indicates treatment-naive patients (no prior treatment), suitable for first-line treatment regimens\n\nSpecific text: indicates previously treated patients\n\nMetastasis Type (0 vs 1):\n\n0: indicates oligometastasis (≤5 lesions), suitable for local curative + systemic therapy\n\n1: indicates widespread metastasis, suitable for systemic drug therapy\n\nWhether First-line Treatment (0 vs 1):\n\n0: indicates second-line treatment should be used\n\n1: indicates first-line treatment should be used\n\nFirst-line patients include:\n1. Patients who have not received treatment\n2. Patients who have received treatment but whose disease has not progressed\nDisease progression includes tumor enlargement or metastasis spread, etc.\n\n# Guideline Document 1 - Advanced NSCLC Driver-Negative First-line Treatment (Initial Treatment)\n\nIf no meaningful driver gene alterations are detected (EGFR classical mutations, EGFR uncommon sensitive mutations, EGFR exon 20 insertion, ALK fusion, ROS1 fusion, BRAF V600E mutation, NTRK fusion, MET exon 14 skipping mutation, RET fusion, high-level MET amplification, FGFR mutation), treatment should be determined based on patient condition (PS 0–1, PS 2, PS 3–4) and scenario (whether immunotherapy can be used). For patients eligible for immunotherapy, different treatment regimens are recommended based on PD-L1 levels (≥50%, 1%≤PD-L1<50%).\n\n# I. Performance Status (PS 0–1)\n\n## Scenario 1: Immunotherapy can be used\nIf the patient has no contraindications to immunotherapy (autoimmune disease, organ transplantation history, active infection, etc.), is willing to receive immunotherapy, and has no driver mutations, the following applies:\n\n### Situation 1: PD-L1 TPS ≥50%\n\n1. Option 1: Immunotherapy alone (preferred by NCCN and CSCO)\nDrugs: pembrolizumab, atezolizumab; NCCN only: cemiplimab; CSCO alternative: ivonescimab\n\n2. Option 2: Immunotherapy + chemotherapy (also preferred)\n\n* Squamous: paclitaxel + carboplatin + pembrolizumab, etc.\n* Non-squamous: pemetrexed + platinum + pembrolizumab, etc.\n\n3. Option 3: Dual immunotherapy + chemotherapy (secondary recommendation)\n\n4. Option 4: Dual immunotherapy (secondary NCCN recommendation)\n\n5. Option 5: Immunotherapy + anti-angiogenesis + chemotherapy (non-squamous only)\n\n### Situation 2: 1% ≤ PD-L1 <50%\n\n1. Option 1: Immunotherapy alone (special cases only)\n\n2. Option 2: Immunotherapy + chemotherapy (preferred)\n\n3. Option 3: Dual immunotherapy + chemotherapy\n\n4. Option 4: Dual immunotherapy\n\n5. Option 5: Immunotherapy + anti-angiogenesis + chemotherapy\n\n### Situation 3: PD-L1 <1%\n\n1. Option 1: Immunotherapy + chemotherapy (preferred)\n\n2. Option 2: Dual immunotherapy + chemotherapy\n\n3. Option 3: Four-drug regimen (immunotherapy + chemo + anti-angiogenesis)\n\n4. Option 4: Dual immunotherapy\n\n## Scenario 2: Immunotherapy not applicable\n\n1. Option 1: Chemotherapy alone\n\n2. Option 2: Chemotherapy + anti-angiogenesis (non-squamous only)\n\n# II. Performance Status (PS = 2)\n\nTreatment similar to PS 0–1, but chemotherapy intensity should be adjusted\n\n# III. Performance Status (PS = 3–4)\n\n1. Option 1: Best supportive care only (no anti-cancer treatment)\n```'
+        - id: 2aa7da88-0c64-4d38-95aa-ca1d75f9784f
+          role: user
+          text: You are a non-small cell lung cancer (NSCLC) clinical decision support expert. Your task is to formulate a precise treatment plan for the patient based on the provided [Guideline Document] and the extracted {{#1765803586857.result#}}.
+        selected: false
+        title: 晚期驱动基因阴性一线
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 88
+      id: '1765965790968'
+      position:
+        x: 3937.936499371748
+        y: 372.440576259985
+      positionAbsolute:
+        x: 3937.936499371748
+        y: 372.440576259985
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params: {}
+          mode: chat
+          name: glm-4.6
+          provider: langgenius/zhipuai/zhipuai
+        prompt_template:
+        - id: ef260779-aef5-4260-b8cb-6ba07be881ed
+          role: system
+          text: 'You are a non-small cell lung cancer (NSCLC) clinical decision support expert. Your task is to formulate a precise treatment plan for the patient based on the provided [Guideline Document] and the extracted [Patient Information].\nBefore answering, first output the **reasoning process**: within <think> tags, briefly list the key basis for making the final judgment. Requirements:\n- Only include judgments directly related to the final plan\n- Avoid repetition and content unrelated to the guidelines\n- Total word count must not exceed 200 words\n\n# Constraints (Strict Constraints)\n\n1. Based only on the document: All your recommendations must strictly cite the content in the context. The use of external knowledge or hallucination is strictly prohibited.\n\n2. Handling missing information: If key decision factors are missing in the patient information, do not state \"key information is missing\", do not suggest supplementary examinations or evaluations, and do not explain how different results of that indicator would affect plan selection. You must directly provide treatment recommendations that can be clearly established under the currently available information, based only on the provided patient information and guideline content.\n\n3. For decision conditions that are not provided, do not expand into conditional branches in the form of \"if... then...\". For detailed plans that depend on missing information, do not speculate or supplement. When information is insufficient to refine to specific drug combinations, it is allowed to output only higher-level treatment pathways.\n\n# Data Schema Mapping\n\nPlease strictly parse the input JSON data according to the following definitions, paying attention to the special meanings of numeric codes:\n\nDriver Gene (0 vs text):\n\n0: indicates driver-negative (no mutation), suitable for chemotherapy/immunotherapy regimens\n\nSpecific gene name (e.g., \"EGFR\"): indicates driver-positive, suitable for targeted therapy regimens\n\nTreatment Stage (1 vs 0):\n\n1: indicates curative postoperative\n\n0: indicates curative preoperative\n\nPrevious Treatment Regimen (1 vs text):\n\n1: indicates treatment-naive patients (no prior treatment), suitable for first-line treatment regimens\n\nSpecific text: indicates previously treated patients (drug-resistant or relapsed), further determination of second-line or later-line treatment should be based on the description\n\nMetastasis Type (0 vs 1):\n\n0: indicates oligometastasis (≤5 lesions), suitable for local curative + systemic therapy\n\n1: indicates widespread metastasis, suitable for systemic drug therapy\n\nWhether First-line Treatment (0 vs 1):\n\n0: indicates second-line treatment should be adopted\n\n1: indicates first-line treatment should be adopted\n\n# Guideline Document 1 - Advanced NSCLC Driver-Positive First-line Treatment (Initial Treatment)\n\nDifferent gene mutation types (14 mutation types: EGFR classical mutations, EGFR uncommon sensitive mutations, EGFR exon 20 insertion mutations, ALK fusion, ROS1 fusion, BRAF V600E mutation, NTRK fusion, MET exon 14 skipping mutation, RET fusion, KRAS G12C mutation, HER2 (ERBB2) mutation, NRG1 fusion, high-level MET amplification, FGFR mutation) have different recommended first-line treatment regimens, and the drug options also differ. The following are recommended first-line treatment regimens and corresponding drugs for different mutation types:\n\n# I. EGFR classical mutations (EGFR exon 19 deletion or exon 21 L858R mutation) have 2 scenarios\n\n## Scenario 1: If targeted therapy can be used, there are 4 first-line treatment options. Option 1 is targeted monotherapy, which remains the preferred approach using third-generation EGFR TKIs. Options 2–4 are combination strategies, which have no significant efficacy advantage but increase toxicity, so they are secondary choices unless in special situations.\n\n1. Option 1: Targeted monotherapy (preferred by NCCN and CSCO)\n\n   * Condition 1: Third-generation EGFR TKIs can be used:\n     NCCN & CSCO: osimertinib\n     CSCO only: aumolertinib, furmonertinib, befotertinib, etc.\n\n   * Condition 2: If third-generation cannot be used:\n     Second-generation: dacomitinib, afatinib\n     First-generation: gefitinib, erlotinib, icotinib\n\n2. Option 2: Targeted therapy + chemotherapy (non-squamous: osimertinib + pemetrexed + platinum)\n\n3. Option 3: Targeted therapy + anti-angiogenesis (e.g., erlotinib + bevacizumab)\n\n4. Option 4: Targeted therapy + monoclonal antibody (e.g., amivantamab + lazertinib)\n\n## Scenario 2: If EGFR targeted therapy cannot be used\n\nPlatinum doublet chemotherapy + bevacizumab (CSCO secondary recommendation)\n\n# II. EGFR uncommon sensitive mutations\n\n1. Preferred: osimertinib or afatinib\n2. Alternative: dacomitinib, gefitinib, erlotinib\n\n# III. EGFR exon 20 insertion mutation\n\n1. Preferred: amivantamab + pemetrexed + carboplatin (non-squamous)\n2. Alternative: treat as driver-negative NSCLC\n\n# IV. ALK fusion\n\n1. Preferred: lorlatinib\n2. Alternative: alectinib, brigatinib, ensartinib, ceritinib\n3. Third option: crizotinib\n4. If unavailable: chemotherapy ± bevacizumab\n\n# V. ROS1 fusion\n\n1. Preferred: crizotinib\n2. Alternative: entrectinib, repotrectinib\n3. If unavailable: chemotherapy ± bevacizumab\n\n# VI. BRAF V600E mutation\n\n1. Preferred: dabrafenib + trametinib\n2. Alternative: single-agent BRAF inhibitors\n3. If unavailable: treat as driver-negative\n\n# VII. NTRK fusion\n\n1. Preferred: entrectinib or larotrectinib\n2. Alternative: driver-negative regimen\n\n# VIII. MET exon 14 skipping mutation\n\n1. Preferred: capmatinib or tepotinib\n2. Alternative: crizotinib\n3. Otherwise: driver-negative regimen\n\n# IX. RET fusion\n\n1. Preferred: selpercatinib or pralsetinib\n2. Otherwise: driver-negative regimen\n\n# X. KRAS G12C mutation\n\nFirst-line: driver-negative regimen; after progression → KRAS inhibitor\n\n# XI. HER2 mutation\n\nFirst-line: driver-negative regimen; after progression → HER2-targeted therapy\n\n# XII. NRG1 fusion\n\nFirst-line: driver-negative regimen; after progression → targeted therapy\n\n# XIII. High-level MET amplification (copy number ≥10)\n\n1. MET inhibitors: capmatinib, tepotinib, crizotinib\n2. Otherwise: driver-negative regimen\n\n# XIV. FGFR mutation\n\n1. FGFR inhibitor: erdafitinib\n2. Otherwise: driver-negative regimen\n```'
+        - id: 1d8279f4-1761-4d54-8098-9869fc89c9f5
+          role: user
+          text: You are a non-small cell lung cancer (NSCLC) clinical decision support expert. Your task is to formulate a precise treatment plan for the patient based on the provided [Guideline Document] and the extracted {{#1765803586857.result#}}.
+        selected: false
+        title: 晚期驱动基因阳性一线
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 88
+      id: '1765965808653'
+      position:
+        x: 3937.936499371748
+        y: 701.6367972614183
+      positionAbsolute:
+        x: 3937.936499371748
+        y: 701.6367972614183
+      selected: true
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params: {}
+          mode: chat
+          name: glm-4.6
+          provider: langgenius/zhipuai/zhipuai
+        prompt_template:
+        - id: fbcf3edf-0446-4a21-8646-4b4ae9d728ab
+          role: system
+          text: 'You are a non-small cell lung cancer (NSCLC) clinical decision support expert. Your task is to formulate a precise treatment plan for the patient based on the provided [Guideline Document] and the extracted [Patient Information].\nBefore answering, first output the **reasoning process**: within <think> tags, briefly list the key basis for making the final judgment. Requirements:\n- Only include judgments directly related to the final plan\n- Avoid repetition and content unrelated to the guidelines\n- Total word count must not exceed 200 words\n\n# Constraints (Strict Constraints)\n\n1. Based only on the document: All your recommendations must strictly cite the content in the context. The use of external knowledge or hallucination is strictly prohibited.\n\n2. Handling missing information: If key decision factors are missing in the patient information, do not state \"key information is missing\", do not suggest supplementary examinations or evaluations, and do not explain how different results of that indicator would affect plan selection. You must directly provide treatment recommendations that can be clearly established under the currently available information, based only on the provided patient information and guideline content.\n\n3. For decision conditions that are not provided, do not expand into conditional branches in the form of \"if... then...\". For detailed plans that depend on missing information, do not speculate or supplement. When information is insufficient to refine to specific drug combinations, it is allowed to output only higher-level treatment pathways.\n\n# Data Schema Mapping\n\nPlease strictly parse the input JSON data according to the following definitions, paying attention to the special meanings of numeric codes:\n\nDriver Gene (0 vs text):\n\n0: indicates driver-negative (no mutation), suitable for chemotherapy/immunotherapy regimens\n\nSpecific gene name (e.g., \"EGFR\"): indicates driver-positive, suitable for targeted therapy regimens.\n\nTreatment Stage (1 vs 0):\n\n1: indicates curative postoperative\n\n0: indicates curative preoperative\n\nPrevious Treatment Regimen (1 vs text):\n\n1: indicates treatment-naive patients (have not received treatment), suitable for first-line treatment regimens.\n\nSpecific text: indicates previously treated patients (drug-resistant or relapsed), and second-line or later-line treatment needs to be determined according to the description.\n\nMetastasis Type (0 vs 1):\n\n0: indicates oligometastasis (≤5 lesions), suitable for local curative + systemic treatment\n\n1: indicates widespread metastasis, suitable for systemic drug treatment\n\n# Guideline Document - Treatment of Advanced Isolated Metastatic or Oligometastatic Non-Small Cell Lung Cancer\n\nDefinition of oligometastasis: metastatic lesions are already present at diagnosis, and the number of lesions is ≤5; within oligometastasis, a special category is called isolated metastasis, defined as metastatic lesions already present at diagnosis, with only 1 lesion. Although oligometastatic NSCLC is stage IV, some patients with oligometastasis or isolated metastasis still have an opportunity for curative treatment. According to whether the pulmonary lesion can receive curative treatment, it is divided into the following 2 scenarios:\n\n# First, Scenario 1: The pulmonary lesion can receive curative surgery or radiotherapy. NCCN and CSCO guidelines provide the following recommendations:\n\n## NCCN Guidelines: For patients with brain oligometastasis or oligometastasis at other sites whose pulmonary lesions can receive curative treatment, the following treatments are recommended. According to performance status, there are the following 2 situations:\n\n### Situation 1: Performance status (PS = 0–2). It is recommended that these patients receive treatment for metastatic lesions separately and curative treatment for pulmonary lesions.\n\n* Treatment of metastatic lesions: According to the metastatic site, there are the following 2 options:\n\n  1. Option 1: For patients with isolated brain metastasis or brain oligometastasis: priority recommendation is to first perform local brain radiotherapy, and then provide curative treatment for the pulmonary lesion; in cases where brain symptoms require surgery for relief or surgery is needed to obtain pathology for diagnosis, it is recommended to first perform brain surgery, followed by local brain radiotherapy, and then provide curative treatment for the pulmonary lesion.\n\n  2. Option 2: For patients with isolated metastasis or oligometastasis at other sites: it is recommended to perform curative local treatment (surgery, radiotherapy, ablation) for the metastatic lesion after curative treatment of the pulmonary lesion.\n\n* Curative treatment of pulmonary lesions: According to different pathological stages, there are the following 3 options. Systemic treatment regimens should refer to the first-line treatment regimens for advanced NSCLC driver-negative disease or advanced NSCLC driver-positive disease, and may be given before or after curative surgery or radiotherapy.\n\n  1. Option 1: Pathological stage T1–T3N0: surgery or curative radiotherapy is recommended.\n\n  2. Option 2: Pathological stage T1–T3N1: concurrent chemoradiotherapy is preferred; surgery and curative radiotherapy are secondary recommendations.\n\n  3. Option 3: Pathological stage T1–T3N2, T4N0–N2: only curative concurrent chemoradiotherapy is recommended.\n\n### Situation 2: Performance status (PS = 3–4): only best supportive care is recommended, with no anti-cancer treatment.\n\n## CSCO Guidelines: For patients with isolated brain metastasis, isolated adrenal metastasis, or isolated bone metastasis whose pulmonary lesions can receive curative treatment, the following treatments are recommended. According to performance status, there are the following 3 situations:\n\n### Situation 1: Performance status (PS = 0–1). According to the metastatic lesion type, there are the following 2 conditions:\n\n1. Condition 1: For patients with isolated brain metastasis or adrenal metastasis, according to whether the pulmonary lesion can be treated surgically, it is divided into the following 2 scenarios:\n\n  1. Mode 1: Pulmonary lesion is N0–N1 and can be completely resected: there are the following 2 options:\n\n     1. Option 1: Surgical resection of the brain or adrenal lesion, combined with complete resection of the primary pulmonary lesion, combined with adjuvant chemotherapy. This is the preferred option; for patients with isolated brain metastasis, the following may also be considered: local radiotherapy to the brain lesion, combined with complete resection of the primary pulmonary lesion, combined with adjuvant chemotherapy.\n\n     2. Option 2: Local radiotherapy to the brain or adrenal lesion, combined with local radiotherapy to the primary pulmonary lesion, combined with adjuvant chemotherapy. This is a secondary recommendation.\n\n  2. Mode 2: For patients whose pulmonary lesion is T4 or N2 and can receive curative radiotherapy, the following treatment is recommended: local radiotherapy to the brain or adrenal lesion, combined with concurrent or sequential chemoradiotherapy to the primary pulmonary lesion.\n\n2. Condition 2: For patients with isolated bone metastasis, according to whether the pulmonary lesion can be treated surgically, it is divided into the following 2 scenarios:\n\n  1. Mode 1: For patients whose pulmonary lesion is N0–N1 and can be completely resected, the following treatment is recommended: complete resection of the primary pulmonary lesion, combined with radiotherapy to the bone metastatic lesion, combined with adjuvant chemotherapy, combined with bisphosphonates or denosumab treatment.\n\n  2. Mode 2: For patients whose pulmonary lesion is N2 or T4, the following treatment is recommended: sequential or concurrent chemoradiotherapy to the primary pulmonary lesion, combined with radiotherapy to the bone metastatic lesion, combined with adjuvant chemotherapy, combined with bisphosphonates or denosumab treatment.\n\n### Situation 2: Performance status (PS = 2): treatment is recommended according to the first-line treatment regimen for advanced NSCLC driver-negative disease or the first-line treatment regimen for advanced NSCLC driver-positive disease.\n\n### Situation 3: Performance status (PS = 3–4): only best supportive care is recommended, with no anti-cancer treatment.\n\n# Second, Scenario 2: The pulmonary lesion cannot receive curative surgery or radiotherapy\n\nBoth NCCN and CSCO guidelines recommend treatment according to the first-line treatment regimen for advanced NSCLC driver-negative disease or the first-line treatment regimen for advanced NSCLC driver-positive disease.'
+        - id: 7694d7a8-b854-4273-8adc-30b19a60245f
+          role: user
+          text: You are a non-small cell lung cancer (NSCLC) clinical decision support expert. Your task is to formulate a precise treatment plan for the patient based on the provided [Guideline Document] and the extracted {{#1765803586857.result#}}.
+        selected: false
+        title: 寡转移
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 88
+      id: '1765965876012'
+      position:
+        x: 2610.7792499192187
+        y: 785.1380275459427
+      positionAbsolute:
+        x: 2610.7792499192187
+        y: 785.1380275459427
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        answer: '晚期驱动基因阴性一线
+
+          {{#1765965790968.text#}}'
+        desc: ''
+        selected: false
+        title: 直接回复 3
+        type: answer
+        variables: []
+      height: 119
+      id: '1765967125774'
+      position:
+        x: 4263.700101700386
+        y: 419.9319060591852
+      positionAbsolute:
+        x: 4263.700101700386
+        y: 419.9319060591852
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        answer: '晚期驱动基因阳性一线
+
+          {{#1765965808653.text#}}'
+        desc: ''
+        selected: false
+        title: 直接回复 4
+        type: answer
+        variables: []
+      height: 119
+      id: '1765967134303'
+      position:
+        x: 4250.564780749252
+        y: 708.9341977898255
+      positionAbsolute:
+        x: 4250.564780749252
+        y: 708.9341977898255
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        answer: '寡转移
+
+          {{#1765965876012.text#}}'
+        desc: ''
+        selected: false
+        title: 直接回复 5
+        type: answer
+        variables: []
+      height: 103
+      id: '1765967141819'
+      position:
+        x: 2947.5681969890106
+        y: 785.1380275459427
+      positionAbsolute:
+        x: 2947.5681969890106
+        y: 785.1380275459427
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        code: "import json\n\ndef main(arg1: str) -> dict:\n    try:\n        # 1.\
+          \ 解析 JSON 数据\n        data = json.loads(arg1)\n        \n        # 2. 获取\"\
+          治疗阶段\"字段\n        # 使用 .get 避免字段不存在时报错\n        phase = data.get(\"是否一线治疗\"\
+          )\n        \n        # 3. 判断逻辑\n        # 兼容 数字类型的 0 和 字符串类型的 \"0\"\n  \
+          \      if phase == 1 or str(phase) == \"1\":\n            return {\"result\"\
+          : 1}\n        else:\n            return {\"result\": 0}\n            \n\
+          \    except Exception as e:\n        # 如果解析失败或发生错误，默认返回 0\n        return\
+          \ {\"result\": 0}\n"
+        code_language: python3
+        desc: ''
+        outputs:
+          result:
+            children: null
+            type: number
+        selected: false
+        title: 是否一线治疗
+        type: code
+        variables:
+        - value_selector:
+          - '1765803586857'
+          - result
+          variable: arg1
+      height: 52
+      id: '1765968101036'
+      position:
+        x: 3332.3170779220604
+        y: 384.90438352283036
+      positionAbsolute:
+        x: 3332.3170779220604
+        y: 384.90438352283036
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        cases:
+        - case_id: 'true'
+          conditions:
+          - comparison_operator: '='
+            id: 5ca151e8-f28e-48d9-b8a1-abe8ca516464
+            value: '1'
+            varType: number
+            variable_selector:
+            - '1765968101036'
+            - result
+          id: 'true'
+          logical_operator: and
+        desc: ''
+        selected: false
+        title: 是否一线治疗
+        type: if-else
+      height: 124
+      id: '1765968201082'
+      position:
+        x: 3619.2627967595645
+        y: 384.90438352283036
+      positionAbsolute:
+        x: 3619.2627967595645
+        y: 384.90438352283036
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params:
+            temperature: 0.2
+          mode: chat
+          name: glm-4.6
+          provider: langgenius/zhipuai/zhipuai
+        prompt_template:
+        - id: e5951da6-72ef-4bdd-a95a-a818f05c8bdf
+          role: system
+          text: 'You are a non-small cell lung cancer (NSCLC) clinical decision support expert. Your task is to formulate a precise treatment plan for the patient based on the provided [Guideline Document] and the extracted [Patient Information].\nBefore answering, first output the **reasoning process**: within <think> tags, briefly list the key basis for making the final judgment. Requirements:\n- Only include judgments directly related to the final plan\n- Avoid repetition and content unrelated to the guidelines\n- Total word count must not exceed 200 words\n\n# Constraints (Strict Constraints)\n\n1. Based only on the document: All your recommendations must strictly cite the content in the context. The use of external knowledge or hallucination is strictly prohibited.\n\n2. Handling missing information: If key decision factors are missing in the patient information, do not state \"key information is missing\", do not suggest supplementary examinations or evaluations, and do not explain how different results of that indicator would affect plan selection. You must directly provide treatment recommendations that can be clearly established under the currently available information, based only on the provided patient information and guideline content.\n\n3. For decision conditions that are not provided, do not expand into conditional branches in the form of \"if... then...\". For detailed plans that depend on missing information, do not speculate or supplement. When information is insufficient to refine to specific drug combinations, it is allowed to output only higher-level treatment pathways.\n\n# Data Schema Mapping\n\nPlease strictly parse the input JSON data according to the following definitions, paying attention to the special meanings of numeric codes:\n\nDriver Gene (0 vs text):\n\n0: indicates driver-negative (no mutation), suitable for chemotherapy/immunotherapy regimens\n\nSpecific gene name (e.g., \"EGFR\"): indicates driver-positive, suitable for targeted therapy regimens\n\nTreatment Stage (1 vs 0):\n\n1: indicates curative postoperative\n\n0: indicates curative preoperative\n\nPrevious Treatment Regimen (1 vs text):\n\n1: indicates treatment-naive patients (no prior treatment), suitable for first-line treatment regimens\n\nSpecific text: indicates previously treated patients (drug-resistant or relapsed), and second-line or later-line treatment should be determined according to the description\n\nMetastasis Type (0 vs 1):\n\n0: indicates oligometastasis (≤5 lesions), suitable for local curative + systemic treatment\n\n1: indicates widespread metastasis, suitable for systemic drug treatment\n\n# Guideline Document 2 - Advanced NSCLC Driver-Negative Later-line Treatment (Second-line or beyond)\n\nFor advanced NSCLC patients with driver-negative status, after first-line treatment, different recommended regimens are provided based on patient condition (performance status PS 0–2 vs PS 3–4) and prior treatment history:\n\n# I. Performance Status (PS = 0–2)\n\nBased on previous treatment regimen, histology type, and molecular pathology type, the following options are available:\n\n1. Option 1: Immunotherapy monotherapy\nNCCN and CSCO recommend this option for patients who have not previously received immune checkpoint inhibitors.\nAvailable drugs:\nNCCN & CSCO: nivolumab, pembrolizumab (CSCO secondary and only when PD-L1 ≥1%), atezolizumab (CSCO secondary)\nCSCO only: tislelizumab\n\n2. Option 2: Chemotherapy alone\nRecommended regardless of prior use of immune checkpoint inhibitors.\nPrefer drugs not used in first-line therapy.\n\n   * Condition 1: Non-squamous:\n     NCCN & CSCO: docetaxel, pemetrexed\n     NCCN only: gemcitabine, nab-paclitaxel\n\n   * Condition 2: Squamous:\n     NCCN & CSCO: docetaxel, gemcitabine (CSCO secondary, low evidence)\n     NCCN only: nab-paclitaxel\n     CSCO only: vinorelbine (low evidence)\n\n3. Option 3: Chemotherapy + anti-angiogenesis (NCCN)\nramucirumab + docetaxel\n\n4. Option 4: HER2 high expression (IHC 3+)\ntrastuzumab deruxtecan\n\n5. Option 5: MET high expression (≥50% IHC 3+) and EGFR wild-type non-squamous\nTelisotuzumab vedotin\n\n6. Option 6: CSCO recommendation\nNon-squamous after ≥2 lines: anlotinib\nPeripheral squamous ≥3rd line: anlotinib\n\n# II. Performance Status (PS = 3–4)\n\n1. Option 1: Best supportive care only\nNo anti-cancer treatment (including chemotherapy or immunotherapy)\n```'
+        - id: 6ee99b36-cf8a-4fd8-a531-aef40402df10
+          role: user
+          text: You are a non-small cell lung cancer (NSCLC) clinical decision support expert. Your task is to formulate a precise treatment plan for the patient based on the provided [Guideline Document] and the extracted {{#1765803586857.result#}}.
+        selected: false
+        title: 晚期驱动基因阴性后线
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 88
+      id: '1765968282402'
+      position:
+        x: 3944.558525610826
+        y: 512.684628738142
+      positionAbsolute:
+        x: 3944.558525610826
+        y: 512.684628738142
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        answer: '晚期驱动基因阳性后线
+
+          {{#1765968282402.text#}}'
+        desc: ''
+        selected: false
+        title: 直接回复 6
+        type: answer
+        variables: []
+      height: 119
+      id: '1765968349855'
+      position:
+        x: 4247.64582053789
+        y: 562.524415385359
+      positionAbsolute:
+        x: 4247.64582053789
+        y: 562.524415385359
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        code: "import json\n\ndef main(arg1: str) -> dict:\n    try:\n        # 1.\
+          \ 解析 JSON 数据\n        data = json.loads(arg1)\n        \n        # 2. 获取\"\
+          治疗阶段\"字段\n        # 使用 .get 避免字段不存在时报错\n        phase = data.get(\"是否一线治疗\"\
+          )\n        \n        # 3. 判断逻辑\n        # 兼容 数字类型的 0 和 字符串类型的 \"0\"\n  \
+          \      if phase == 1 or str(phase) == \"1\":\n            return {\"result\"\
+          : 1}\n        else:\n            return {\"result\": 0}\n            \n\
+          \    except Exception as e:\n        # 如果解析失败或发生错误，默认返回 0\n        return\
+          \ {\"result\": 0}\n"
+        code_language: python3
+        desc: ''
+        outputs:
+          result:
+            children: null
+            type: number
+        selected: false
+        title: 是否一线治疗
+        type: code
+        variables:
+        - value_selector:
+          - '1765803586857'
+          - result
+          variable: arg1
+      height: 52
+      id: '1765968378779'
+      position:
+        x: 3323.5601972879717
+        y: 701.6367972614183
+      positionAbsolute:
+        x: 3323.5601972879717
+        y: 701.6367972614183
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        cases:
+        - case_id: 'true'
+          conditions:
+          - comparison_operator: '='
+            id: 9aae422f-462c-4fc2-aaff-af7fa1ce2c6c
+            value: '1'
+            varType: number
+            variable_selector:
+            - '1765968378779'
+            - result
+          id: 'true'
+          logical_operator: and
+        desc: ''
+        selected: false
+        title: 是否一线治疗
+        type: if-else
+      height: 124
+      id: '1765968398711'
+      position:
+        x: 3626.5601972879713
+        y: 701.6367972614183
+      positionAbsolute:
+        x: 3626.5601972879713
+        y: 701.6367972614183
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params:
+            temperature: 0.2
+          mode: chat
+          name: glm-4.6
+          provider: langgenius/zhipuai/zhipuai
+        prompt_template:
+        - id: c45e2366-7d69-446a-9a22-ff7aa1470e83
+          role: system
+          text: 'You are a non-small cell lung cancer (NSCLC) clinical decision support expert. Your task is to formulate a precise treatment plan for the patient based on the provided [Guideline Document] and the extracted [Patient Information].\nBefore answering, first output the **reasoning process**: within <think> tags, briefly list the key basis for making the final judgment. Requirements:\n- Only include judgments directly related to the final plan\n- Avoid repetition and content unrelated to the guidelines\n- Total word count must not exceed 200 words\n\n# Constraints (Strict Constraints)\n\n1. Based only on the document: All your recommendations must strictly cite the content in the context. The use of external knowledge or hallucination is strictly prohibited.\n\n2. Handling missing information: If key decision factors are missing in the patient information, do not state \"key information is missing\", do not suggest supplementary examinations or evaluations, and do not explain how different results of that indicator would affect plan selection. You must directly provide treatment recommendations that can be clearly established under the currently available information, based only on the provided patient information and guideline content.\n\n3. For decision conditions that are not provided, do not expand into conditional branches in the form of \"if... then...\". For detailed plans that depend on missing information, do not speculate or supplement. When information is insufficient to refine to specific drug combinations, it is allowed to output only higher-level treatment pathways.\n\n# Data Schema Mapping\n\nPlease strictly parse the input JSON data according to the following definitions, paying attention to the special meanings of numeric codes:\n\nDriver Gene (0 vs text):\n\n0: indicates driver-negative (no mutation), suitable for chemotherapy/immunotherapy regimens\n\nSpecific gene name (e.g., \"EGFR\"): indicates driver-positive, suitable for targeted therapy regimens\n\nTreatment Stage (1 vs 0):\n\n1: indicates curative postoperative\n\n0: indicates curative preoperative\n\nPrevious Treatment Regimen (1 vs text):\n\n1: indicates treatment-naive patients (no prior treatment), suitable for first-line treatment regimens\n\nSpecific text: indicates previously treated patients (drug-resistant or relapsed), and second-line or later-line treatment should be determined according to the description\n\nMetastasis Type (0 vs 1):\n\n0: indicates oligometastasis (≤5 lesions), suitable for local curative + systemic treatment\n\n1: indicates widespread metastasis, suitable for systemic drug treatment\n\nWhether First-line Treatment (0 vs 1):\n\n0: indicates second-line treatment should be adopted\n\n1: indicates first-line treatment should be adopted\n\n# Guideline Document 2 - Advanced NSCLC Driver-Positive Second-line Treatment\n\nDifferent gene mutation types (14 mutation types: EGFR classical mutations, EGFR uncommon sensitive mutations, EGFR exon 20 insertion mutations, ALK fusion, ROS1 fusion, BRAF V600E mutation, NTRK fusion, MET exon 14 skipping mutation, RET fusion, KRAS G12C mutation, HER2 (ERBB2) mutation, NRG1 fusion, high-level MET amplification, FGFR mutation) and different progression patterns (6 progression types: oligoprogression asymptomatic, oligoprogression symptomatic, brain metastasis symptomatic, brain metastasis asymptomatic, widespread progression symptomatic, widespread progression asymptomatic) require different treatment regimens. The following provides different treatment strategies and corresponding drugs based on mutation type, scenario, and progression pattern.\n\n## I. EGFR sensitive mutations (EGFR classical mutations: exon 19 deletion or exon 21 L858R; EGFR uncommon sensitive mutations: exon 18 G719X, exon 20 S768I, exon 21 L861Q)\n\nAfter progression on first- or second-generation EGFR TKIs, re-biopsy and T790M testing divide into two scenarios:\n\n### Scenario 1: T790M positive after progression\n\n1. Situation 1: Oligoprogression (≤5 lesions) or CNS progression (brain metastasis), regardless of symptoms:\n\n   * Option 1: Continue original first/second-generation EGFR TKI + local therapy (mainly stereotactic radiotherapy)\n   * Option 2 (preferred): Switch to third-generation EGFR TKI\n     NCCN & CSCO: osimertinib\n     CSCO only: aumolertinib, furmonertinib, befotertinib, rezivertinib, etc.\n\n2. Situation 2: Widespread progression (>5 lesions), regardless of symptoms:\n\n   Switch to third-generation EGFR TKI (same drugs as above)\n\n### Scenario 2: T790M negative or progression after third-generation TKI\n\n1. Situation 1: Oligoprogression (≤5 lesions) without symptoms OR CNS progression regardless of symptoms:\n\n   Continue original EGFR TKI + local therapy (mainly stereotactic radiotherapy)\n\n2. Situation 2: Oligoprogression with symptoms:\n\n   Continue EGFR TKI + local therapy OR follow Situation 3 options\n\n3. Situation 3: Symptomatic widespread progression (>5 lesions):\n\n   Switch treatment; options include:\n\n   * Option 1: If no prior amivantamab → amivantamab + pemetrexed + carboplatin (non-squamous)\n   * Option 2: Platinum doublet + bevacizumab (non-squamous)\n   * Option 3: Chemotherapy alone (multiple platinum regimens)\n   * Option 4: Four-drug regimen (chemo + bevacizumab + immunotherapy)\n   * Option 5: Pemetrexed + carboplatin + immunotherapy (CSCO)\n   * Option 6: ADC drugs (e.g., sacituzumab)\n\n## II. EGFR exon 20 insertion\n\n1. After progression on driver-negative first-line → targeted therapy (amivantamab, sunvozertinib)\n2. After amivantamab progression → switch to sunvozertinib\n\n## III. ALK fusion progression\n\n1. Oligoprogression or CNS progression:\n\n   * Continue ALK TKI + local therapy\n   * Switch to next-generation ALK TKI\n   * Switch to lorlatinib\n\n2. Symptomatic oligoprogression:\n\n   + chemo or combination regimens\n\n3. Widespread progression:\n\n   * Switch next-generation ALK TKI\n   * OR chemotherapy / combination regimens\n\n## IV. ROS1 fusion progression\n\n1. Oligoprogression:\n\n   * Continue original ROS1 TKI + local therapy\n   * OR switch TKI based on prior drug\n\n2. Symptomatic oligoprogression:\n\n   + chemo options\n\n3. CNS progression:\n\n   Switch CNS-active TKI or combine local therapy\n\n4. Widespread progression:\n\n   Switch TKI OR chemotherapy\n\n## V–XIII Other mutations (BRAF, NTRK, MET, RET, KRAS, HER2, NRG1, MET amplification, FGFR)\n\nGeneral principle:\n\nIf progression after targeted therapy → treat as driver-negative regimen\nOR use next-line targeted therapy where available\n\n# Guideline Document 3 - Advanced NSCLC Driver-Positive Later-line Treatment\n\nFor patients after first- and second-line therapy:\n\n# I. PS 0–2\n\n1. Option 1: Immunotherapy monotherapy (if no prior ICIs)\n\n2. Option 2: Chemotherapy (preferred)\n\n3. Option 3: Chemo + anti-angiogenesis (ramucirumab + docetaxel)\n\n4. Option 4: HER2 high → trastuzumab deruxtecan\n\n5. Option 5: MET high → telisotuzumab vedotin\n\n6. Option 6: ≥3rd line → anlotinib (CSCO)\n\n7. Option 7: EGFR classical mutation → ADC drug (datopotamab deruxtecan)\n\n# II. PS 3–4\n\n1. Option 1: Best supportive care only\nNo anti-cancer treatment\n```'
+
+        - id: 644c907a-9c74-40db-8c19-514a7e3f21ea
+          role: user
+          text: You are a non-small cell lung cancer (NSCLC) clinical decision support expert. Your task is to formulate a precise treatment plan for the patient based on the provided [Guideline Document] and the extracted {{#1765803586857.result#}}.
+        selected: false
+        title: 晚期驱动基因阳性二线及后线
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 88
+      id: '1765968498971'
+      position:
+        x: 3937.936499371748
+        y: 846.1505585295956
+      positionAbsolute:
+        x: 3937.936499371748
+        y: 846.1505585295956
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        answer: '晚期驱动基因阳性二线及后线
+
+          {{#1765968498971.text#}}'
+        desc: ''
+        selected: false
+        title: 直接回复 7
+        type: answer
+        variables: []
+      height: 119
+      id: '1765968546687'
+      position:
+        x: 4253.483740960615
+        y: 846.1505585295956
+      positionAbsolute:
+        x: 4253.483740960615
+        y: 846.1505585295956
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        code: "import json\nimport re\n\ndef main(arg1: str) -> dict:\n    try:\n\
+          \        data = json.loads(arg1)\n        tnm_input = data.get(\"TNM分期\"\
+          , \"\")\n        if not tnm_input:\n            return {\"result\": 0}\n\
+          \n        s = str(tnm_input).lower().replace(\" \", \"\")\n\n        t_match\
+          \ = re.search(r't([0-4x])', s)\n        n_match = re.search(r'n([0-3x])',\
+          \ s)\n        m_match = re.search(r'm(0|1a|1b|1c|1|x)', s)\n\n        t\
+          \ = t_match.group(0) if t_match else \"\"\n        n = n_match.group(0)\
+          \ if n_match else \"\"\n        m = m_match.group(0) if m_match else \"\"\
+          \n\n        if not t or not n:\n            return {\"result\": 0}\n\n \
+          \       # 若有漏网的 IV 期，直接不进入本节点判断\n        if m in [\"m1\", \"m1a\", \"m1b\"\
+          , \"m1c\"]:\n            return {\"result\": 0}\n\n        # Tx 当 T0，Nx\
+          \ 当 N0\n        if t == \"tx\":\n            t = \"t0\"\n        if n ==\
+          \ \"nx\":\n            n = \"n0\"\n\n        # 3 = 蓝色：不可切（局部晚期）\n      \
+          \  if n == \"n3\":\n            return {\"result\": 3}\n\n        # 2 =\
+          \ 灰色：潜在可切\n        if n == \"n2\":\n            return {\"result\": 2}\n\
+          \n        if t in [\"t3\", \"t4\"] and n in [\"n0\", \"n1\"]:\n        \
+          \    return {\"result\": 2}\n\n        # 1 = 绿色：可手术\n        if t in [\"\
+          t0\", \"t1\", \"t2\"] and n in [\"n0\", \"n1\"]:\n            return {\"\
+          result\": 1}\n\n        return {\"result\": 0}\n\n    except Exception:\n\
+          \        return {\"result\": 0}"
+        code_language: python3
+        desc: ''
+        outputs:
+          result:
+            children: null
+            type: number
+        selected: false
+        title: MDT讨论
+        type: code
+        variables:
+        - value_selector:
+          - '1765803586857'
+          - result
+          variable: arg1
+      height: 52
+      id: '1766937177831'
+      position:
+        x: 2628.3698312641295
+        y: 282
+      positionAbsolute:
+        x: 2628.3698312641295
+        y: 282
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        cases:
+        - case_id: 'true'
+          conditions:
+          - comparison_operator: '='
+            id: 64c0b881-2f34-4710-9860-561cf51384cd
+            value: '1'
+            varType: number
+            variable_selector:
+            - '1766937177831'
+            - result
+          id: 'true'
+          logical_operator: and
+        - case_id: fbe22fcb-9a5f-485e-b0c5-8fe8aa989d64
+          conditions:
+          - comparison_operator: '='
+            id: 97f142ed-0a98-4e79-8592-1144cb396407
+            numberVarType: constant
+            value: '2'
+            varType: number
+            variable_selector:
+            - '1766937177831'
+            - result
+          id: fbe22fcb-9a5f-485e-b0c5-8fe8aa989d64
+          logical_operator: and
+        - case_id: 449f0e29-c3cd-4ebb-9303-1ce3c74da5fa
+          conditions:
+          - comparison_operator: '='
+            id: c62e0252-b835-4fce-8a43-78b173edddaa
+            numberVarType: constant
+            value: '3'
+            varType: number
+            variable_selector:
+            - '1766937177831'
+            - result
+          id: 449f0e29-c3cd-4ebb-9303-1ce3c74da5fa
+          logical_operator: and
+        desc: ''
+        selected: false
+        title: 条件分支 7
+        type: if-else
+      height: 220
+      id: '1766937504505'
+      position:
+        x: 2939.3402490420785
+        y: 228.22777876716532
+      positionAbsolute:
+        x: 2939.3402490420785
+        y: 228.22777876716532
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params: {}
+          mode: chat
+          name: glm-4.6
+          provider: langgenius/zhipuai/zhipuai
+        prompt_template:
+        - id: f9c2a85e-c7b0-4b5b-a46f-6fea45e6ff71
+          role: system
+          text: 'You are a non-small cell lung cancer (NSCLC) clinical decision support expert. Your task is to formulate a precise treatment plan for the patient based on the provided [Guideline Document] and the extracted [Patient Information].\nBefore answering, first output the **reasoning process**: within <think> tags, briefly list the key basis for making the final judgment. Requirements:\n- Only include judgments directly related to the final plan\n- Avoid repetition and content unrelated to the guidelines\n- Total word count must not exceed 200 words\n\n# Constraints (Strict Constraints)\n\n1. Based only on the document: All your recommendations must strictly cite the content in the context. The use of external knowledge or hallucination is strictly prohibited.\n\n2. Handling missing information: If key decision factors are missing in the patient information, do not state \"key information is missing\", do not suggest supplementary examinations or evaluations, and do not explain how different results of that indicator would affect plan selection. You must directly provide treatment recommendations that can be clearly established under the currently available information, based only on the provided patient information and guideline content.\n\n3. For decision conditions that are not provided, do not expand into conditional branches in the form of \"if... then...\". For detailed plans that depend on missing information, do not speculate or supplement. When information is insufficient to refine to specific drug combinations, it is allowed to output only higher-level treatment pathways.\n\n# Data Schema Mapping\n\nPlease strictly parse the input JSON data according to the following definitions, paying attention to the special meanings of numeric codes:\n\nDriver Gene (0 vs text):\n\n0: indicates driver-negative (no mutation), suitable for chemotherapy/immunotherapy regimens\n\nSpecific gene name (e.g., \"EGFR\"): indicates driver-positive, suitable for targeted therapy regimens.\n\nTreatment Stage (1 vs 0):\n\n1: indicates curative postoperative\n\n0: indicates curative preoperative\n\nPrevious Treatment Regimen (1 vs text):\n\n1: indicates treatment-naive patients (have not received treatment), suitable for first-line treatment regimens.\n\nSpecific text: indicates previously treated patients\n\nMetastasis Type (0 vs 1):\n\n0: indicates oligometastasis (≤5 lesions), suitable for local curative + systemic treatment\n\n1: indicates widespread metastasis, suitable for systemic drug treatment\n\nWhether First-line Treatment (0 vs 1):\n\n0: indicates second-line treatment should be adopted\n\n1: indicates first-line treatment should be adopted\n\nThere are two types of first-line treatment patients: 1. patients who have not received treatment. 2. patients who have received treatment but whose disease has not further progressed. Disease progression includes tumor enlargement or metastasis spread, etc.\n\n# Guideline Document 1 - Potentially Resectable Treatment\n\nAccording to the definition of unresectable non-small cell lung cancer: after multidisciplinary discussion (MDT), it is unanimously considered potentially resectable.\n\nAccording to different scenarios (whether there are immune checkpoint inhibitors) and different conditions (whether there are driver gene alterations such as EGFR mutation or ALK fusion), the following different regimen recommendations are provided:\n\n# First, Scenario 1: Neoadjuvant regimens for patients without contraindications to immune checkpoint inhibitors. According to whether there are driver gene alterations, there are the following 2 situations:\n\n## Situation 1: The patient has no detected driver gene alterations (EGFR mutation, ALK fusion). There are the following 2 recommended regimens, and these 2 regimens have equal status:\n\n1. Regimen 1: Curative surgery after preoperative neoadjuvant treatment. The neoadjuvant treatment regimen is as follows: platinum-doublet chemotherapy combined with nivolumab for 3 cycles is recommended, and no postoperative adjuvant treatment is required. Optional chemotherapy drugs are as follows: non-squamous: pemetrexed plus cisplatin, paclitaxel plus carboplatin; squamous: gemcitabine plus cisplatin, paclitaxel plus carboplatin.\n\n2. Regimen 2: Curative surgery after preoperative neoadjuvant treatment combined with postoperative adjuvant treatment. Drug selection is as follows:\n\n* Curative surgery after 4 cycles of preoperative platinum-doublet chemotherapy combined with nivolumab, followed by 13 cycles of postoperative nivolumab. Optional chemotherapy drugs are as follows: platinum-doublet chemotherapy regimens: carboplatin or cisplatin plus paclitaxel, cisplatin plus pemetrexed (non-squamous), cisplatin plus gemcitabine (squamous); chemotherapy regimens for patients with cisplatin contraindications: carboplatin plus pemetrexed (non-squamous), carboplatin plus gemcitabine (squamous).\n\n* Curative surgery after 4 cycles of preoperative platinum-doublet chemotherapy combined with durvalumab, followed by 12 cycles of postoperative durvalumab maintenance treatment. Optional chemotherapy drugs are as follows: platinum-doublet chemotherapy regimens: carboplatin plus paclitaxel (squamous), cisplatin plus gemcitabine (squamous), cisplatin or carboplatin plus pemetrexed (non-squamous); chemotherapy regimens for patients with cisplatin contraindications: carboplatin plus gemcitabine (squamous).\n\n* Curative surgery after 4 cycles of preoperative platinum-doublet chemotherapy combined with tislelizumab, followed by 8 cycles of postoperative tislelizumab. Optional chemotherapy drugs are as follows: paclitaxel or docetaxel plus cisplatin or carboplatin (squamous), pemetrexed plus cisplatin or carboplatin (non-squamous).\n\n* Curative surgery after 4 cycles of preoperative platinum-doublet chemotherapy combined with toripalimab, followed by 13 cycles of postoperative toripalimab. Optional chemotherapy drugs are as follows: paclitaxel plus cisplatin or carboplatin (squamous), pemetrexed plus cisplatin or carboplatin (non-squamous).\n\n## Situation 2: Regardless of whether the patient has detected driver gene alterations:\n\n1. Regimen 1: Curative surgery after 4 cycles of preoperative chemotherapy combined with pembrolizumab, followed by 13 cycles of postoperative pembrolizumab maintenance treatment. Optional chemotherapy drugs are as follows: cisplatin plus gemcitabine (squamous), cisplatin plus pemetrexed (non-squamous).\n\n# Second, Scenario 2: Neoadjuvant regimens and postoperative adjuvant regimens for patients with contraindications to immune checkpoint inhibitors:\n\n## Postoperative adjuvant regimen: The patient should complete the adjuvant regimen after surgery. According to the type of driver gene alteration, there are the following 3 different regimen options:\n\n1. Regimen 1: If the patient has ALK fusion: no postoperative adjuvant chemotherapy is required, and only alectinib is recommended.\n\n2. Regimen 2: If the patient has EGFR mutation (EGFR exon 19 deletion or exon 21 L858R mutation): osimertinib is recommended regardless of whether adjuvant chemotherapy is given.\n\n3. Regimen 3: If the patient has no EGFR mutation or ALK fusion, only postoperative adjuvant chemotherapy is recommended. Optional drugs are as follows: preferred recommendations: cisplatin plus pemetrexed (non-squamous), cisplatin plus gemcitabine or docetaxel (squamous). Alternative recommendations: cisplatin plus vinorelbine, cisplatin plus etoposide; when cisplatin cannot be used, carboplatin plus paclitaxel, carboplatin plus gemcitabine (squamous), and carboplatin plus pemetrexed (non-squamous) are recommended.'
+        - id: 4e6858c7-64a3-4ded-8dee-9e17dbbd6f93
+          role: user
+          text: You are a non-small cell lung cancer (NSCLC) clinical decision support expert. Your task is to formulate a precise treatment plan for the patient based on the provided [Guideline Document] and the extracted {{#1765803586857.result#}}.
+        selected: false
+        title: 潜在可切除(CSCO)
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 88
+      id: '1766937547562'
+      position:
+        x: 3354.302432155724
+        y: 138.00579554973274
+      positionAbsolute:
+        x: 3354.302432155724
+        y: 138.00579554973274
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params: {}
+          mode: chat
+          name: glm-4.6
+          provider: langgenius/zhipuai/zhipuai
+        prompt_template:
+        - id: 66fa0633-fd97-4d0a-8316-e485b0399b39
+          role: system
+          text: 'You are a non-small cell lung cancer (NSCLC) clinical decision support expert. Your task is to formulate a precise treatment plan for the patient based on the provided [Guideline Document] and the extracted [Patient Information].\nBefore answering, first output the **reasoning process**: within <think> tags, briefly list the key basis for making the final judgment. Requirements:\n- Only include judgments directly related to the final plan\n- Avoid repetition and content unrelated to the guidelines\n- Total word count must not exceed 200 words\n# Constraints (Strict Constraints)\n\n1. Based only on the document: All your recommendations must strictly cite the content in the context. The use of external knowledge or hallucination is strictly prohibited.\n\n2. Handling missing information: If key decision factors are missing in the patient information, do not state \"key information is missing\", do not suggest supplementary examinations or evaluations, and do not explain how different results of that indicator would affect plan selection. You must directly provide treatment recommendations that can be clearly established under the currently available information, based only on the provided patient information and guideline content.\n\n3. For decision conditions that are not provided, do not expand into conditional branches in the form of \"if... then...\". For detailed plans that depend on missing information, do not speculate or supplement. When information is insufficient to refine to specific drug combinations, it is allowed to output only higher-level treatment pathways.\n\n# Data Schema Mapping\n\nPlease strictly parse the input JSON data according to the following definitions, paying attention to the special meanings of numeric codes:\n\nDriver Gene (0 vs text):\n\n0: indicates driver-negative (no mutation), suitable for chemotherapy/immunotherapy regimens\n\nSpecific gene name (e.g., \"EGFR\"): indicates driver-positive, suitable for targeted therapy regimens.\n\nTreatment Stage (1 vs 0):\n\n1: indicates curative postoperative\n\n0: indicates curative preoperative\n\nPrevious Treatment Regimen (1 vs text):\n\n1: indicates treatment-naive patients (have not received treatment), suitable for first-line treatment regimens.\n\nSpecific text: indicates previously treated patients\n\nMetastasis Type (0 vs 1):\n\n0: indicates oligometastasis (≤5 lesions), suitable for local curative + systemic treatment\n\n1: indicates widespread metastasis, suitable for systemic drug treatment\n\nWhether First-line Treatment (0 vs 1):\n\n0: indicates second-line treatment should be adopted\n\n1: indicates first-line treatment should be adopted\n\nThere are two types of first-line treatment patients: 1. patients who have not received treatment. 2. patients who have received treatment but whose disease has not further progressed. Disease progression includes tumor enlargement or metastasis spread, etc.\n\n# Guideline Document 1 - Treatment of Locally Advanced Unresectable Non-Small Cell Lung Cancer\n\nDefinition of unresectable non-small cell lung cancer: after multidisciplinary discussion (MDT), it is unanimously considered unresectable. Then, after evaluation by the radiation oncology department, it can be divided into 2 scenarios: suitable for curative radiotherapy or not suitable for curative radiotherapy.\n\n# First, Scenario 1: Patients suitable for curative radiotherapy. NCCN and CSCO guidelines have the following different recommendations:\n\n## NCCN recommendation: Curative concurrent chemoradiotherapy. Optional chemotherapy drugs are as follows: pemetrexed plus cisplatin or carboplatin (non-squamous), paclitaxel plus carboplatin, etoposide plus cisplatin. After curative concurrent chemoradiotherapy, according to whether there is an EGFR-sensitive mutation, there are the following 2 conditions:\n\n* Condition 1: If the patient has an EGFR-sensitive mutation (EGFR exon 19 deletion or exon 21 L858R mutation), apply osimertinib until disease progression.\n\n* Condition 2: If the patient does not have an EGFR-sensitive mutation (EGFR exon 19 deletion or exon 21 L858R mutation), apply durvalumab for at least 1 year.\n\n## CSCO recommendation: According to different performance status, CSCO guidelines have different situations:\n\n### Situation 1: Performance status (PS = 0–1), there are the following 2 regimens:\n\n1. Regimen 1: Curative concurrent chemoradiotherapy. CSCO guidelines preferentially recommend this regimen. Optional chemotherapy drugs are as follows: pemetrexed plus cisplatin or carboplatin (non-squamous), paclitaxel plus cisplatin or carboplatin, etoposide plus cisplatin, docetaxel plus cisplatin. After curative concurrent chemoradiotherapy, according to whether there is an EGFR-sensitive mutation, there are the following 2 conditions:\n\n   * Condition 1: If the patient has an EGFR-sensitive mutation (EGFR exon 19 deletion or exon 21 L858R mutation), the following drug options are available: apply osimertinib or aumolertinib until disease progression.\n\n   * Condition 2: If the patient does not have an EGFR-sensitive mutation (EGFR exon 19 deletion or exon 21 L858R mutation), the following drug options are available: apply durvalumab or sugemalimab.\n\n2. Regimen 2: Chemotherapy followed by curative radiotherapy. CSCO guidelines secondarily recommend this regimen. Optional chemotherapy drugs are as follows: paclitaxel plus cisplatin, vinorelbine plus cisplatin. After chemotherapy followed by curative radiotherapy, according to whether there is an EGFR-sensitive mutation, there are the following 2 conditions:\n\n   * Condition 1: If the patient has an EGFR-sensitive mutation (EGFR exon 19 deletion or exon 21 L858R mutation), the following drug options are available: apply osimertinib or aumolertinib until disease progression.\n\n   * Condition 2: If the patient does not have an EGFR-sensitive mutation (EGFR exon 19 deletion or exon 21 L858R mutation), the following drug options are available: apply durvalumab or sugemalimab.\n\n### Situation 2: For patients with performance status (PS = 2) who cannot tolerate concurrent chemoradiotherapy, CSCO guidelines recommend radiotherapy alone or curative radiotherapy followed by chemotherapy. Optional chemotherapy drugs are as follows: paclitaxel plus carboplatin, pemetrexed plus cisplatin or carboplatin (non-squamous).\n\n# Second, Scenario 2: Patients not suitable for curative radiotherapy should be treated according to the first-line treatment for advanced NSCLC driver-positive disease or the first-line treatment for advanced NSCLC driver-negative disease.'
+        - id: a179bdd4-8626-42ff-8755-105778c23597
+          role: user
+          text: You are a non-small cell lung cancer (NSCLC) clinical decision support expert. Your task is to formulate a precise treatment plan for the patient based on the provided [Guideline Document] and the extracted {{#1765803586857.result#}}.
+        selected: false
+        title: 不可切除(局晚期)
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 88
+      id: '1766937598411'
+      position:
+        x: 3354.302432155724
+        y: 258.6294613273735
+      positionAbsolute:
+        x: 3354.302432155724
+        y: 258.6294613273735
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        answer: '局晚期
+
+          {{#1766937598411.text#}}'
+        desc: ''
+        selected: false
+        title: 直接回复 8
+        type: answer
+        variables: []
+      height: 103
+      id: '1766938039625'
+      position:
+        x: 3657.302432155724
+        y: 258.6294613273735
+      positionAbsolute:
+        x: 3657.302432155724
+        y: 258.6294613273735
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        answer: '潜在可切除
+
+          {{#1766937547562.text#}}'
+        desc: ''
+        selected: false
+        title: 直接回复 9
+        type: answer
+        variables: []
+      height: 103
+      id: '1766938057994'
+      position:
+        x: 3662.0846828224935
+        y: 138.00579554973274
+      positionAbsolute:
+        x: 3662.0846828224935
+        y: 138.00579554973274
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        desc: ''
+        is_array_file: true
+        selected: false
+        title: 文档提取器
+        type: document-extractor
+        variable_selector:
+        - sys
+        - files
+      height: 90
+      id: '1766974885785'
+      position:
+        x: 476.41656438661425
+        y: 282
+      positionAbsolute:
+        x: 476.41656438661425
+        y: 282
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    viewport:
+      x: -1274.463233221185
+      y: 86.86795654107829
+      zoom: 0.6273196870777873

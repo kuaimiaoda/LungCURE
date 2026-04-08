@@ -1,0 +1,1226 @@
+app:
+  description: Integrated version updated on 2026-03-27
+  icon: 🤖
+  icon_background: '#FFEAD5'
+  mode: advanced-chat
+  name: tnm_staging_assistant_en_0327
+  use_icon_as_answer_icon: false
+dependencies:
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: langgenius/zhipuai:0.0.23@7e6213a06c26b17b5dfc2416db36f664d4fb08252bd1644ca54a82a6cc7a8609
+kind: app
+version: 0.3.0
+workflow:
+  conversation_variables: []
+  environment_variables: []
+  features:
+    file_upload:
+      allowed_file_extensions:
+      - .JPG
+      - .JPEG
+      - .PNG
+      - .GIF
+      - .WEBP
+      - .SVG
+      allowed_file_types:
+      - image
+      - document
+      allowed_file_upload_methods:
+      - remote_url
+      - local_file
+      enabled: true
+      fileUploadConfig:
+        audio_file_size_limit: 50
+        batch_count_limit: 5
+        file_size_limit: 15
+        image_file_size_limit: 10
+        video_file_size_limit: 100
+        workflow_file_upload_limit: 10
+      image:
+        enabled: false
+        number_limits: 3
+        transfer_methods:
+        - local_file
+        - remote_url
+      number_limits: 3
+    opening_statement: ''
+    retriever_resource:
+      enabled: true
+    sensitive_word_avoidance:
+      enabled: false
+    speech_to_text:
+      enabled: false
+    suggested_questions: []
+    suggested_questions_after_answer:
+      enabled: false
+    text_to_speech:
+      enabled: false
+      language: ''
+      voice: ''
+  graph:
+    edges:
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: start
+        targetType: document-extractor
+      id: 1756804397059-source-1756804402464-target
+      selected: false
+      source: '1756804397059'
+      sourceHandle: source
+      target: '1756804402464'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: document-extractor
+        targetType: llm
+      id: 1756804402464-source-1758186451078-target
+      selected: false
+      source: '1756804402464'
+      sourceHandle: source
+      target: '1758186451078'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: llm
+        targetType: code
+      id: 1758861864675-source-1764323555201-target
+      selected: false
+      source: '1758861864675'
+      sourceHandle: source
+      target: '1764323555201'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: llm
+        targetType: code
+      id: 1758861867069-source-17643235703550-target
+      selected: false
+      source: '1758861867069'
+      sourceHandle: source
+      target: '17643235703550'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: llm
+        targetType: code
+      id: 1758861898205-source-17643235815850-target
+      selected: false
+      source: '1758861898205'
+      sourceHandle: source
+      target: '17643235815850'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: code
+        targetType: code
+      id: 1764323555201-source-1768228656389-target
+      selected: false
+      source: '1764323555201'
+      sourceHandle: source
+      target: '1768228656389'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: code
+        targetType: code
+      id: 17643235703550-source-1768228656389-target
+      selected: false
+      source: '17643235703550'
+      sourceHandle: source
+      target: '1768228656389'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: code
+        targetType: code
+      id: 17643235815850-source-1768228656389-target
+      selected: false
+      source: '17643235815850'
+      sourceHandle: source
+      target: '1768228656389'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: code
+        targetType: answer
+      id: 1768228656389-source-answer-target
+      selected: false
+      source: '1768228656389'
+      sourceHandle: source
+      target: answer
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: llm
+        targetType: code
+      id: 1758186451078-source-1764323445709-target
+      selected: false
+      source: '1758186451078'
+      sourceHandle: source
+      target: '1764323445709'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: code
+        targetType: llm
+      id: 1764323445709-source-1769599924411-target
+      source: '1764323445709'
+      sourceHandle: source
+      target: '1769599924411'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: llm
+        targetType: code
+      id: 1769599924411-source-1769603565594-target
+      source: '1769599924411'
+      sourceHandle: source
+      target: '1769603565594'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: code
+        targetType: code
+      id: 1769603565594-source-1769604169192-target
+      source: '1769603565594'
+      sourceHandle: source
+      target: '1769604169192'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: code
+        targetType: llm
+      id: 1769604169192-source-1758861867069-target
+      source: '1769604169192'
+      sourceHandle: source
+      target: '1758861867069'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: code
+        targetType: llm
+      id: 1769604169192-source-1758861898205-target
+      source: '1769604169192'
+      sourceHandle: source
+      target: '1758861898205'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: code
+        targetType: llm
+      id: 1764323445709-source-1770127326622-target
+      source: '1764323445709'
+      sourceHandle: source
+      target: '1770127326622'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: llm
+        targetType: code
+      id: 1770127326622-source-1770127431059-target
+      source: '1770127326622'
+      sourceHandle: source
+      target: '1770127431059'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: code
+        targetType: code
+      id: 1770127431059-source-1770127481088-target
+      source: '1770127431059'
+      sourceHandle: source
+      target: '1770127481088'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: code
+        targetType: llm
+      id: 1770127481088-source-1758861864675-target
+      source: '1770127481088'
+      sourceHandle: source
+      target: '1758861864675'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    nodes:
+    - data:
+        desc: ''
+        selected: false
+        title: Start
+        type: start
+        variables: []
+      height: 52
+      id: '1756804397059'
+      position:
+        x: -427.0996395598006
+        y: 265.94797206002454
+      positionAbsolute:
+        x: -427.0996395598006
+        y: 265.94797206002454
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        answer: '{{#1770127326622.text#}}
+
+          {{#1769599924411.text#}}
+
+          {{#1768228656389.result#}}
+
+          '
+        desc: ''
+        selected: false
+        title: Direct Reply
+        type: answer
+        variables: []
+      height: 140
+      id: answer
+      position:
+        x: 3040.286210556385
+        y: 336.3953877260365
+      positionAbsolute:
+        x: 3040.286210556385
+        y: 336.3953877260365
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        desc: ''
+        is_array_file: true
+        selected: false
+        title: Document Extractor
+        type: document-extractor
+        variable_selector:
+        - sys
+        - files
+      height: 90
+      id: '1756804402464'
+      position:
+        x: -85.32537904648848
+        y: 265.94797206002454
+      positionAbsolute:
+        x: -85.32537904648848
+        y: 265.94797206002454
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params:
+            temperature: 0.1
+            thinking: false
+          mode: chat
+          name: glm-4.7
+          provider: langgenius/zhipuai/zhipuai
+        prompt_template:
+        - id: 1b305772-fcf8-4167-954f-398120064ba9
+          role: system
+          text: "Role\nYou are a medical report extraction assistant. You will receive\
+            \ one or more reports, such as CT, PET/CT, MRI, pathology reports, surgical\
+            \ notes, or molecular testing reports. Your task is to extract the clinically\
+            \ important backbone information without changing any critical wording.\n\
+            \nCore task and logic\n1. Imaging reports (CT / PET-CT / MRI / etc.)\n\
+            - Extract the imaging findings into 【Main Findings】.\n- Extract the diagnostic\
+            \ impression / conclusion into 【Impression】.\n- Report headings may vary.\
+            \ Recognize synonymous sections.\n\n2. Pathology reports\n- Extract the\
+            \ gross and microscopic descriptions into 【Main Findings】.\n- Extract\
+            \ the final pathologic diagnosis and immunohistochemistry into 【Impression】.\n\
+            \nSemantic processing rules\n- If the text contains wording such as “cannot\
+            \ exclude metastasis” or “consider metastasis”, normalize it into wording\
+            \ that still clearly preserves the metastatic meaning.\n- Split long conclusions\
+            \ naturally by sentence or semicolon.\n- If a compound anatomic phrase\
+            \ shares the same metastatic qualifier, split it into separate items.\n\
+            \  Example: “bilateral hilar and mediastinal lymph nodes, cannot exclude\
+            \ metastasis” should become:\n  - Bilateral hilar lymph node metastasis\n\
+            \  - Mediastinal lymph node metastasis\n\nStrict preservation rules\n\
+            - Do not turn indeterminate / follow-up / inflammatory / infectious /\
+            \ fibrotic findings into metastasis.\n- Preserve lesion size notation\
+            \ such as * or x exactly as written.\n\nOutput format\nFor each report,\
+            \ output strictly in the following Markdown format:\n\nReport Type: <CT\
+            \ / PET-CT / pathology / etc.>\n\n【Main Findings】\n<verbatim key findings\
+            \ and details>\n\n【Impression】\n<extracted conclusion / diagnosis, with\
+            \ normalized wording and split long sentences when needed>\n\nApply this\
+            \ to all provided reports."
+        - id: c67d0967-5e1f-4f2e-bd5b-a31de7807c61
+          role: user
+          text: 'Please extract information from:
+
+            {{#sys.query#}}
+
+            {{#1756804402464.text#}}'
+        selected: false
+        title: Extract Info
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 88
+      id: '1758186451078'
+      position:
+        x: 244.54938795750934
+        y: 265.94797206002454
+      positionAbsolute:
+        x: 244.54938795750934
+        y: 265.94797206002454
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params:
+            temperature: 0.1
+            thinking: false
+          mode: chat
+          name: glm-4.7
+          provider: langgenius/zhipuai/zhipuai
+        prompt_template:
+        - id: 3bf95c24-9038-49dd-af97-b9438bcb95a4
+          role: system
+          text: "Role and task\nYou are an oncology staging assistant specializing\
+            \ in lung cancer T staging. Based on `t_assessment_context`, determine\
+            \ the correct T stage by strictly following the rules below. Size comparison\
+            \ must be exact, and the conclusion must match the evidence.\n\nKey rules\n\
+            - Extract the maximum tumor diameter from the primary tumor description.\
+            \ For values like 3.9×3.4×4.6 cm, use 4.6 cm.\n- Size brackets are mutually\
+            \ exclusive:\n  - T1a: ≤1 cm\n  - T1b: >1 to ≤2 cm\n  - T1c: >2 to ≤3\
+            \ cm\n  - T2a: >3 to ≤4 cm, or visceral pleural invasion, or main bronchus\
+            \ involvement without carina, or obstructive pneumonia / atelectasis\n\
+            \  - T2b: >4 to ≤5 cm\n  - T3: >5 to ≤7 cm, or invasion of chest wall\
+            \ / parietal pericardium / phrenic nerve / rib, or separate tumor nodules\
+            \ in the same lobe, or lymphangitic spread in the same lobe\n  - T4: >7\
+            \ cm, or invasion of diaphragm, mediastinum, heart, great vessels, trachea,\
+            \ carina, vertebral body, or nodules in different ipsilateral lobes, or\
+            \ ipsilateral multilobar lymphangitic spread\n- Pleural rules:\n  - visceral\
+            \ pleural invasion includes direct wording like pleural invasion, pleural\
+            \ involvement, pleural infiltration\n  - also includes ill-defined or\
+            \ indistinct boundary between lesion and pleura\n  - pleural traction\
+            \ alone, subpleural location, or pleural thickening alone do not count\
+            \ as pleural invasion\n- If wording includes metastasis in an ipsilateral\
+            \ same-lobe lesion, classify as T3.\n- If wording includes ipsilateral\
+            \ different-lobe dissemination, classify as T4.\n- If wording contains\
+            \ uncertain invasion wording (possible / suspicious) for T-related structures,\
+            \ count it as present.\n- If wording contains uncertain metastasis wording\
+            \ but still explicitly includes metastasis, count it as metastatic spread.\n\
+            - Distinguish invasion from metastasis.\n- Use pathology > impression\
+            \ > descriptive findings when conflicts exist.\n- Find all satisfied T\
+            \ criteria first, list them all in `matched_criteria`, and then choose\
+            \ the highest-level final T stage.\n\nOutput JSON only:\n{\n  \"final_t_stage\"\
+            : \"T3\",\n  \"matched_criteria\": [\n    {\"stage_level\": \"T2a\", \"\
+            description\": \"Visceral pleural invasion\"},\n    {\"stage_level\":\
+            \ \"T3\", \"description\": \"5 cm < tumor diameter ≤ 7 cm (actual 6 cm)\"\
+            }\n  ],\n  \"logic_analysis\": \"...\"\n}\n\nSpecial handling\n- If no\
+            \ valid T evidence is available, output `final_t_stage` as null and `matched_criteria`\
+            \ as an empty array.\n- If pleural metastasis or chest wall metastasis\
+            \ is present, explain in `logic_analysis` that these belong to M staging\
+            \ rather than T staging."
+        - id: f30116b7-b8e1-4fbf-ad75-5e89946ef8eb
+          role: user
+          text: 'Determine the T stage for
+
+            {{#1770127481088.t_descriptions#}}
+
+            and output the reasoning and result in JSON.'
+        selected: false
+        title: T Staging
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 88
+      id: '1758861864675'
+      position:
+        x: 1907.562679162071
+        y: 169.8943252547112
+      positionAbsolute:
+        x: 1907.562679162071
+        y: 169.8943252547112
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params:
+            temperature: 0.1
+            thinking: false
+          mode: chat
+          name: glm-4.7
+          provider: langgenius/zhipuai/zhipuai
+        prompt_template:
+        - id: 7f8f6cd2-bade-4644-a04b-f4bafd8199f8
+          role: system
+          text: "Role and task\nYou are an oncology staging assistant specializing\
+            \ in lung cancer N staging. Based on the provided node descriptions, determine\
+            \ the N stage.\n\nWorkflow\n1. Scan all evidence and independently classify\
+            \ every lymph node finding.\n2. Record all confirmed evidence for N1,\
+            \ N2, and N3 if present.\n3. Set the final N stage to the highest confirmed\
+            \ level.\n\nDefinitions\n- N1: ipsilateral peribronchial / hilar / intrapulmonary\
+            \ nodes (stations 10-14)\n- N2: ipsilateral mediastinal or subcarinal\
+            \ nodes (stations 2-9)\n- N3: contralateral mediastinal or hilar nodes,\
+            \ or ipsilateral / contralateral scalene or supraclavicular nodes\n\n\
+            Important rules\n- Wording such as “consider metastasis”, “cannot exclude\
+            \ metastasis”, “possible metastasis”, “malignant”, or “carcinoma found”\
+            \ counts as metastatic involvement.\n- Purely inflammatory uptake or enlarged\
+            \ nodes without metastatic wording should not be treated as confirmed\
+            \ metastasis.\n- If a regional node is indeterminate, do not count it\
+            \ in `final_n_stage`; instead place it in `uncertain_nodes` and project\
+            \ what the N stage would become if it were confirmed.\n- If no regional\
+            \ nodal abnormality is mentioned, default to N0.\n- Non-regional nodes\
+            \ belong to M staging, not N staging.\n- Use pathology > impression >\
+            \ descriptive findings when conflicts exist.\n\nOutput JSON only:\n{\n\
+            \  \"final_n_stage\": \"N1\",\n  \"matched_criteria\": [\n    {\"stage_level\"\
+            : \"N1\", \"description\": \"Left hilar nodal metastasis (ipsilateral\
+            \ N1 region)\"}\n  ],\n  \"uncertain_nodes\": [\n    {\n      \"node_name\"\
+            : \"Subcarinal station 7 node\",\n      \"original_desc\": \"Indeterminate\"\
+            ,\n      \"projected_stage\": \"N2\",\n      \"impact_description\": \"\
+            If confirmed positive, staging would increase from N1 to N2.\"\n    }\n\
+            \  ],\n  \"logic_analysis\": \"...\"\n}"
+        - id: 73a5a9e7-47dc-42a7-ad59-b0e6030eff09
+          role: user
+          text: 'Determine the N stage for
+
+            {{#1769604169192.n_descriptions#}}
+
+            and output the reasoning and result in JSON.'
+        selected: false
+        title: N Staging
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 88
+      id: '1758861867069'
+      position:
+        x: 1878.1661799140304
+        y: 420.7404755025976
+      positionAbsolute:
+        x: 1878.1661799140304
+        y: 420.7404755025976
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params:
+            temperature: 0.1
+            thinking: false
+          mode: chat
+          name: glm-4.7
+          provider: langgenius/zhipuai/zhipuai
+        prompt_template:
+        - id: 30ee7454-175b-4df6-801b-f26e4cc74422
+          role: system
+          text: "Role and task\nYou are an oncology staging assistant specializing\
+            \ in lung cancer M staging. Analyze all evidence of distant disease and\
+            \ determine the M stage.\n\nWorkflow\n1. Independently check for M1a findings:\
+            \ contralateral lung metastasis, pleural metastasis, malignant pleural\
+            \ effusion, malignant pericardial effusion, pleural or chest wall metastatic\
+            \ nodules.\n2. Inventory all extrapulmonary metastatic organs and all\
+            \ non-regional lymph-node sites.\n3. Decide between M1b and M1c:\n   -\
+            \ M1b: one lesion in one extrapulmonary organ or one non-regional nodal\
+            \ site\n   - M1c: multiple lesions in one extrapulmonary organ, or metastases\
+            \ in two or more extrapulmonary organs / non-regional nodal sites\n4.\
+            \ If multiple M categories are present, choose the highest final category:\
+            \ M1c > M1b > M1a > M0.\n\nImportant rules\n- Phrases such as “consider\
+            \ metastasis”, “cannot exclude metastasis”, “possible metastasis”, or\
+            \ similar metastatic wording count as metastasis.\n- Indeterminate / follow-up-only\
+            \ / no clear malignant wording findings should go to `uncertain_findings`,\
+            \ not confirmed metastasis.\n- Non-regional lymph nodes belong to M staging.\n\
+            - If no distant metastatic evidence is present, output M0.\n- Use pathology\
+            \ > impression > descriptive findings when conflicts exist.\n\nOutput\
+            \ JSON only:\n{\n  \"final_m_stage\": \"M1c\",\n  \"matched_criteria\"\
+            : [\n    {\"stage_level\": \"M1a\", \"location\": \"Contralateral lung\"\
+            , \"count_type\": \"single\", \"description\": \"A right-lung lesion suspicious\
+            \ for metastasis\"},\n    {\"stage_level\": \"M1c\", \"location\": \"\
+            Brain\", \"count_type\": \"multiple\", \"description\": \"Multiple brain\
+            \ metastases\"}\n  ],\n  \"uncertain_findings\": [\n    {\"description\"\
+            : \"Bilateral adrenal nodules, follow-up recommended\", \"reason\": \"\
+            Indeterminate without definite malignant wording\"}\n  ],\n  \"logic_analysis\"\
+            : \"...\"\n}"
+        - id: ef9ff411-5e8e-41e9-b1bf-49b4e6c26118
+          role: user
+          text: 'Determine the M stage for
+
+            {{#1769604169192.m_descriptions#}}
+
+            and output the reasoning and result in JSON.'
+        selected: false
+        title: M Staging
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 88
+      id: '1758861898205'
+      position:
+        x: 1878.1661799140304
+        y: 593.8133038473281
+      positionAbsolute:
+        x: 1878.1661799140304
+        y: 593.8133038473281
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        code: "\nimport re\n\ndef main(arg1: str) -> dict:\n    \"\"\"\n    Input:\
+          \ an LLM output string that may contain <think>...</think> tags.\n    Output:\
+          \ the same text with all think-tag content removed.\n    \"\"\"\n    if\
+          \ arg1 is None:\n        return {\"result\": \"\"}\n    cleaned_text = re.sub(\n\
+          \        r'<think>.*?</think>',\n        '',\n        str(arg1),\n     \
+          \   flags=re.DOTALL | re.IGNORECASE\n    )\n    final_text = cleaned_text.strip()\n\
+          \    return {\"result\": final_text}\n"
+        code_language: python3
+        desc: ''
+        outputs:
+          result:
+            children: null
+            type: string
+        selected: false
+        title: Strip Think Tags
+        type: code
+        variables:
+        - value_selector:
+          - '1758186451078'
+          - text
+          variable: arg1
+      height: 52
+      id: '1764323445709'
+      position:
+        x: 531.0582869850446
+        y: 265.94797206002454
+      positionAbsolute:
+        x: 531.0582869850446
+        y: 265.94797206002454
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        code: "\nimport re\n\ndef main(arg1: str) -> dict:\n    \"\"\"\n    Input:\
+          \ an LLM output string that may contain <think>...</think> tags.\n    Output:\
+          \ the same text with all think-tag content removed.\n    \"\"\"\n    if\
+          \ arg1 is None:\n        return {\"result\": \"\"}\n    cleaned_text = re.sub(\n\
+          \        r'<think>.*?</think>',\n        '',\n        str(arg1),\n     \
+          \   flags=re.DOTALL | re.IGNORECASE\n    )\n    final_text = cleaned_text.strip()\n\
+          \    return {\"result\": final_text}\n"
+        code_language: python3
+        desc: ''
+        outputs:
+          result:
+            children: null
+            type: string
+        selected: false
+        title: T
+        type: code
+        variables:
+        - value_selector:
+          - '1758861864675'
+          - text
+          variable: arg1
+      height: 52
+      id: '1764323555201'
+      position:
+        x: 2301.4737843737394
+        y: 265.94797206002454
+      positionAbsolute:
+        x: 2301.4737843737394
+        y: 265.94797206002454
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        code: "\nimport re\n\ndef main(arg1: str) -> dict:\n    \"\"\"\n    Input:\
+          \ an LLM output string that may contain <think>...</think> tags.\n    Output:\
+          \ the same text with all think-tag content removed.\n    \"\"\"\n    if\
+          \ arg1 is None:\n        return {\"result\": \"\"}\n    cleaned_text = re.sub(\n\
+          \        r'<think>.*?</think>',\n        '',\n        str(arg1),\n     \
+          \   flags=re.DOTALL | re.IGNORECASE\n    )\n    final_text = cleaned_text.strip()\n\
+          \    return {\"result\": final_text}\n"
+        code_language: python3
+        desc: ''
+        outputs:
+          result:
+            children: null
+            type: string
+        selected: false
+        title: N
+        type: code
+        variables:
+        - value_selector:
+          - '1758861867069'
+          - text
+          variable: arg1
+      height: 52
+      id: '17643235703550'
+      position:
+        x: 2343.5939857230965
+        y: 414.5067026956876
+      positionAbsolute:
+        x: 2343.5939857230965
+        y: 414.5067026956876
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        code: "\nimport re\n\ndef main(arg1: str) -> dict:\n    \"\"\"\n    Input:\
+          \ an LLM output string that may contain <think>...</think> tags.\n    Output:\
+          \ the same text with all think-tag content removed.\n    \"\"\"\n    if\
+          \ arg1 is None:\n        return {\"result\": \"\"}\n    cleaned_text = re.sub(\n\
+          \        r'<think>.*?</think>',\n        '',\n        str(arg1),\n     \
+          \   flags=re.DOTALL | re.IGNORECASE\n    )\n    final_text = cleaned_text.strip()\n\
+          \    return {\"result\": final_text}\n"
+        code_language: python3
+        desc: ''
+        outputs:
+          result:
+            children: null
+            type: string
+        selected: false
+        title: M
+        type: code
+        variables:
+        - value_selector:
+          - '1758861898205'
+          - text
+          variable: arg1
+      height: 52
+      id: '17643235815850'
+      position:
+        x: 2266.970531269544
+        y: 593.8133038473281
+      positionAbsolute:
+        x: 2266.970531269544
+        y: 593.8133038473281
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        code: "\nimport json\nimport re\n\ndef main(t: str, n: str, m: str) -> dict:\n\
+          \    def safe_parse(json_str):\n        if not json_str:\n            return\
+          \ {}\n        try:\n            clean_str = re.sub(r'^```json\\s*', '',\
+          \ str(json_str).strip())\n            clean_str = re.sub(r'\\s*```$', '',\
+          \ clean_str)\n            return json.loads(clean_str)\n        except Exception:\n\
+          \            return {}\n\n    def normalize_stage(stage: str) -> str:\n\
+          \        if stage is None:\n            return \"\"\n        s = str(stage).upper().strip()\n\
+          \        s = re.sub(r'\\s+', '', s)\n        s = re.sub(r'^(?:Y?P|Y?C|R)+',\
+          \ '', s)\n        if s == 'TX':\n            return 'T0'\n        if s ==\
+          \ 'NX':\n            return 'N0'\n        if s == 'MX':\n            return\
+          \ 'M0'\n        return s\n\n    def format_criteria(criteria_list):\n  \
+          \      if not criteria_list:\n            return \"  - *No specific matched\
+          \ criteria*\\n\"\n        lines = []\n        for i in criteria_list:\n\
+          \            stage_level = i.get('stage_level', '')\n            description\
+          \ = i.get('description', '')\n            location = i.get('location')\n\
+          \            count_type = i.get('count_type')\n            extra_parts =\
+          \ []\n            if location:\n                extra_parts.append(str(location))\n\
+          \            if count_type:\n                extra_parts.append(str(count_type))\n\
+          \            if extra_parts and description:\n                text = f\"\
+          {description} ({', '.join(extra_parts)})\"\n            elif extra_parts:\n\
+          \                text = \", \".join(extra_parts)\n            else:\n  \
+          \              text = description\n            lines.append(f\"  - **[{stage_level}]**\
+          \ {text}\\n\")\n        return \"\".join(lines)\n\n    def format_uncertainty(uncertain_list):\n\
+          \        if not uncertain_list:\n            return \"\"\n        lines\
+          \ = []\n        for i in uncertain_list:\n            name = i.get('node_name')\
+          \ or i.get('description', 'Unknown finding')\n            impact = i.get('impact_description')\
+          \ or i.get('potential_impact') or i.get('reason', '')\n            lines.append(f\"\
+          \  - {name} — *{impact}*\\n\")\n        return \"\\n**⚠️ Indeterminate /\
+          \ follow-up findings:**\\n\" + \"\".join(lines)\n\n    def get_n_weight(n_stage):\n\
+          \        clean_n = normalize_stage(n_stage)\n        mapping = {'N0': 0,\
+          \ 'N1': 1, 'N2': 2, 'N3': 3}\n        return mapping.get(clean_n, -1)\n\n\
+          \    def calculate_stage_by_set(final_t, final_n, final_m):\n        T =\
+          \ normalize_stage(final_t)\n        N = normalize_stage(final_n)\n     \
+          \   M = normalize_stage(final_m)\n        current_combo = f\"{T}{N}{M}\"\
+          \n        if M == 'M1C':\n            return 'Stage IVB'\n        if M in\
+          \ ('M1A', 'M1B'):\n            return 'Stage IVA'\n        stage_rules =\
+          \ {\n            \"Stage IA1\": {\"T1AN0M0\"},\n            \"Stage IA2\"\
+          : {\"T1BN0M0\"},\n            \"Stage IA3\": {\"T1CN0M0\"},\n          \
+          \  \"Stage IB\": {\"T2AN0M0\"},\n            \"Stage IIA\": {\"T2BN0M0\"\
+          },\n            \"Stage IIB\": {\"T1AN1M0\", \"T1BN1M0\", \"T1CN1M0\", \"\
+          T2AN1M0\", \"T2BN1M0\", \"T3N0M0\"},\n            \"Stage IIIA\": {\"T1AN2M0\"\
+          , \"T1BN2M0\", \"T1CN2M0\", \"T2AN2M0\", \"T2BN2M0\", \"T3N1M0\", \"T4N0M0\"\
+          , \"T4N1M0\"},\n            \"Stage IIIB\": {\"T1AN3M0\", \"T1BN3M0\", \"\
+          T1CN3M0\", \"T2AN3M0\", \"T2BN3M0\", \"T3N2M0\", \"T4N2M0\"},\n        \
+          \    \"Stage IIIC\": {\"T3N3M0\", \"T4N3M0\"}\n        }\n        for stage_name,\
+          \ combinations in stage_rules.items():\n            if current_combo in\
+          \ combinations:\n                return stage_name\n        if M == 'M0':\n\
+          \            if N == 'N3':\n                if T.startswith('T1') or T.startswith('T2'):\n\
+          \                    return 'Stage IIIB'\n                if T.startswith('T3')\
+          \ or T.startswith('T4'):\n                    return 'Stage IIIC'\n    \
+          \        if N == 'N2':\n                if T.startswith('T1') or T.startswith('T2'):\n\
+          \                    return 'Stage IIIA'\n                if T.startswith('T3')\
+          \ or T.startswith('T4'):\n                    return 'Stage IIIB'\n    \
+          \        if N == 'N1':\n                if T.startswith('T1') or T.startswith('T2'):\n\
+          \                    return 'Stage IIB'\n                if T.startswith('T3')\
+          \ or T.startswith('T4'):\n                    return 'Stage IIIA'\n    \
+          \        if N == 'N0':\n                if T == 'T2A':\n               \
+          \     return 'Stage IB'\n                if T == 'T2B':\n              \
+          \      return 'Stage IIA'\n                if T.startswith('T2'):\n    \
+          \                return 'Stage IB or IIA'\n                if T.startswith('T3'):\n\
+          \                    return 'Stage IIB'\n                if T.startswith('T4'):\n\
+          \                    return 'Stage IIIA'\n        return 'Manual review\
+          \ required'\n\n    t_data = safe_parse(t)\n    n_data = safe_parse(n)\n\
+          \    m_data = safe_parse(m)\n    final_t = t_data.get('final_t_stage', 'Tx')\n\
+          \    final_n = n_data.get('final_n_stage', 'Nx')\n    final_m = m_data.get('final_m_stage',\
+          \ 'Mx')\n    normalized_t = normalize_stage(final_t)\n    normalized_n =\
+          \ normalize_stage(final_n)\n    normalized_m = normalize_stage(final_m)\n\
+          \    stage_result = calculate_stage_by_set(final_t, final_n, final_m)\n\
+          \    potential_scenarios = {}\n    uncertain_nodes = n_data.get('uncertain_nodes',\
+          \ [])\n    current_weight = get_n_weight(final_n)\n    if uncertain_nodes:\n\
+          \        for node in uncertain_nodes:\n            proj_stage = node.get('projected_stage')\n\
+          \            proj_weight = get_n_weight(proj_stage)\n            if proj_weight\
+          \ > current_weight:\n                node_name = node.get('node_name', 'Unknown\
+          \ site')\n                if proj_stage not in potential_scenarios:\n  \
+          \                  calculated_tnm = calculate_stage_by_set(final_t, proj_stage,\
+          \ final_m)\n                    potential_scenarios[proj_stage] = {\"tnm_stage\"\
+          : calculated_tnm, \"weight\": proj_weight, \"nodes\": [node_name]}\n   \
+          \             else:\n                    potential_scenarios[proj_stage][\"\
+          nodes\"].append(node_name)\n    sorted_scenarios = sorted(potential_scenarios.items(),\
+          \ key=lambda x: x[1]['weight'])\n    md = \"# \U0001FA7A Lung Cancer TNM\
+          \ Staging Report\\n\\n\"\n    md += \"## \U0001F3C1 Overall Stage\\n\"\n\
+          \    md += f\"### **{stage_result}**\\n\"\n    md += f\"> **Current confirmed\
+          \ TNM combination:** {normalized_t} {normalized_n} {normalized_m}\\n\"\n\
+          \    if sorted_scenarios:\n        md += \"\\n⚠️ **Potential stage-up scenarios:**\\\
+          n\"\n        for p_n, info in sorted_scenarios:\n            nodes_str =\
+          \ \" or \".join(info['nodes'])\n            md += f\"> * If **{nodes_str}**\
+          \ is confirmed positive ({normalize_stage(p_n)})\\n\"\n            md +=\
+          \ f\">   stage would increase to **{info['tnm_stage']}** (combination: {normalized_t}{normalize_stage(p_n)}{normalized_m})\\\
+          n\"\n            md += \">\\n\"\n    md += \"\\n---\\n\\n\"\n    md += f\"\
+          ### \U0001FAC1 T stage: {normalized_t}\\n\"\n    md += \"**Matched criteria:**\\\
+          n\" + format_criteria(t_data.get('matched_criteria', []))\n    if t_data.get('logic_analysis'):\n\
+          \        md += f\"> *Analysis: {t_data['logic_analysis']}*\\n\\n\"\n   \
+          \ md += f\"### \U0001F9EC N stage: {normalized_n}\\n\"\n    md += \"**Matched\
+          \ criteria:**\\n\" + format_criteria(n_data.get('matched_criteria', []))\n\
+          \    md += format_uncertainty(n_data.get('uncertain_nodes', []))\n    if\
+          \ n_data.get('logic_analysis'):\n        md += f\"> *Analysis: {n_data['logic_analysis']}*\\\
+          n\\n\"\n    md += f\"### \U0001F50D M stage: {normalized_m}\\n\"\n    md\
+          \ += \"**Matched criteria:**\\n\" + format_criteria(m_data.get('matched_criteria',\
+          \ []))\n    md += format_uncertainty(m_data.get('uncertain_findings', []))\n\
+          \    if m_data.get('logic_analysis'):\n        md += f\"> *Analysis: {m_data['logic_analysis']}*\\\
+          n\"\n    return {\"result\": md}\n"
+        code_language: python3
+        desc: ''
+        outputs:
+          result:
+            children: null
+            type: string
+        selected: true
+        title: TNM Summary
+        type: code
+        variables:
+        - value_selector:
+          - '1764323555201'
+          - result
+          variable: t
+        - value_selector:
+          - '17643235703550'
+          - result
+          variable: n
+        - value_selector:
+          - '17643235815850'
+          - result
+          variable: m
+      height: 52
+      id: '1768228656389'
+      position:
+        x: 2653.224615918322
+        y: 379.11954528852056
+      positionAbsolute:
+        x: 2653.224615918322
+        y: 379.11954528852056
+      selected: true
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params:
+            temperature: 0.1
+            thinking: false
+          mode: chat
+          name: glm-4.7
+          provider: langgenius/zhipuai/zhipuai
+        prompt_template:
+        - id: ba80ccb2-3588-4d58-9c80-a27c118e3210
+          role: system
+          text: "Role\nYou are a pathology and imaging anatomy data-cleaning expert.\
+            \ Extract all lesions potentially relevant to N or M staging, including\
+            \ confirmed malignant lesions, suspicious lesions, and indeterminate lesions,\
+            \ then route them into `n_assessment_context` or `m_assessment_context`.\n\
+            \nCore task\n1. Extract and integrate all potentially staging-relevant\
+            \ lesions from both 【Impression】 and 【Main Findings】.\n2. Merge conclusion-level\
+            \ statements with detailed descriptive evidence.\n3. Output one JSON object\
+            \ with two fields: `n_assessment_context` and `m_assessment_context`.\n\
+            \nInclusion rules\nInclude findings containing any of the following:\n\
+            - Definite or highly suspicious metastasis: metastasis, metastatic, consider\
+            \ metastasis, cannot exclude metastasis, malignant, carcinoma.\n- Indeterminate\
+            \ / follow-up / suspicious findings: indeterminate, unclear nature, follow-up\
+            \ recommended, further workup suggested, enlarged node without definite\
+            \ benign explanation, nodule or mass not explicitly benign.\n\nExclude\n\
+            - Primary tumor characteristics that belong to T staging only.\n- Clearly\
+            \ benign lesions such as inflammatory change, reactive hyperplasia, cyst,\
+            \ calcification, hemangioma, or explicitly non-metastatic findings.\n\n\
+            Routing rules\n1. Route to N pool (`n_assessment_context`)\n- Regional\
+            \ lymph nodes only: supraclavicular / scalene (station 1), mediastinal\
+            \ stations 2-9, hilar / intrapulmonary stations 10-14, and related equivalent\
+            \ regional groups.\n- If “supraclavicular and infraclavicular” is mentioned\
+            \ together, split into supraclavicular (regional) and infraclavicular\
+            \ (non-regional).\n- If “clavicular region node” or “neck level V node”\
+            \ is mentioned ambiguously, send it to both N and M pools because it may\
+            \ or may not represent supraclavicular disease.\n- Generic neck nodes\
+            \ without explicit supraclavicular or scalene wording are non-regional\
+            \ and must not be routed to N.\n\n2. Route to M pool (`m_assessment_context`)\n\
+            - All non-regional lymph nodes: deep cervical, axillary, internal mammary,\
+            \ retroperitoneal, pelvic, inguinal, etc.\n- Pleural or pericardial metastatic\
+            \ spread, pleural nodules, malignant effusions, contralateral lung lesions.\n\
+            - All distant organs: brain, liver, bone, adrenal, kidney, skin/subcutaneous\
+            \ tissue, muscle, etc.\n\nProcessing rules\n- Split long sentences into\
+            \ independent lesions.\n- For every retained lesion, backfill detailed\
+            \ evidence from the findings section whenever possible.\n- Keep indeterminate\
+            \ lesions because they may change staging downstream.\n\nOutput JSON only:\n\
+            {\n  \"n_assessment_context\": [\"...\"],\n  \"m_assessment_context\"\
+            : [\"...\"]\n}"
+        - id: 501fac74-53a9-4ca3-ae37-aff4ea498446
+          role: user
+          text: Please complete N/M routing for {{#1764323445709.result#}}
+        selected: false
+        title: N/M Routing
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 88
+      id: '1769599924411'
+      position:
+        x: 811.3416483724218
+        y: 490.9504563810142
+      positionAbsolute:
+        x: 811.3416483724218
+        y: 490.9504563810142
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        code: "\nimport re\n\ndef main(arg1: str) -> dict:\n    \"\"\"\n    Input:\
+          \ an LLM output string that may contain <think>...</think> tags.\n    Output:\
+          \ the same text with all think-tag content removed.\n    \"\"\"\n    if\
+          \ arg1 is None:\n        return {\"result\": \"\"}\n    cleaned_text = re.sub(\n\
+          \        r'<think>.*?</think>',\n        '',\n        str(arg1),\n     \
+          \   flags=re.DOTALL | re.IGNORECASE\n    )\n    final_text = cleaned_text.strip()\n\
+          \    return {\"result\": final_text}\n"
+        code_language: python3
+        desc: ''
+        outputs:
+          result:
+            children: null
+            type: string
+        selected: false
+        title: Strip Think Tags-NM
+        type: code
+        variables:
+        - value_selector:
+          - '1769599924411'
+          - text
+          variable: arg1
+      height: 52
+      id: '1769603565594'
+      position:
+        x: 1123.8440528415608
+        y: 521.2135746343746
+      positionAbsolute:
+        x: 1123.8440528415608
+        y: 521.2135746343746
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        code: "\nimport json\nimport re\n\ndef main(arg1: str) -> dict:\n    def safe_parse(json_input):\n\
+          \        if not json_input:\n            return {}\n        try:\n     \
+          \       if isinstance(json_input, dict):\n                return json_input\n\
+          \            clean_str = str(json_input).strip()\n            clean_str\
+          \ = re.sub(r'^```json\\s*', '', clean_str)\n            clean_str = re.sub(r'\\\
+          s*```$', '', clean_str)\n            return json.loads(clean_str)\n    \
+          \    except Exception as e:\n            print(f\"JSON Parse Error: {e}\"\
+          )\n            return {}\n\n    def format_context_list(data_list, default_msg=\"\
+          No relevant findings mentioned.\"):\n        if not data_list or not isinstance(data_list,\
+          \ list):\n            return default_msg\n        valid_items = [f\"- {str(item)}\"\
+          \ for item in data_list if item]\n        if not valid_items:\n        \
+          \    return default_msg\n        return \"\\n\".join(valid_items)\n\n  \
+          \  data = safe_parse(arg1)\n    raw_n_list = data.get(\"n_assessment_context\"\
+          , [])\n    raw_m_list = data.get(\"m_assessment_context\", [])\n\n    n_context_text\
+          \ = format_context_list(raw_n_list, default_msg=\"No abnormal regional lymph-node\
+          \ findings mentioned.\")\n    m_context_text = format_context_list(raw_m_list,\
+          \ default_msg=\"No distant metastatic or non-regional nodal findings mentioned.\"\
+          )\n\n    return {\n        \"n_descriptions\": n_context_text,\n       \
+          \ \"m_descriptions\": m_context_text\n    }\n"
+        code_language: python3
+        desc: ''
+        outputs:
+          m_descriptions:
+            children: null
+            type: string
+          n_descriptions:
+            children: null
+            type: string
+        selected: false
+        title: Format N/M Inputs
+        type: code
+        variables:
+        - value_selector:
+          - '1769603565594'
+          - result
+          variable: arg1
+      height: 52
+      id: '1769604169192'
+      position:
+        x: 1472.287369086399
+        y: 521.2135746343746
+      positionAbsolute:
+        x: 1472.287369086399
+        y: 521.2135746343746
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params:
+            temperature: 0.1
+            thinking: false
+          mode: chat
+          name: glm-4.7
+          provider: langgenius/zhipuai/zhipuai
+        prompt_template:
+        - id: 8ba5f9b5-b8fb-44aa-b418-65bd6bc854a0
+          role: system
+          text: "Role\nYou are an anatomic data-cleaning expert for lung cancer staging.\
+            \ Extract only findings relevant to the primary tumor (T stage) and route\
+            \ them into `t_assessment_context`.\n\nCore task\n1. Determine the single\
+            \ reference side (left or right lung), with priority: pathology-confirmed\
+            \ primary site > largest imaging lesion > diagnostic impression.\n2. Keep\
+            \ only findings on the reference side.\n3. Merge diagnostic impression\
+            \ with detailed supporting findings from the descriptive section.\n\n\
+            Must extract on the reference side\n- Primary lesion terms: mass, nodule,\
+            \ lesion, tumor, cancer, and any tumor size values.\n- Invasion-related\
+            \ features: pleura, bronchus, chest wall, rib, phrenic nerve, diaphragm,\
+            \ pericardium, great vessels, heart, trachea, carina, vertebra.\n- Obstructive\
+            \ change: obstructive pneumonia, atelectasis, lung collapse.\n- Ipsilateral\
+            \ intrapulmonary dissemination: nodules in the same lobe or different\
+            \ ipsilateral lobes, including suspicious or indeterminate lesions if\
+            \ malignancy / metastasis cannot be excluded.\n- Bilateral lung statements:\
+            \ if bilateral pulmonary nodules are described without excluding the reference\
+            \ side, explicitly annotate that the reference side is involved so downstream\
+            \ T staging can detect ipsilateral spread.\n\nDo not extract\n- Contralateral\
+            \ lung lesions (these belong to M1a).\n- Distant organ metastases.\n-\
+            \ Pleural effusion or pericardial effusion.\n- Lymph nodes.\n- Pleural\
+            \ metastasis or chest wall metastasis as distant metastatic disease.\n\
+            - Clearly benign findings such as simple cysts, calcification, or purely\
+            \ inflammatory linear opacities unless specifically flagged as suspicious.\n\
+            \nProcessing rules\n- “Ill-defined”, “poorly demarcated”, “abutting”,\
+            \ and “traction” should be captured as invasion-related evidence when\
+            \ they refer to relevant adjacent structures.\n- Merge descriptive details\
+            \ into each retained item.\n- Do not output pure feature fragments as\
+            \ separate items; attach them to the corresponding lesion.\n\nOutput JSON\
+            \ only:\n{\n  \"t_assessment_context\": [\n    \"...\"\n  ]\n}"
+        - id: d8c5646d-bfd4-4c1c-8abe-f0a6ebf9616a
+          role: user
+          text: Please complete T-routing for {{#1764323445709.result#}}
+        selected: false
+        title: T Routing
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 88
+      id: '1770127326622'
+      position:
+        x: 811.3416483724218
+        y: 149.35927487025515
+      positionAbsolute:
+        x: 811.3416483724218
+        y: 149.35927487025515
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        code: "\nimport re\n\ndef main(arg1: str) -> dict:\n    \"\"\"\n    Input:\
+          \ an LLM output string that may contain <think>...</think> tags.\n    Output:\
+          \ the same text with all think-tag content removed.\n    \"\"\"\n    if\
+          \ arg1 is None:\n        return {\"result\": \"\"}\n    cleaned_text = re.sub(\n\
+          \        r'<think>.*?</think>',\n        '',\n        str(arg1),\n     \
+          \   flags=re.DOTALL | re.IGNORECASE\n    )\n    final_text = cleaned_text.strip()\n\
+          \    return {\"result\": final_text}\n"
+        code_language: python3
+        desc: ''
+        outputs:
+          result:
+            children: null
+            type: string
+        selected: false
+        title: Strip Think Tags-T
+        type: code
+        variables:
+        - value_selector:
+          - '1770127326622'
+          - text
+          variable: arg1
+      height: 52
+      id: '1770127431059'
+      position:
+        x: 1130.4993349201918
+        y: 149.35927487025515
+      positionAbsolute:
+        x: 1130.4993349201918
+        y: 149.35927487025515
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        code: "\nimport json\nimport re\n\ndef main(arg1: str) -> dict:\n    def safe_parse(json_input):\n\
+          \        if not json_input:\n            return {}\n        try:\n     \
+          \       if isinstance(json_input, dict):\n                return json_input\n\
+          \            clean_str = str(json_input).strip()\n            clean_str\
+          \ = re.sub(r'^```json\\s*', '', clean_str)\n            clean_str = re.sub(r'\\\
+          s*```$', '', clean_str)\n            return json.loads(clean_str)\n    \
+          \    except Exception as e:\n            print(f\"JSON Parse Error: {e}\"\
+          )\n            return {}\n\n    def format_context_list(data_list, default_msg=\"\
+          No primary-tumor-related abnormalities mentioned.\"):\n        if not data_list\
+          \ or not isinstance(data_list, list):\n            return default_msg\n\
+          \        valid_items = [f\"- {str(item)}\" for item in data_list if item]\n\
+          \        if not valid_items:\n            return default_msg\n        return\
+          \ \"\\n\".join(valid_items)\n\n    data = safe_parse(arg1)\n    raw_t_list\
+          \ = data.get(\"t_assessment_context\", [])\n    t_context_text = format_context_list(raw_t_list,\
+          \ default_msg=\"No primary-tumor-related abnormalities mentioned.\")\n \
+          \   return {\n        \"t_descriptions\": t_context_text\n    }\n"
+        code_language: python3
+        desc: ''
+        outputs:
+          t_descriptions:
+            children: null
+            type: string
+        selected: false
+        title: Format T Input
+        type: code
+        variables:
+        - value_selector:
+          - '1770127431059'
+          - result
+          variable: arg1
+      height: 52
+      id: '1770127481088'
+      position:
+        x: 1491.273613116071
+        y: 149.35927487025515
+      positionAbsolute:
+        x: 1491.273613116071
+        y: 149.35927487025515
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    viewport:
+      x: 84.8450296100977
+      y: 260.90050650083384
+      zoom: 0.38152473474068865

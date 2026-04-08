@@ -1,0 +1,34 @@
+active_provider: gpt-5.2
+
+evaluation:
+  judge_provider: judge_model
+
+providers:
+  gpt-5.2:
+    model: gpt-5.2
+    base_url: https://YOUR_BASE_URL.com/v1
+    api_key: YOUR_API_KEY_HERE
+    timeout: 300
+    max_retries: 3
+    retry_backoff_seconds: 2
+    temperature: 0.2
+    max_tokens: 10240
+
+  model2:
+    model: MODEL_2
+    base_url: https://YOUR_BASE_URL.com/v1
+    api_key: YOUR_API_KEY_HERE
+    timeout: 300
+    max_retries: 3
+    retry_backoff_seconds: 2
+    temperature: 0.2
+    max_tokens: 10240
+
+  judge_model:
+    model: JUDGE_MODEL
+    base_url: https://YOUR_BASE_URL.cn/v1
+    api_key: YOUR_API_KEY_HERE
+    max_retries: 3
+    retry_backoff_seconds: 2
+    temperature: 0.2
+    max_tokens: 10240

@@ -1,0 +1,11 @@
+/.vscode/
+/.conda/
+/gt/tnm_gt/*
+/gt/treatment_gt/*
+/LC_patient_image/*
+!/LC_patient_image/.gitkeep
+/LC_patient_text/*
+!/LC_patient_text/.gitkeep
+/logs/
+/results/
+/api_config.yaml
